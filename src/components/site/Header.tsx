@@ -28,7 +28,7 @@ export function Header() {
   const active = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href.replace(/\/$/, '')))
 
   return (
-    <header className="sticky top-0 z-40 px-3 pt-3 transition-colors sm:px-6 sm:pt-4" style={{ background: scrolled ? 'transparent' : '#DDF8FB' }}>
+    <header className="sticky top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-4">
       <div
         className={`mx-auto flex max-w-[1320px] items-center gap-6 rounded-[22px] border border-white/90 py-2.5 pl-4 pr-2.5 backdrop-blur transition-all duration-300 sm:pl-6 ${
           scrolled ? 'bg-white/90 shadow-lift' : 'bg-white/80 shadow-[0_18px_40px_-28px_rgba(11,61,74,0.5)]'

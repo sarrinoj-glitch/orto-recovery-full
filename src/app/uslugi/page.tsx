@@ -6,6 +6,7 @@ import { asset } from '@/lib/asset'
 import { PageHead } from '@/components/site/Home'
 import { Start } from '@/components/site/Start'
 import { Glossary } from '@/components/site/Treatment'
+import { MethodsMarquee, ServicesHoverList } from '@/components/site/Extras'
 
 export const metadata: Metadata = { title: 'Услуги', description: 'Ортопедия, лечение спины, реабилитация и ЛФК, физиотерапия, PRP, эндоскопия во сне, детская реабилитация.' }
 
@@ -14,8 +15,9 @@ export default function ServicesIndex() {
     <>
       <PageHead kicker="Услуги" title="Что мы лечим" lead="Восемь направлений в одном центре: от консультации ортопеда до обследования во сне. Выберите своё или подберите врача за три вопроса." />
       <main>
-        <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <ul data-stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ServicesHoverList />
+        <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:hidden">
+          <ul data-stagger className="grid gap-4 sm:grid-cols-2">
             {SERVICES.map((s) => (
               <li key={s.slug}>
                 <Link href={`/uslugi/${s.slug}/`} className="lift group flex h-full flex-col overflow-hidden rounded-[26px] bg-white shadow-soft ring-1 ring-graphite/5">
@@ -31,6 +33,7 @@ export default function ServicesIndex() {
           </ul>
         </section>
         <Start />
+        <MethodsMarquee />
         <Glossary />
       </main>
     </>

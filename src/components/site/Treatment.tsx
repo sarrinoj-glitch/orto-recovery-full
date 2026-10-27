@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Check, Info, Syringe } from 'lucide-react'
 import { openChat } from '@/components/ChatWidget'
 import { METHODS, TWIN_PLANS } from '@/lib/content'
@@ -19,8 +20,9 @@ export function TwinPlans() {
         <div role="group" aria-label="Пациент" className="flex gap-1 rounded-full bg-ward p-1 sm:inline-flex">
           {(Object.keys(TWIN_PLANS) as (keyof typeof TWIN_PLANS)[]).map((key) => (
             <button key={key} type="button" aria-pressed={k === key} onClick={() => setK(key)}
-              className={`h-11 flex-1 rounded-full px-4 text-sm font-semibold transition sm:flex-none sm:px-5 sm:text-[15px] ${k === key ? 'bg-deep text-white' : 'text-deep'}`}>
-              {TWIN_PLANS[key].tab}
+              className={`relative h-11 flex-1 rounded-full px-4 text-sm font-semibold transition-colors sm:flex-none sm:px-5 sm:text-[15px] ${k === key ? 'text-white' : 'text-deep'}`}>
+              {k === key && <motion.span layoutId="twin-pill" className="absolute inset-0 rounded-full bg-deep" transition={{ type: 'spring', stiffness: 380, damping: 32 }} />}
+              <span className="relative">{TWIN_PLANS[key].tab}</span>
             </button>
           ))}
         </div>

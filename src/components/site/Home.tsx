@@ -7,6 +7,7 @@ import { ArrowRight, Plus, Search } from 'lucide-react'
 import { CLINIC, DOCTORS } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
 import { openChat } from '@/components/ChatWidget'
+import { BlurIn, FlipWords, Magnetic, Spotlight, TiltCard } from '@/components/ui/motion'
 
 const H2 = 'text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl'
 const CHIPS = ['Болит спина', 'Грыжа диска', 'Колено', 'Плечо после травмы', 'Пятка по утрам', 'Сколиоз у ребёнка', 'Реабилитолог на дом']
@@ -27,13 +28,13 @@ export function HomeHero() {
             </span>
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-neon">Центр восстановительной медицины · Махачкала</p>
             <h1 className="mt-3 text-[2.6rem] font-extrabold leading-none tracking-[-0.035em] sm:text-[4.2rem]">
-              Лечим боль в спине и суставах <span className="bg-gradient-to-r from-neon to-lime bg-clip-text text-transparent">без операции</span>
+              Лечим боль в <FlipWords words={['спине', 'колене', 'плече', 'шее', 'пятке']} className="text-white" /><br /><span className="bg-gradient-to-r from-neon to-lime bg-clip-text text-transparent">без операции</span>
             </h1>
             <p className="mt-5 max-w-[520px] text-lg leading-relaxed text-white/85">Ортопеды, невролог и реабилитологи. Сначала находим причину, потом составляем план лечения — цену вы знаете до начала.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <button type="button" onClick={() => openChat()} className="flex h-14 items-center justify-center gap-2.5 rounded-full bg-[radial-gradient(120%_180%_at_50%_50%,#FDFFC7_0%,#F2FF59_45%,#DCEB2E_100%)] px-8 font-bold text-graphite shadow-[0_18px_40px_-16px_rgba(242,255,89,.7)] transition hover:-translate-y-0.5">
+              <Magnetic><button type="button" onClick={() => openChat()} className="shimmer flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[radial-gradient(120%_180%_at_50%_50%,#FDFFC7_0%,#F2FF59_45%,#DCEB2E_100%)] px-8 font-bold text-graphite shadow-[0_18px_40px_-16px_rgba(242,255,89,.7)] transition hover:-translate-y-0.5">
                 Записаться на приём <ArrowRight size={20} />
-              </button>
+              </button></Magnetic>
               <Link href="/uslugi/" className="flex h-14 items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 font-semibold backdrop-blur">Что мы лечим</Link>
             </div>
           </div>
@@ -84,7 +85,7 @@ export function BodyCards() {
       </div>
       <div className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [scrollbar-width:none] sm:mx-0 sm:px-0">
         {CARDS.map((c) => (
-          <Link key={c.title} href={c.href} className="group relative isolate aspect-[4/5] w-[78%] shrink-0 snap-start overflow-hidden rounded-[28px] text-white transition hover:-translate-y-1.5 sm:w-[300px]">
+          <TiltCard key={c.title} className="w-[78%] shrink-0 snap-start rounded-[28px] sm:w-[300px]"><Link href={c.href} className="group relative isolate block aspect-[4/5] overflow-hidden rounded-[28px] text-white">
             <img src={asset(c.img)} alt="" className={`absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105 ${c.pos}`} />
             <span className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent from-40% to-deep/90" />
             <span className="absolute left-4 top-4 rounded-full bg-lime px-3 py-1 text-[13px] font-semibold text-graphite">{c.tag}</span>
@@ -97,7 +98,7 @@ export function BodyCards() {
               </span>
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-deep transition group-hover:rotate-90 group-hover:bg-lime"><Plus size={20} /></span>
             </span>
-          </Link>
+          </Link></TiltCard>
         ))}
       </div>
     </section>
@@ -158,9 +159,10 @@ export function PageHead({ kicker, title, lead, children }: { kicker: string; ti
   return (
     <section className="relative isolate -mt-[84px] overflow-hidden bg-lagoon pb-14 pt-[132px] sm:-mt-[92px] sm:pt-[150px]">
       <div aria-hidden className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-neon/25 blur-2xl" />
+      <Spotlight color="rgba(255,255,255,0.55)" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">{kicker}</p>
-        <h1 className="mt-3 max-w-3xl text-[2.4rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-deep sm:text-[3.6rem]">{title}</h1>
+        <h1 className="mt-3 max-w-3xl text-[2.4rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-deep sm:text-[3.6rem]"><BlurIn text={title} /></h1>
         {lead && <p className="mt-4 max-w-2xl text-lg leading-relaxed text-graphite/70">{lead}</p>}
         {children}
       </div>

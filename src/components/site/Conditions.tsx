@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { openChat } from '@/components/ChatWidget'
 import { CONDITIONS, AFTER_COURSE } from '@/lib/content'
 import { asset } from '@/lib/asset'
@@ -18,19 +19,20 @@ export function Conditions({ ids, title = 'Травмы и заболевани�
         <div role="tablist" className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1">
           {list.length > 1 && list.map((c) => (
             <button key={c.id} role="tab" aria-selected={tab === c.id} type="button" onClick={() => setTab(c.id)}
-              className={`h-11 shrink-0 rounded-full px-5 text-[15px] font-semibold transition ${tab === c.id ? 'bg-deep text-white' : 'bg-ward text-deep hover:bg-lagoon'}`}>
-              {c.label}
+              className={`relative h-11 shrink-0 rounded-full px-5 text-[15px] font-semibold transition-colors ${tab === c.id ? 'text-white' : 'bg-ward text-deep hover:bg-lagoon'}`}>
+              {tab === c.id && <motion.span layoutId={`cond-pill-${list.map((x) => x.id).join('')}`} className="absolute inset-0 rounded-full bg-deep" transition={{ type: 'spring', stiffness: 380, damping: 32 }} />}
+              <span className="relative">{c.label}</span>
             </button>
           ))}
         </div>
-        <ul className="mt-6 gap-8 sm:columns-2 lg:columns-3">
+        <motion.ul key={cur.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }} className="mt-6 gap-8 sm:columns-2 lg:columns-3">
           {cur.items.map((it) => (
             <li key={it} className="relative break-inside-avoid border-b border-graphite/5 py-2.5 pl-6 text-base">
               <span className="absolute left-1 top-[18px] h-2.5 w-2.5 rounded-full bg-[#E2553A] shadow-[0_0_0_4px_rgba(226,85,58,0.15)]" />
               {it}
             </li>
           ))}
-        </ul>
+        </motion.ul>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-[15px] text-graphite/60">
           <span>Не нашли свой диагноз? Напишите — администратор подскажет, к какому врачу идти.</span>
           <button type="button" onClick={() => openChat('Здравствуйте, не нашёл свой диагноз в списке, подскажите, к какому врачу идти')} className="h-12 rounded-full bg-deep px-6 font-semibold text-white">Спросить администратора</button>

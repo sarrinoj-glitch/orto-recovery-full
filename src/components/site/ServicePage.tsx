@@ -13,6 +13,7 @@ import { Procedures } from '@/components/site/Procedures'
 import { Endoscopy } from '@/components/site/Endoscopy'
 import { HomeVisit } from '@/components/site/HomeVisit'
 import { ForFamily } from '@/components/site/ForFamily'
+import { OrbitCta } from '@/components/site/Extras'
 
 const EXTRAS: Record<Extra, () => ReactNode> = {
   second: () => <SecondOpinion />,
@@ -82,6 +83,7 @@ export function ServicePage({ slug }: { slug: string }) {
 
         {s.conditions.length > 0 && <Conditions ids={s.conditions} title="С чем к нам приходят" />}
         {s.extras.map((e) => <div key={e}>{EXTRAS[e]()}</div>)}
+        <OrbitCta />
 
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <h2 className="text-2xl font-bold text-deep">Другие направления</h2>

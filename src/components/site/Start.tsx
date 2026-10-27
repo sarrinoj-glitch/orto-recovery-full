@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion'
+import { BorderBeam } from '@/components/ui/motion'
 import { ArrowRight, RotateCcw } from 'lucide-react'
 import { openChat } from '@/components/ChatWidget'
 import { QUIZ, QUIZ_RESULT, type QuizArea } from '@/lib/content'
@@ -49,7 +51,8 @@ export function Start() {
         ))}
       </div>
 
-      <div id="quiz" data-reveal className="mt-4 grid scroll-mt-24 gap-8 rounded-[32px] bg-deep p-6 text-white sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div id="quiz" data-reveal className="relative mt-4 grid scroll-mt-24 gap-8 rounded-[32px] bg-deep p-6 text-white sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <BorderBeam />
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neon">3 вопроса — 30 секунд</p>
           <p className="mt-3 text-[1.75rem] font-bold leading-tight tracking-[-0.02em]">Подберём врача и скажем цену приёма</p>
@@ -59,8 +62,9 @@ export function Start() {
           <div className="mb-4 flex gap-1.5" aria-hidden>
             {QUIZ.map((_, i) => <span key={i} className={`h-1.5 flex-1 rounded-full transition ${i <= Math.min(step, QUIZ.length - 1) ? 'bg-lime' : 'bg-white/15'}`} />)}
           </div>
+          <AnimatePresence mode="wait" initial={false}>
           {!done && (
-            <>
+            <motion.div key={step} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.25 }}>
               <p className="mb-3 text-lg font-semibold">{QUIZ[step].q}</p>
               <div className="flex flex-wrap gap-2">
                 {QUIZ[step].options.map(([v, l]) => (
@@ -69,10 +73,10 @@ export function Start() {
                   </button>
                 ))}
               </div>
-            </>
+            </motion.div>
           )}
           {res && (
-            <>
+            <motion.div key="res" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 22 }}>
               <div className="rounded-[22px] bg-white p-5 text-graphite">
                 <p className="text-lg font-semibold text-deep">{res.doctor}</p>
                 <p className="text-sm text-teal">{res.role}</p>
@@ -86,8 +90,9 @@ export function Start() {
                 </div>
               </div>
               <button type="button" onClick={() => setAnswers({})} className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-neon"><RotateCcw size={14} /> Пройти заново</button>
-            </>
+            </motion.div>
           )}
+          </AnimatePresence>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { PageHead } from '@/components/site/Home'
-import { FirstVisit } from '@/components/site/FirstVisit'
+import { StickySteps, BookingFlow } from '@/components/site/Extras'
+import { WhatsAppPlan } from '@/components/site/Trust'
 import { Prep } from '@/components/site/Trust'
 import { SecondOpinion } from '@/components/site/Conditions'
 import { HomeVisit } from '@/components/site/HomeVisit'
@@ -13,8 +14,10 @@ export default function PatientsPage() {
     <>
       <PageHead kicker="Пациентам" title="Всё, что нужно знать до визита" lead="Как проходит первый приём, что взять с собой, как получить второе мнение и вызвать реабилитолога на дом." />
       <main>
-        <FirstVisit />
+        <StickySteps />
         <Prep />
+        <BookingFlow />
+        <WhatsAppPlan />
         <SecondOpinion />
         <HomeVisit />
         <Faq />

@@ -5,6 +5,8 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { RevealObserver } from "@/components/site/RevealObserver";
 import ChatWidget from "@/components/ChatWidget";
+import { ScrollProgress } from "@/components/ui/motion";
+import { MobileDock } from "@/components/site/Extras";
 
 const onest = Onest({
   subsets: ["latin", "cyrillic"],
@@ -31,12 +33,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru" className={`${onest.variable} ${caveat.variable}`}>
       <body className="font-sans antialiased">
-        <div className="overflow-x-clip bg-white text-graphite">
+        <ScrollProgress />
+        <div className="overflow-x-clip bg-white pb-20 text-graphite md:pb-0">
           <Header />
           {children}
           <Footer />
         </div>
         <ChatWidget />
+        <MobileDock />
         <RevealObserver />
       </body>
     </html>

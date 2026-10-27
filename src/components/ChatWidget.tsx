@@ -81,7 +81,7 @@ export default function ChatWidget({ channel = 'web' }: { channel?: 'web' | 'wha
       <button
         aria-label={open ? 'Закрыть чат' : 'Написать администратору'}
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-4 right-4 z-50 flex h-14 items-center gap-2.5 rounded-full bg-graphite pl-4 pr-5 text-[15px] font-medium text-white shadow-lift transition hover:bg-black sm:bottom-6 sm:right-6"
+        className="fixed bottom-4 right-4 z-50 hidden h-14 items-center md:flex gap-2.5 rounded-full bg-graphite pl-4 pr-5 text-[15px] font-medium text-white shadow-lift transition hover:bg-black sm:bottom-6 sm:right-6"
       >
         {open ? <X size={20} /> : <MessageCircle size={20} />}
         <span className="hidden sm:inline">{open ? 'Свернуть' : 'Написать администратору'}</span>
@@ -99,6 +99,7 @@ export default function ChatWidget({ channel = 'web' }: { channel?: 'web' | 'wha
               <p className="text-[15px] font-semibold text-graphite">Администратор</p>
               <p className="text-[13px] text-graphite/60">Отвечает сразу, даже вечером</p>
             </div>
+            <button type="button" onClick={() => setOpen(false)} aria-label="Закрыть чат" className="ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-ward text-graphite md:hidden"><X size={18} /></button>
           </div>
 
           <div ref={scrollRef} className="flex-1 space-y-2.5 overflow-y-auto bg-ward px-4 py-5">

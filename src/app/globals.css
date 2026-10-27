@@ -283,3 +283,24 @@ html { scroll-behavior: smooth; }
 .hl-mobile .hl-hot { transform:scale(1.6); }
 .hl-doc.hl-doc-m { position:relative; left:auto; top:auto; width:auto; margin-top:16px; }
 @media (prefers-reduced-motion: reduce) { .hl-pain { animation:none; } }
+
+/* ===== Анимации второго круга (motion.tsx) ===== */
+.marquee-track { animation: marquee linear infinite; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+/* свет бежит по рамке: вращающийся конический градиент, вырезанный маской по контуру */
+.border-beam { padding: 2px; background: conic-gradient(from var(--beam-a, 0deg), transparent 0 70%, #48F6FF 80%, #F2FF59 88%, transparent 96%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: beamSpin 4.5s linear infinite; }
+@property --beam-a { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@keyframes beamSpin { to { --beam-a: 360deg; } }
+/* блик пробегает по главной кнопке */
+.shimmer { position: relative; overflow: hidden; isolation: isolate; }
+.shimmer::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-120%); animation: shimmer 3.2s ease-in-out infinite; }
+@keyframes shimmer { 60%, 100% { transform: translateX(120%); } }
+@keyframes orbit { to { transform: rotate(360deg); } }
+@keyframes orbitBack { to { transform: rotate(-360deg); } }
+.orbit-spin { animation: orbit 38s linear infinite; }
+.orbit-spin .orbit-item { animation: orbitBack 38s linear infinite; }
+.orbit-spin-2 { animation: orbit 26s linear infinite reverse; }
+.orbit-spin-2 .orbit-item { animation: orbitBack 26s linear infinite reverse; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .border-beam, .shimmer::after, .orbit-spin, .orbit-spin .orbit-item, .orbit-spin-2, .orbit-spin-2 .orbit-item { animation: none !important; }
+}

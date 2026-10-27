@@ -277,14 +277,15 @@ export function OrbitCta() {
   )
   return (
     <section className="px-4 py-10 sm:px-6">
-      <div className="relative mx-auto flex min-h-[520px] max-w-6xl flex-col items-center justify-center overflow-hidden rounded-[40px] bg-deep px-6 py-16 text-center text-white">
-        <div aria-hidden className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-        <div aria-hidden className="absolute left-1/2 top-1/2 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+      <div className="relative mx-auto flex min-h-[520px] max-w-6xl sm:min-h-[640px] flex-col items-center justify-center overflow-hidden rounded-[40px] bg-deep px-6 py-16 text-center text-white">
+        <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:block" />
+        <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 lg:block" />
         <div aria-hidden className="pointer-events-none absolute inset-0">
-          {ring('orbit-spin', 150, [0, 2, 4])}
-          {ring('orbit-spin-2 hidden sm:block', 240, [1, 3, 5])}
+          {ring('orbit-spin hidden sm:block', 220, [0, 2, 4])}
+          {ring('orbit-spin-2 hidden lg:block', 300, [1, 3, 5])}
         </div>
-        <div className="relative z-10 max-w-md rounded-[28px] bg-deep/70 px-4 py-6 backdrop-blur-sm">
+        <div className="relative z-10 max-w-md">
+          <div className="mb-6 flex justify-center -space-x-3 sm:hidden">{DOCTORS.map((d, i) => <Avatar key={d.name} d={d} i={i} className="h-12 w-12 rounded-full border-[3px] border-deep text-sm" />)}</div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neon">Запись</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[2.6rem]">Жизнь без боли начинается <span className="text-lime">с&nbsp;одного приёма</span></h2>
           <div className="mt-7 flex justify-center">

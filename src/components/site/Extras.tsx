@@ -277,12 +277,12 @@ export function OrbitCta() {
   )
   return (
     <section className="px-4 py-10 sm:px-6">
-      <div className="relative mx-auto flex min-h-[520px] max-w-6xl sm:min-h-[640px] flex-col items-center justify-center overflow-hidden rounded-[40px] bg-deep px-6 py-16 text-center text-white">
-        <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:block" />
-        <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 lg:block" />
+      <div className="relative mx-auto flex min-h-[520px] max-w-6xl sm:min-h-[720px] flex-col items-center justify-center overflow-hidden rounded-[40px] bg-deep px-6 py-16 text-center text-white">
+        <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[540px] w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:block" />
+        <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 lg:block" />
         <div aria-hidden className="pointer-events-none absolute inset-0">
-          {ring('orbit-spin hidden sm:block', 220, [0, 2, 4])}
-          {ring('orbit-spin-2 hidden lg:block', 300, [1, 3, 5])}
+          {ring('orbit-spin hidden sm:block', 270, [0, 2, 4])}
+          {ring('orbit-spin-2 hidden lg:block', 350, [1, 3, 5])}
         </div>
         <div className="relative z-10 max-w-md">
           <div className="mb-6 flex justify-center -space-x-3 sm:hidden">{DOCTORS.map((d, i) => <Avatar key={d.name} d={d} i={i} className="h-12 w-12 rounded-full border-[3px] border-deep text-sm" />)}</div>

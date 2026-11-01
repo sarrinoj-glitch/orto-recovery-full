@@ -6,6 +6,7 @@ import { Prep } from '@/components/site/Trust'
 import { SecondOpinion } from '@/components/site/Conditions'
 import { HomeVisit } from '@/components/site/HomeVisit'
 import { Faq } from '@/components/site/Faq'
+import { LegalIndex } from '@/components/site/LegalDoc'
 
 export const metadata: Metadata = { title: 'Пациентам', description: 'Как проходит первый визит, как подготовиться, второе мнение перед операцией, реабилитолог на дом, ответы на вопросы.' }
 
@@ -21,6 +22,10 @@ export default function PatientsPage() {
         <SecondOpinion />
         <HomeVisit />
         <Faq />
+        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <h2 className="mb-8 text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl">Документы</h2>
+          <LegalIndex />
+        </section>
       </main>
     </>
   )

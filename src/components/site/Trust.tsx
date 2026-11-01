@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { GraduationCap, Play } from 'lucide-react'
 import { openChat } from '@/components/ChatWidget'
 import { asset } from '@/lib/asset'
+import { PdConsent } from '@/components/site/Consent'
 
 const H2 = 'text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl'
 
@@ -166,6 +167,8 @@ export function Prep() {
   const [phone, setPhone] = useState('')
   const [err, setErr] = useState(false)
   const [sent, setSent] = useState(false)
+  const [pd, setPd] = useState(false)
+  const [pdErr, setPdErr] = useState(false)
 
   useEffect(() => {
     try { const s = JSON.parse(localStorage.getItem('orto-prep') || '[]'); if (Array.isArray(s)) setChecked((c) => c.map((_, i) => !!s[i])) } catch { /* браузер без хранилища */ }
@@ -177,7 +180,9 @@ export function Prep() {
   })
   const submit = (e: FormEvent) => {
     e.preventDefault()
-    if (phone.replace(/\D/g, '').replace(/^[78]/, '').length !== 10) { setErr(true); return }
+    const bad = phone.replace(/\D/g, '').replace(/^[78]/, '').length !== 10
+    setErr(bad); setPdErr(!pd)
+    if (bad || !pd) return
     setSent(true)
   }
 
@@ -211,6 +216,7 @@ export function Prep() {
                 <button type="submit" className="rounded-2xl bg-graphite px-5 py-3.5 font-bold text-lime">Получить</button>
               </div>
               {err && <p className="mt-2 text-sm text-[#8a2b12]">Введите номер телефона — 10 цифр после +7</p>}
+              <div className="mt-3"><PdConsent checked={pd} onChange={(v) => { setPd(v); setPdErr(false) }} error={pdErr} /></div>
             </form>
           )}
         </div>

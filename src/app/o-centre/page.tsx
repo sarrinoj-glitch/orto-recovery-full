@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { PageHead } from '@/components/site/Home'
-import { Founders, Guarantees, Stories } from '@/components/site/Trust'
+import { Founders, Guarantees } from '@/components/site/Trust'
 import { Gallery } from '@/components/site/Gallery'
 import { Reviews } from '@/components/site/Reviews'
 import { Stats, Manifesto } from '@/components/site/Extras'
@@ -18,7 +18,6 @@ export default function AboutPage() {
         <Guarantees />
         <Gallery />
         <Reviews />
-        <Stories />
       </main>
     </>
   )

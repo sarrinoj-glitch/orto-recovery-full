@@ -66,7 +66,8 @@ export function AfterCourse() {
   const tones = ['bg-lagoon', 'bg-lime', 'bg-coral-soft', 'bg-lime-soft', 'bg-white ring-1 ring-graphite/10', 'bg-teal-soft']
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
-      <h2 className="text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl">После курса лечения вы сможете</h2>
+      <h2 className="text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl">Цели, с которыми к нам приходят</h2>
+      <p className="mt-4 max-w-2xl text-lg text-graphite/65">Что получится достичь, зависит от диагноза и состояния — врач скажет это после осмотра и составит план под вашу цель.</p>
       <ul data-stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {AFTER_COURSE.map((t, i) => (
           <li key={t} className={`flex gap-4 rounded-3xl p-6 text-lg font-semibold leading-snug text-deep ${tones[i]}`}><Check className="mt-0.5 shrink-0" size={22} />{t}</li>

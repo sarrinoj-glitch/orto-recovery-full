@@ -304,3 +304,22 @@ html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track, .border-beam, .shimmer::after, .orbit-spin, .orbit-spin .orbit-item, .orbit-spin-2, .orbit-spin-2 .orbit-item { animation: none !important; }
 }
+
+/* ===== Юридические документы ===== */
+.legal-doc { font-size: 16px; line-height: 1.65; color: #24302f; max-width: 52rem; }
+.legal-doc h2 { margin: 2.2em 0 .6em; font-size: 1.35rem; font-weight: 800; letter-spacing: -.01em; color: #0B3D4A; }
+.legal-doc h2:first-child { margin-top: 0; }
+.legal-doc p { margin: .7em 0; }
+.legal-doc ul, .legal-doc ol { margin: .6em 0; padding-left: 1.4em; }
+.legal-doc ul { list-style: disc; } .legal-doc ol { list-style: decimal; }
+.legal-doc li { margin: .35em 0; }
+.legal-doc a { color: #177E96; text-decoration: underline; text-underline-offset: 2px; }
+.legal-doc .tbl-wrap { overflow-x: auto; margin: 1em 0; }
+.legal-doc table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.legal-doc th { text-align: left; font-weight: 600; color: #56656B; padding: 8px 12px 8px 0; border-bottom: 2px solid #0B3D4A; }
+.legal-doc td { padding: 10px 12px 10px 0; border-bottom: 1px solid #DCE7EA; vertical-align: top; }
+.legal-doc td:first-child { font-weight: 500; min-width: 12rem; }
+.legal-doc mark.fill { background: #FFF3B0; color: #5a4600; padding: 0 .2em; border-radius: 4px; }
+.legal-doc .blank { display: inline-block; min-width: 6em; border-bottom: 1px solid #24302f; color: #8a989d; font-size: .92em; }
+.legal-doc .doc-head { text-align: center; font-size: 1.1rem; }
+.legal-doc .doc-meta { display: flex; justify-content: space-between; }

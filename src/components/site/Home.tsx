@@ -37,6 +37,7 @@ export function HomeHero() {
               </button></Magnetic>
               <Link href="/uslugi/" className="flex h-14 items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 font-semibold backdrop-blur">Что мы лечим</Link>
             </div>
+            <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.04em] text-white/70">Имеются противопоказания. Необходима консультация специалиста</p>
           </div>
         </div>
         <span aria-hidden className="absolute left-[69.5%] top-[53%] hidden h-5 w-5 -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full border-[3px] border-white bg-[#E2553A] shadow-[0_0_0_10px_rgba(226,85,58,.25)] lg:block" />
@@ -143,7 +144,7 @@ export function PricesTeaser() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neon">Цены</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[2.6rem]">Цену вы знаете до начала лечения</h2>
-          <p className="mt-4 text-white/75">Прайс центра на ПроДокторов от 19.10.2026. Есть рассрочка без переплат и справка для налогового вычета.</p>
+          <p className="mt-4 text-white/75">Прайс центра на ПроДокторов от 19.10.2026. Есть рассрочка без переплат и справка для налогового вычета. Цены не являются публичной офертой: стоимость лечения фиксируется в договоре.</p>
           <Link href="/ceny/" className="mt-6 inline-flex h-12 items-center gap-2 rounded-full bg-lime px-6 font-semibold text-graphite">Весь прайс <ArrowRight size={18} /></Link>
         </div>
         <ul className="divide-y divide-white/10 rounded-3xl bg-white/5 px-5">

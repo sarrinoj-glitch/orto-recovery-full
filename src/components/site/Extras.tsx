@@ -282,7 +282,7 @@ export function OrbitCta() {
         <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 lg:block" />
         <div aria-hidden className="pointer-events-none absolute inset-0">
           {ring('orbit-spin hidden sm:block', 270, [0, 2, 4])}
-          {ring('orbit-spin-2 hidden lg:block', 350, [1, 3, 5])}
+          {ring('orbit-spin-2 hidden lg:block', 350, [1, 3])}
         </div>
         <div className="relative z-10 max-w-md">
           <div className="mb-6 flex justify-center -space-x-3 sm:hidden">{DOCTORS.map((d, i) => <Avatar key={d.name} d={d} i={i} className="h-12 w-12 rounded-full border-[3px] border-deep text-sm" />)}</div>

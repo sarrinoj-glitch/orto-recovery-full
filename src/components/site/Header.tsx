@@ -11,7 +11,7 @@ import { openChat } from '@/components/ChatWidget'
 
 const tel = `tel:${CLINIC.phone.replace(/[^\d+]/g, '')}`
 
-// Стеклянная плавающая шапка; меню как на старом сайте: Главная · О центре · Услуги · Врачи · Цены · Пациентам · Контакты
+// Стеклянная плавающая шапка; меню как на старом сайте + Отзывы и Блог. «Главная» — по логотипу (в мобильном меню остаётся)
 export function Header() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
@@ -39,7 +39,7 @@ export function Header() {
         </Link>
 
         <nav aria-label="Основное меню" className="ml-2 hidden items-center gap-6 text-[15px] text-[#4a5357] xl:flex">
-          {NAV.map((l) =>
+          {NAV.filter((l) => l.href !== '/').map((l) =>
             l.sub ? (
               <div key={l.href} className="group relative">
                 <Link href={l.href} className={`flex items-center gap-1.5 whitespace-nowrap py-2 transition-colors hover:text-graphite ${active(l.href) ? 'font-semibold text-graphite' : ''}`}>

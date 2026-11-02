@@ -323,3 +323,12 @@ html { scroll-behavior: smooth; }
 .legal-doc .blank { display: inline-block; min-width: 6em; border-bottom: 1px solid #24302f; color: #8a989d; font-size: .92em; }
 .legal-doc .doc-head { text-align: center; font-size: 1.1rem; }
 .legal-doc .doc-meta { display: flex; justify-content: space-between; }
+
+/* Статьи блога: поверх стилей документов */
+.article { font-size: 17px; line-height: 1.7; }
+.article h2 { scroll-margin-top: 110px; font-size: 1.6rem; }
+.article .callout { margin: 1.4em 0; padding: 18px 22px; border-radius: 20px; background: #F3FAFB; }
+.article .callout p:last-child { margin-bottom: 0; }
+.article .callout.warn { background: #FFF1EC; border-left: 4px solid #E2553A; }
+.article .callout.warn b { display: block; color: #8a2f1c; }
+.article .callout > p:only-child { margin: 0; font-size: 15px; color: #56656B; }

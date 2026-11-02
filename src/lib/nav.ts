@@ -140,5 +140,7 @@ export const NAV: { href: string; label: string; sub?: boolean }[] = [
   { href: '/vrachi/', label: 'Врачи' },
   { href: '/ceny/', label: 'Цены' },
   { href: '/pacientam/', label: 'Пациентам' },
+  { href: '/otzyvy/', label: 'Отзывы' },
+  { href: '/blog/', label: 'Блог' },
   { href: '/kontakty/', label: 'Контакты' },
 ]

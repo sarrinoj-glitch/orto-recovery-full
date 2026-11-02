@@ -5,6 +5,15 @@ import { ProDoctorovWidget } from './ProDoctorov'
 import { ConsentFrame } from './Consent'
 import { AskButton } from './BlogClient'
 import { LEGAL_ORG } from '@/lib/legal'
+import { asset } from '@/lib/asset'
+
+// Видео из orto-recovery/видеоотзывы, сжатые в 720p (web/review-*.mp4)
+const VIDEO_REVIEWS = [
+  { id: '8301', title: 'Обошла почти 10 клиник, пришла на костыле — теперь хожу без него', duration: '56 сек' },
+  { id: '0931', title: 'Травма колена за три недели до турнира', duration: '52 сек' },
+  { id: '5233', title: '16 лет с болезнью, лечился в Москве и Петербурге', duration: '1 мин 2 сек' },
+  { id: '6986', title: 'Много раз обращался в центр: ортопедия, травматология, обследования', duration: '43 сек' },
+]
 
 // Сам сайт показывает только оценки со ссылками на площадки (ч. 3 ст. 24 38-ФЗ);
 // отзывы ПроДокторов подгружаются виджетом площадки по кнопке
@@ -106,6 +115,26 @@ export function ReviewsHub() {
         </div>
         <p className="mt-3 text-[13px] text-graphite/50">Данные площадок на 1 ноября 2026 года.</p>
 
+        <h2 className="mt-14 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-[2.6rem]">Видеоотзывы пациентов</h2>
+        <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-graphite/65">Пациенты рассказывают о лечении своими словами. Видео начинает загружаться, только когда вы нажмёте «воспроизвести».</p>
+        <div className="-mx-4 mt-6 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 sm:scroll-px-0 sm:mx-0 sm:grid sm:grid-cols-2 sm:px-0 lg:grid-cols-4">
+          {VIDEO_REVIEWS.map((v) => (
+            <figure key={v.id} className="w-[72%] shrink-0 snap-start sm:w-auto">
+              <video
+                controls
+                playsInline
+                preload="none"
+                poster={asset(`/video/review-${v.id}.jpg`)}
+                src={asset(`/video/review-${v.id}.mp4`)}
+                aria-label={`Видеоотзыв: ${v.title}`}
+                className="aspect-[9/16] w-full rounded-[24px] bg-graphite object-cover"
+              />
+              <figcaption className="mt-3 text-[15px] font-semibold leading-snug text-graphite">{v.title}</figcaption>
+              <p className="text-[13px] text-graphite/50">{v.duration}</p>
+            </figure>
+          ))}
+        </div>
+
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div className="flex flex-col gap-4 rounded-[28px] bg-white p-6 shadow-lift sm:p-7">
             <h2 className="text-2xl font-extrabold tracking-[-0.02em] text-deep">ПроДокторов</h2>
@@ -140,7 +169,7 @@ export function ReviewsHub() {
       </section>
 
       <p className="mx-auto max-w-6xl px-4 py-8 text-[13px] leading-relaxed text-graphite/50 sm:px-6">
-        Центр не публикует отзывы и благодарности пациентов на своих страницах. Отзывы выше показывают виджеты независимых площадок: они загружаются с их серверов по вашему нажатию, клиника не может изменить или удалить отзыв.
+        Видеоотзывы — личное мнение пациентов, результат лечения у каждого свой. Имеются противопоказания, необходима консультация специалиста. Отзывы в блоках площадок показывают виджеты 2ГИС, Яндекса и ПроДокторов: они загружаются с их серверов по вашему нажатию, клиника не может изменить или удалить отзыв.
       </p>
     </>
   )

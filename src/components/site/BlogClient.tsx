@@ -48,7 +48,7 @@ function Card({ p, big }: { p: BlogPost; big?: boolean }) {
 export function BlogIndex() {
   const [cat, setCat] = useState<string | null>(null)
   const list = cat ? BLOG_POSTS.filter((p) => p.category === cat) : BLOG_POSTS
-  const chip = (on: boolean) => `h-10 whitespace-nowrap rounded-full px-4 text-[14px] font-semibold transition ${on ? 'bg-deep text-white' : 'bg-white text-graphite ring-1 ring-graphite/10 hover:ring-teal'}`
+  const chip = (on: boolean) => `h-10 whitespace-nowrap rounded-full px-4 text-[14px] font-semibold transition ${on ? 'bg-deep text-white' : 'bg-white text-graphite ring-1 ring-inset ring-graphite/10 hover:ring-teal'}`
   return (
     <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
       <div role="tablist" aria-label="Темы" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">

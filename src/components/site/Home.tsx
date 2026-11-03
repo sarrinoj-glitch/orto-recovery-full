@@ -122,7 +122,7 @@ export function DoctorsTeaser() {
             <div className="flex items-center gap-3.5">
               {d.photo ? <img src={d.photo} alt="" className="h-16 w-16 shrink-0 rounded-[20px] object-cover object-[50%_20%]" />
                 : <span className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-[20px] text-xl font-bold ${TONES[i % TONES.length]}`} aria-hidden>{initials(d.name)}</span>}
-              <span><b className="block leading-tight text-deep">{d.name}</b><span className="mt-1 block text-[13px] text-teal">{d.role}</span></span>
+              <span><b className="block leading-tight text-deep">{d.name}</b><span className="mt-1 block text-[13px] text-teal">{d.role}</span>{d.visit && <span className="mt-0.5 block text-[12px] text-graphite/55">{d.visit}</span>}</span>
             </div>
             <div className="mt-auto flex items-center justify-between border-t border-graphite/5 pt-3">
               <b className="text-deep">{d.price}</b>

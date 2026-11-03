@@ -221,6 +221,7 @@ export function DoctorsMorph({ title = 'Врачи, к которым прихо
               <span className="min-w-0 flex-1">
                 <motion.b layoutId={`doc-name-${i}`} className="block leading-tight text-deep">{doc.name}</motion.b>
                 <span className="mt-1 block text-[13px] text-teal">{doc.role}</span>
+                {doc.visit && <span className="mt-1 block text-[12px] text-graphite/55">{doc.visit}</span>}
                 <span className="mt-2 flex items-center justify-between text-sm"><b className="text-deep">{doc.price}</b><span className="flex h-8 w-8 items-center justify-center rounded-full bg-ward text-deep transition group-hover:bg-lime">+</span></span>
               </span>
             </motion.button>
@@ -238,6 +239,7 @@ export function DoctorsMorph({ title = 'Врачи, к которым прихо
                 <div>
                   <motion.b layoutId={`doc-name-${open}`} className="block text-2xl leading-tight text-deep">{d.name}</motion.b>
                   <p className="mt-2 font-semibold text-teal">{d.role}</p>
+                  {d.visit && <p className="mt-1 text-[14px] text-graphite/60">{d.visit}</p>}
                   <p className="mt-2 text-[15px] leading-relaxed text-graphite/70">{d.treats}</p>
                 </div>
               </div>

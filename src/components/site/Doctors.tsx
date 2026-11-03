@@ -35,6 +35,7 @@ export function Doctors() {
               <div>
                 <p className="text-xl font-semibold tracking-[-0.01em] text-graphite">{d.name}</p>
                 <p className="mt-1 text-[15px] text-graphite/60">{d.role}</p>
+                {d.visit && <p className="mt-1 text-[13px] font-medium text-teal">{d.visit}</p>}
               </div>
             </div>
             <p className="text-[15px] leading-relaxed text-graphite/80">{d.treats}</p>

@@ -74,7 +74,7 @@ export function ServicePage({ slug }: { slug: string }) {
               <div key={d.name} className="flex items-center gap-3.5 rounded-2xl bg-white p-3.5">
                 {d.photo ? <img src={d.photo} alt="" className="h-14 w-14 shrink-0 rounded-2xl object-cover object-[50%_20%]" />
                   : <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-teal text-lg font-bold text-white" aria-hidden>{initials(d.name)}</span>}
-                <span className="min-w-0 flex-1"><b className="block leading-tight text-deep">{d.name}</b><span className="text-[13px] text-teal">{d.role}</span></span>
+                <span className="min-w-0 flex-1"><b className="block leading-tight text-deep">{d.name}</b><span className="text-[13px] text-teal">{d.role}</span>{d.visit && <span className="block text-[12px] text-graphite/55">{d.visit}</span>}</span>
               </div>
             ))}
             <button type="button" onClick={() => openChat(docs[0]?.chat ?? s.chat)} className="mt-auto h-12 rounded-2xl bg-teal font-semibold text-white">Записаться к врачу</button>

@@ -10,6 +10,7 @@ import { openChat } from '@/components/ChatWidget'
 import { Conditions, SecondOpinion, AfterCourse } from '@/components/site/Conditions'
 import { TwinPlans, Glossary, PrpSteps, Whole, Sport } from '@/components/site/Treatment'
 import { Procedures } from '@/components/site/Procedures'
+import { Equipment } from '@/components/site/Equipment'
 import { Endoscopy } from '@/components/site/Endoscopy'
 import { HomeVisit } from '@/components/site/HomeVisit'
 import { ForFamily } from '@/components/site/ForFamily'
@@ -83,6 +84,7 @@ export function ServicePage({ slug }: { slug: string }) {
 
         {s.conditions.length > 0 && <Conditions ids={s.conditions} title="С чем к нам приходят" />}
         {s.extras.map((e) => <div key={e}>{EXTRAS[e]()}</div>)}
+        <Equipment service={slug} />
         <OrbitCta />
 
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHead } from '@/components/site/Home'
 import { Founders, Guarantees } from '@/components/site/Trust'
 import { Gallery } from '@/components/site/Gallery'
+import { Equipment } from '@/components/site/Equipment'
 import { Reviews } from '@/components/site/Reviews'
 import { Stats, Manifesto } from '@/components/site/Extras'
 
@@ -17,6 +18,7 @@ export default function AboutPage() {
         <Founders />
         <Guarantees />
         <Gallery />
+        <Equipment />
         <Reviews />
       </main>
     </>

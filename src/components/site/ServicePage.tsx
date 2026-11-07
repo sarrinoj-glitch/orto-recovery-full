@@ -11,7 +11,6 @@ import { Conditions, SecondOpinion, AfterCourse } from '@/components/site/Condit
 import { TwinPlans, Glossary, PrpSteps, Whole, Sport } from '@/components/site/Treatment'
 import { Procedures } from '@/components/site/Procedures'
 import { Equipment } from '@/components/site/Equipment'
-import { Endoscopy } from '@/components/site/Endoscopy'
 import { HomeVisit } from '@/components/site/HomeVisit'
 import { ForFamily } from '@/components/site/ForFamily'
 import { OrbitCta } from '@/components/site/Extras'
@@ -25,7 +24,6 @@ const EXTRAS: Record<Extra, () => ReactNode> = {
   sport: () => <Sport />,
   after: () => <AfterCourse />,
   home: () => <HomeVisit />,
-  endoscopy: () => <Endoscopy />,
   family: () => <ForFamily />,
   whole: () => <Whole />,
 }

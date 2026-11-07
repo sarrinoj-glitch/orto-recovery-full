@@ -8,7 +8,7 @@ import { Start } from '@/components/site/Start'
 import { Glossary } from '@/components/site/Treatment'
 import { MethodsMarquee, ServicesHoverList } from '@/components/site/Extras'
 
-export const metadata: Metadata = { title: 'Услуги', description: 'Ортопедия, лечение спины, реабилитация и ЛФК, физиотерапия, PRP, эндоскопия во сне, детская реабилитация.' }
+export const metadata: Metadata = { title: 'Услуги', description: 'Ортопедия, лечение спины, реабилитация и лечебная физкультура, физиотерапия, PRP, детская реабилитация, питание и психолог.' }
 
 export default function ServicesIndex() {
   return (

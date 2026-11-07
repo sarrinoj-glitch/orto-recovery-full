@@ -4,12 +4,12 @@ import { Prices } from '@/components/site/Prices'
 import { Savings } from '@/components/site/Savings'
 import Link from 'next/link'
 
-export const metadata: Metadata = { title: 'Цены', description: 'Цены на приём врачей, физиотерапию, ЛФК, PRP и эндоскопию в центре «Орто-Рекавери».' }
+export const metadata: Metadata = { title: 'Цены', description: 'Цены на приём врачей, физиотерапию, лечебную физкультуру, массаж, PRP и анализы в центре «Орто-Рекавери».' }
 
 export default function PricesPage() {
   return (
     <>
-      <PageHead kicker="Цены" title="Цену вы знаете до начала лечения" lead="Прайс центра на ПроДокторов от 19.10.2026. Есть рассрочка без переплат и справка для налогового вычета." />
+      <PageHead kicker="Цены" title="Цену вы знаете до начала лечения" lead="Цены по данным центра на 7 ноября 2026 года. Есть рассрочка без переплат и справка для налогового вычета." />
       <main>
         <Prices />
         <Savings />

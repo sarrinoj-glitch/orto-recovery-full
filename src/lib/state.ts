@@ -13,7 +13,7 @@ export function seedState(): ConvState {
     reactivation: [
       { name: 'Патимат А.', lastVisit: 'май 2026', reason: 'ребёнок бросил курс СИАС после 4 из 10 занятий', status: 'idle' },
       { name: 'Магомед К.', lastVisit: 'июл 2026', reason: 'после PRP колена не пришёл на контрольный осмотр', status: 'idle' },
-      { name: 'Заира М.', lastVisit: 'апр 2026', reason: 'просила напомнить о повторной ФГДС через полгода', status: 'idle' },
+      { name: 'Заира М.', lastVisit: 'апр 2026', reason: 'просила напомнить о повторном приёме гастроэнтеролога через полгода', status: 'idle' },
     ],
     handoff: false,
     channel: 'web',

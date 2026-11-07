@@ -53,8 +53,9 @@ export function Prices() {
               </li>
             ))}
           </ul>
+          {group.note && <p className="mt-5 text-lg font-semibold leading-snug text-lime">{group.note}</p>}
           <p className="mt-5 text-sm text-white/45">
-            Цены по прайсу центра на ПроДокторов от 19.10.2026. Имеются противопоказания, необходима консультация специалиста.
+            Цены по данным центра на 7 ноября 2026 года. Имеются противопоказания, необходима консультация специалиста.
           </p>
         </div>
       </div>

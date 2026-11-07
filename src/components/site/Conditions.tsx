@@ -47,11 +47,11 @@ export function SecondOpinion() {
   return (
     <section id="second" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
       <div data-reveal className="grid overflow-hidden rounded-[36px] bg-coral-soft lg:grid-cols-2">
-        <img src={asset('/photos/g-ortho.jpg')} alt="Травматолог-ортопед центра за рабочим столом" className="h-64 w-full object-cover object-[40%_40%] lg:h-full lg:min-h-[420px]" />
+        <img src={asset('/photos/g-mri.jpg')} alt="Врач центра разбирает снимок МРТ" className="h-64 w-full object-cover object-[40%_40%] lg:h-full lg:min-h-[420px]" />
         <div className="flex flex-col justify-center p-7 sm:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C2563A]">Второе мнение</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#4a1f12] sm:text-[2.6rem]">Вам предложили операцию? Сначала покажитесь нам</h2>
-          <p className="mt-4 text-lg leading-relaxed text-[#5b3a30]">Бывает, что от операции можно отказаться — если вовремя начать физиотерапию и ЛФК. Ортопед посмотрит ваши снимки и честно скажет, есть ли смысл пробовать без операции.</p>
+          <p className="mt-4 text-lg leading-relaxed text-[#5b3a30]">Бывает, что от операции можно отказаться — если вовремя начать физиотерапию и лечебную физкультуру. Ортопед посмотрит ваши снимки и честно скажет, есть ли смысл пробовать без операции.</p>
           <ul className="mt-5 space-y-2 text-[#4a1f12]">
             {['Возьмите снимки МРТ и заключения', 'Врач разберёт их на приёме', 'Если операция нужна — так и скажем'].map((t) => <li key={t} className="flex gap-3"><span className="font-bold text-[#C2563A]">→</span>{t}</li>)}
           </ul>

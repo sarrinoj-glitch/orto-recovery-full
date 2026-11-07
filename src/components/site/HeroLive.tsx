@@ -11,7 +11,7 @@ type AreaId = 'knee' | 'back' | 'arm' | 'foot'
 // Прайс клиники (ПроДокторов, 19.10.2026). Время окна — пример до подключения МИС
 const AREAS: Record<AreaId, { tag: string; ini: string; name: string; role: string; chips: string[]; slot: string; chat: string }> = {
   knee: { tag: 'Колено', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед · ПроДокторов 5,0', chips: ['Приём 3 000 ₽', 'PRP 10 500 ₽', 'УВТ 3 000 ₽', 'Гиалуроновая кислота 3 000 ₽'], slot: 'завтра, 16:30', chat: 'Здравствуйте, болит колено уже месяц' },
-  back: { tag: 'Спина и шея', ini: 'КП', name: 'Куделя Павел Александрович', role: 'невролог, мануальный терапевт', chips: ['Полный приём 8 000 ₽', 'УВТ 3 000 ₽', 'ЛФК 2 500 ₽', 'Массаж спины 2 500 ₽'], slot: 'в день приезда врача', chat: 'Здравствуйте, болит спина, есть грыжа поясницы' },
+  back: { tag: 'Спина и шея', ini: 'КП', name: 'Куделя Павел Александрович', role: 'невролог, мануальный терапевт', chips: ['Приём невролога 3 000 ₽', 'УВТ 3 000 ₽', 'Лечебная физкультура 2 500 ₽', 'Массаж от 1 600 ₽'], slot: 'в день приезда врача', chat: 'Здравствуйте, болит спина, есть грыжа поясницы' },
   arm: { tag: 'Плечо и кисть', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед, кистевой реабилитолог', chips: ['Приём 3 000 ₽', 'Разработка кисти 3 000 ₽', 'УВТ 3 000 ₽', 'Тейпирование 1 500 ₽'], slot: 'завтра, 11:30', chat: 'Здравствуйте, после перелома плохо разгибается кисть' },
   foot: { tag: 'Стопа и пятка', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед', chips: ['Приём 3 000 ₽', 'УВТ 3 000 ₽', 'Стельки Formthotics 13 500 ₽'], slot: 'завтра, 16:00', chat: 'Здравствуйте, болит пятка по утрам' },
 }
@@ -182,7 +182,7 @@ export function HeroLive({ asBlock = false }: { asBlock?: boolean }) {
                     <a href={CLINIC.rating2gis.url} target="_blank" rel="noreferrer" className="hl-badge" style={{ background: 'linear-gradient(180deg,#2FC236,#19AA1E)' }}>2ГИС 5,0</a>
                     <a href={CLINIC.ratingYandex.url} target="_blank" rel="noreferrer" className="hl-badge" style={{ background: 'linear-gradient(180deg,#FF6A4D,#FC3F1D)' }}>Яндекс {CLINIC.ratingYandex.value}</a>
                   </div>
-                  <p className="mt-1 text-[13px] text-[#4a5357]">Ортопеды, невролог, реабилитологи, эндоскопист</p>
+                  <p className="mt-1 text-[13px] text-[#4a5357]">Ортопеды, невролог, реабилитологи, гастроэнтеролог</p>
                 </div>
               </div>
             </div>
@@ -245,7 +245,7 @@ export function HeroLive({ asBlock = false }: { asBlock?: boolean }) {
 
                   <button type="button" className={`hl-call${area === 'back' ? ' on' : ''}`} style={{ left: 150, top: 120 }} onClick={() => pick('back')} onMouseEnter={() => pick('back')}>
                     <span className="ic" style={{ background: '#DDF8FB' }}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#177E96" strokeWidth="2" strokeLinecap="round"><path d="M12 3v18M8 7h8M7 12h10M8 17h8" /></svg></span>
-                    <span><b className="font-bold">Спина и шея</b><br /><span className="text-[#5b6266]">невролог, 8 000 ₽</span></span>
+                    <span><b className="font-bold">Спина и шея</b><br /><span className="text-[#5b6266]">невролог, 3 000 ₽</span></span>
                   </button>
                   <button type="button" className={`hl-call${area === 'arm' ? ' on' : ''}`} style={{ left: 560, top: 190, animationDelay: '-1.6s' }} onClick={() => pick('arm')} onMouseEnter={() => pick('arm')}>
                     <span className="ic" style={{ background: '#FFE3D9' }}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C2563A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 11V6a2 2 0 0 1 4 0v5M11 10V5a2 2 0 0 1 4 0v6M15 10V7a2 2 0 0 1 4 0v7a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-3l-2-4a2 2 0 0 1 3-2l1 1" /></svg></span>

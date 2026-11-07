@@ -10,11 +10,11 @@ import { QUIZ, QUIZ_RESULT, type QuizArea } from '@/lib/content'
 
 const DOORS = [
   { n: '01', title: 'Болит, и не знаю, к кому идти', text: 'Начните с консультации: врач осмотрит и скажет, что делать дальше.', cta: 'Подобрать врача', tone: 'bg-lagoon', go: '#quiz' },
-  { n: '02', title: 'Восстанавливаюсь после травмы или операции', text: 'Курс восстановления: ЛФК, физиотерапия и контроль врача.', cta: 'ЛФК — 2 500 ₽', tone: 'bg-lime', go: '/uslugi/reabilitaciya/' },
+  { n: '02', title: 'Восстанавливаюсь после травмы или операции', text: 'Курс восстановления: лечебная физкультура, физиотерапия и контроль врача.', cta: 'Лечебная физкультура — 2 500 ₽', tone: 'bg-lime', go: '/uslugi/reabilitaciya/' },
   { n: '03', title: 'Я спортсмен', text: 'Спортивная реабилитация: вернуть силу и подвижность к тренировкам.', cta: 'Вернуться к спорту', tone: 'bg-coral-soft', go: '/uslugi/reabilitaciya/#sport' },
 ]
 
-const SLUG: Record<QuizArea, string> = { back: 'spina', knee: 'ortopediya', arm: 'ortopediya', foot: 'ortopediya', kids: 'detyam', endo: 'endoskopiya' }
+const SLUG: Record<QuizArea, string> = { back: 'spina', knee: 'ortopediya', arm: 'ortopediya', foot: 'ortopediya', kids: 'detyam', endo: 'pitanie-i-psiholog' }
 
 // Три двери + опрос «подобрать врача за 3 вопроса»
 export function Start() {
@@ -23,7 +23,7 @@ export function Start() {
   const done = step >= QUIZ.length
   const res = done ? QUIZ_RESULT[answers.area as QuizArea] : null
   const note =
-    answers.why === 'surgery' ? 'После операции врач составит план реабилитации и передаст вас инструктору ЛФК.'
+    answers.why === 'surgery' ? 'После операции врач составит план реабилитации и передаст вас инструктору лечебной физкультуры.'
     : answers.why === 'trauma' ? 'Возьмите снимки после травмы — врач разберёт их на приёме.'
     : answers.when === 'long' ? 'Боль дольше полугода — врач найдёт причину и составит курс, а не просто снимет симптом.'
     : 'Чем раньше начать, тем короче обычно восстановление.'

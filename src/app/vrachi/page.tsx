@@ -5,7 +5,7 @@ import { Founders } from '@/components/site/Trust'
 import { DoctorVideos } from '@/components/site/Videos'
 import Link from 'next/link'
 
-export const metadata: Metadata = { title: 'Врачи', description: 'Травматолог-ортопед, невролог, эндоскопист, гастроэнтеролог, инструкторы ЛФК центра «Орто-Рекавери».' }
+export const metadata: Metadata = { title: 'Врачи', description: 'Травматолог-ортопед, невролог, гастроэнтеролог, инструктор лечебной физкультуры центра «Орто-Рекавери».' }
 
 export default function DoctorsPage() {
   return (

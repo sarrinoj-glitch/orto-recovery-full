@@ -17,7 +17,7 @@ const BUBBLES: { me?: boolean; text: string; card?: string; time: string }[] = [
   { text: 'Здравствуйте, Магомед! Напоминаем: завтра в 10:00 ударно-волновая терапия, кабинет 3. Подтвердите, пожалуйста', time: '19:02' },
   { me: true, text: 'Да, буду', time: '19:05' },
   { text: 'Записали. Вход за шлагбаумом, рядом санаторий «Тарнаир», есть парковка', time: '19:05' },
-  { text: 'Упражнения на сегодня от врача:', card: 'ЛФК дома · 3 упражнения · 15 минут — ▶ Смотреть видео', time: '12:40' },
+  { text: 'Упражнения на сегодня от врача:', card: 'Лечебная физкультура дома · 3 упражнения · 15 минут — ▶ Смотреть видео', time: '12:40' },
   { me: true, text: 'После второго упражнения тянет поясницу, это нормально?', time: '18:11' },
   { text: 'Передали ваш вопрос врачу — он ответит сегодня до 20:00', time: '18:11' },
   { text: '', card: 'Ваш курс: 4 из 10 процедур · следующая — четверг, 10:00', time: '18:12' },
@@ -81,8 +81,8 @@ export function WhatsAppPlan() {
 // Основатель и директор (выгрузка старого сайта) + семинары для врачей
 export function Founders({ seminar = true, people: showPeople = true }: { seminar?: boolean; people?: boolean }) {
   const people = [
-    { img: '/photos/p-founder.jpg', name: 'Магомеддов Абдулла-Гаджи Абумуслимович', role: 'Основатель проекта «Орто-Рекавери»', need: '2–3 фразы: почему открыли центр и чем он отличается.' },
-    { img: '/photos/p-director.jpg', name: 'Хумаров Артур Рамазанович', role: 'Генеральный директор', need: 'Обращение к пациентам — коротко, от первого лица.' },
+    { img: '/photos/p-founder.jpg', name: 'Магомеддов Абдулла-Гаджи Абумуслимович', role: 'Основатель проекта «Орто-Рекавери»', need: '2–3 фразы: почему открыли центр и чем он отличается.', quote: '' },
+    { img: '/photos/p-director.jpg', name: 'Хумаров Артур Рамазанович', role: 'Генеральный директор', need: '', quote: 'Наша главная цель — не просто оправдать ваше доверие, а превзойти ваши ожидания. Ведь ваше здоровье и доверие — наша главная ценность!' },
   ]
   return (
     <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
@@ -99,7 +99,11 @@ export function Founders({ seminar = true, people: showPeople = true }: { semina
             <div>
               <p className="text-lg font-bold leading-tight text-deep sm:text-xl">{p.name}</p>
               <p className="mt-1 text-sm font-semibold text-teal">{p.role}</p>
-              <div className="mt-3 flex flex-col gap-1.5 rounded-2xl border-2 border-dashed border-teal/40 p-3"><NeedTag /><p className="text-[13px] text-graphite/60">{p.need}</p></div>
+              {p.quote ? (
+                <blockquote className="mt-3 text-[15px] leading-relaxed text-graphite/80">«{p.quote}»</blockquote>
+              ) : (
+                <div className="mt-3 flex flex-col gap-1.5 rounded-2xl border-2 border-dashed border-teal/40 p-3"><NeedTag /><p className="text-[13px] text-graphite/60">{p.need}</p></div>
+              )}
             </div>
           </article>
         ))}
@@ -154,12 +158,12 @@ export function Stories() {
   )
 }
 
-// Чек-лист перед визитом (страницы ортопеда и ЛФК старого сайта) + памятка за номер
+// Чек-лист перед визитом (страницы ортопеда и лечебной физкультуры старого сайта) + памятка за номер
 export function Prep() {
   const items = [
     ['Снимки и заключения', 'МРТ, рентген, выписки — всё, что есть по вашей проблеме'],
     ['Список жалоб', 'когда началось, что усиливает боль, что помогает'],
-    ['Спортивная одежда и сменная обувь', 'если записаны на ЛФК'],
+    ['Спортивная одежда и сменная обувь', 'если записаны на лечебную физкультуру'],
     ['Перед PRP — спросите врача о лекарствах', 'препараты, влияющие на свёртываемость, отменяют заранее — только по согласованию'],
     ['Заложите 30 минут', 'приём ортопеда длится 20–30 минут'],
   ]

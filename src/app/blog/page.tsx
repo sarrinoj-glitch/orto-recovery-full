@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { PageHead } from '@/components/site/Home'
 import { BlogIndex } from '@/components/site/BlogClient'
 
-export const metadata: Metadata = { title: 'Блог', description: 'Статьи врачей центра «Орто-Рекавери»: боль в спине, суставы и стопы, сколиоз у детей, подготовка к эндоскопии.' }
+export const metadata: Metadata = { title: 'Блог', description: 'Статьи врачей центра «Орто-Рекавери»: боль в спине, суставы и стопы, сколиоз у детей.' }
 
 export default function BlogPage() {
   return (

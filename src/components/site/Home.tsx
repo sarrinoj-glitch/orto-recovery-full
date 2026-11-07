@@ -67,12 +67,11 @@ export function HomeHero() {
 }
 
 const CARDS = [
-  { href: '/uslugi/spina/', tag: 'Спина и шея', title: 'Боль в спине и шее', text: 'Грыжи, протрузии, остеохондроз.', price: 'полный приём 8 000 ₽', img: '/photos/c-back.jpg', pos: 'object-right' },
-  { href: '/uslugi/ortopediya/', tag: 'Суставы', title: 'Колено и тазобедренный', text: 'PRP, ударно-волновая терапия, ЛФК.', price: 'приём ортопеда 3 000 ₽', img: '/photos/c-knee.jpg', pos: 'object-center', spot: ['52%', '52%'] },
+  { href: '/uslugi/spina/', tag: 'Спина и шея', title: 'Боль в спине и шее', text: 'Грыжи, протрузии, остеохондроз.', price: 'приём невролога 3 000 ₽', img: '/photos/c-back.jpg', pos: 'object-right' },
+  { href: '/uslugi/ortopediya/', tag: 'Суставы', title: 'Колено и тазобедренный', text: 'PRP, ударно-волновая терапия, лечебная физкультура.', price: 'приём ортопеда 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-center', spot: ['52%', '52%'] },
   { href: '/uslugi/ortopediya/', tag: 'Плечо и кисть', title: 'Плечо и кисть', text: 'После переломов и травм, УВТ, тейпирование.', price: 'приём ортопеда 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-left', spot: ['57%', '38%'] },
   { href: '/uslugi/ortopediya/', tag: 'Стопа', title: 'Стопа и пятка', text: 'Пяточная шпора, плоскостопие, стельки.', price: 'УВТ 3 000 ₽', img: '/photos/foot.jpg', pos: 'object-[95%_50%]', spot: ['74%', '50%'] },
-  { href: '/uslugi/reabilitaciya/', tag: 'Реабилитация', title: 'После травм и операций', text: 'ЛФК под контролем врача, спортивная реабилитация.', price: 'ЛФК 2 500 ₽', img: '/photos/g-lfk.jpg', pos: 'object-center' },
-  { href: '/uslugi/endoskopiya/', tag: 'Эндоскопия', title: 'Обследование во сне', text: 'Гастроскопия и колоноскопия под седацией.', price: 'от 6 000 ₽', img: '/photos/c-endo.jpg', pos: 'object-center' },
+  { href: '/uslugi/reabilitaciya/', tag: 'Реабилитация', title: 'После травм и операций', text: 'Лечебная физкультура под контролем врача, спортивная реабилитация.', price: 'занятие 2 500 ₽', img: '/photos/g-lfk.jpg', pos: 'object-center' },
   { href: '/uslugi/detyam/', tag: 'Детям', title: 'Осанка и стопы у детей', text: 'Гимнастика СИАС, занятия при ДЦП.', price: 'занятие 2 500 ₽', img: '/photos/g-explain.jpg', pos: 'object-[60%_50%]' },
 ]
 
@@ -135,7 +134,7 @@ export function DoctorsTeaser() {
   )
 }
 
-const TOP_PRICES: [string, string][] = [['Травматолог-ортопед', '3 000 ₽'], ['Невролог, полный приём', '8 000 ₽'], ['Ударно-волновая терапия', '3 000 ₽'], ['PRP-терапия', '10 500 ₽'], ['ЛФК, 60 минут', '2 500 ₽'], ['Гастроскопия во сне', '6 000 ₽']]
+const TOP_PRICES: [string, string][] = [['Травматолог-ортопед', '3 000 ₽'], ['Невролог', '3 000 ₽'], ['Ударно-волновая терапия', '3 000 ₽'], ['PRP-терапия', '10 500 ₽'], ['Лечебная физкультура, индивидуально', '2 500 ₽'], ['Массаж всех видов', 'от 1 600 ₽']]
 
 export function PricesTeaser() {
   return (

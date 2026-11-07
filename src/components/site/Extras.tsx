@@ -21,7 +21,7 @@ const STATS: { v: number; dec?: number; pre?: string; suffix?: string; label: st
   { v: 4.9, dec: 1, label: 'на Яндекс Картах', src: 'Яндекс' },
   { v: 5, pre: 'более ', suffix: ' лет', label: 'стаж каждого врача', src: 'данные центра' },
   { v: 23, label: 'методики восстановления', src: 'сайт центра' },
-  { v: 6, label: 'направлений в одном центре', src: 'прайс' },
+  { v: 7, label: 'направлений в одном центре', src: 'прайс' },
 ]
 
 export function Stats() {
@@ -343,7 +343,7 @@ export function ServicesHoverList({ items, title }: { items: Service[]; title?: 
                 </span>
                 <span className="flex items-center gap-5">
                   <span className="max-w-xs text-right text-sm text-graphite/55">{s.kicker}</span>
-                  <span className="whitespace-nowrap rounded-full bg-ward px-4 py-2 font-semibold text-deep transition group-hover:bg-lime">{s.prices[0][1]}</span>
+                  <span className="whitespace-nowrap rounded-full bg-ward px-4 py-2 font-semibold text-deep transition group-hover:bg-lime">{s.price ?? s.prices[0][1]}</span>
                 </span>
               </Link>
             </li>

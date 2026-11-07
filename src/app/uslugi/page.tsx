@@ -23,7 +23,7 @@ function Cards({ items, title }: { items: Service[]; title: string }) {
               <span className="flex flex-1 flex-col gap-2 p-5">
                 <b className="text-lg leading-tight text-deep">{s.menu}</b>
                 <span className="text-sm leading-relaxed text-graphite/65">{s.lead}</span>
-                <span className="mt-auto flex items-center justify-between pt-2 text-sm font-semibold text-teal">{s.prices[0][1]} <ArrowRight size={16} className="transition group-hover:translate-x-1" /></span>
+                <span className="mt-auto flex items-center justify-between pt-2 text-sm font-semibold text-teal">{s.price ?? s.prices[0][1]} <ArrowRight size={16} className="transition group-hover:translate-x-1" /></span>
               </span>
             </Link>
           </li>

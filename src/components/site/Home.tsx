@@ -67,7 +67,7 @@ export function HomeHero() {
 }
 
 const CARDS = [
-  { href: '/uslugi/spina/', tag: 'Спина и шея', title: 'Боль в спине и шее', text: 'Грыжи, протрузии, остеохондроз.', price: 'приём невролога от 8 000 ₽', img: '/photos/c-back.jpg', pos: 'object-right' },
+  { href: '/uslugi/spina/', tag: 'Спина и шея', title: 'Боль в спине и шее', text: 'Грыжи, протрузии, остеохондроз.', price: 'занятие от 2 000 ₽', img: '/photos/c-back.jpg', pos: 'object-right' },
   { href: '/uslugi/ortopediya/', tag: 'Суставы', title: 'Колено и тазобедренный', text: 'PRP, ударно-волновая терапия, лечебная физкультура.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-center', spot: ['52%', '52%'] },
   { href: '/uslugi/ortopediya/', tag: 'Плечо и кисть', title: 'Плечо и кисть', text: 'После переломов и травм, УВТ, тейпирование.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-left', spot: ['57%', '38%'] },
   { href: '/uslugi/ortopediya/', tag: 'Стопа', title: 'Стопа и пятка', text: 'Пяточная шпора, плоскостопие, стельки.', price: 'УВТ до 3 000 ₽', img: '/photos/foot.jpg', pos: 'object-[95%_50%]', spot: ['74%', '50%'] },

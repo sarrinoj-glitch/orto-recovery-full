@@ -101,7 +101,7 @@ export const METHODS: { name: string; text: string }[] = [
 export type QuizArea = 'back' | 'knee' | 'arm' | 'foot' | 'kids' | 'endo'
 
 export const QUIZ_RESULT: Record<QuizArea, { title: string; doctor: string; role: string; price: string; priceNote: string; chat: string }> = {
-  back: { title: 'Спина и шея', doctor: 'Куделя Павел Александрович', role: 'невролог, мануальный терапевт', price: 'от 8 000 ₽', priceNote: 'приём', chat: 'Здравствуйте, болит спина, хочу к неврологу' },
+  back: { title: 'Спина и шея', doctor: 'Магомедов Муслим Абдулла-Гаджиевич', role: 'инструктор по лечебной физкультуре, мануальный терапевт', price: 'от 2 000 ₽', priceNote: 'занятие', chat: 'Здравствуйте, болит спина, хочу записаться' },
   knee: { title: 'Колено и тазобедренный сустав', doctor: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед', price: '3 000 ₽', priceNote: 'приём', chat: 'Здравствуйте, болит колено, хочу к ортопеду' },
   arm: { title: 'Плечо, локоть, кисть', doctor: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед, кистевой реабилитолог', price: '3 000 ₽', priceNote: 'приём', chat: 'Здравствуйте, болит плечо, хочу к ортопеду' },
   foot: { title: 'Стопа и пятка', doctor: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед', price: '3 000 ₽', priceNote: 'приём', chat: 'Здравствуйте, болит пятка по утрам' },

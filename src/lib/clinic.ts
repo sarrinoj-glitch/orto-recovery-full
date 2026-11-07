@@ -254,8 +254,8 @@ export const PHOTOS = [
 export const EQUIPMENT = [
   { id: 'uvt', image: asset('/photos/eq-uvt.jpg'), title: 'Ударно-волновая терапия', text: 'Аппарат Gymna Shockmaster 500', alt: 'Аппарат ударно-волновой терапии Gymna Shockmaster 500', services: ['ortopediya', 'spina', 'fizioterapiya'] },
   { id: 'magnet', image: asset('/photos/eq-magnet.jpg'), title: 'Магнит высокой интенсивности', text: 'Аппарат Doc Basyr с кольцевым излучателем', alt: 'Аппарат высокоинтенсивной магнитотерапии Doc Basyr', services: ['fizioterapiya'] },
-  { id: 'biomag', image: asset('/photos/eq-biomag.jpg'), title: 'Импульсная магнитотерапия', text: 'Аппликаторы Biomag — процедура лёжа на кушетке', alt: 'Аппликаторы магнитотерапии Biomag на кушетке', services: ['fizioterapiya'] },
-  { id: 'combo', image: asset('/photos/eq-combo.jpg'), title: 'Ультразвук и электротерапия', text: 'Комбинированный аппарат Enraf-Nonius', alt: 'Комбинированный аппарат физиотерапии Enraf-Nonius с двумя излучателями', services: ['fizioterapiya'] },
+  { id: 'biomag', image: asset('/photos/eq-biomag.jpg'), title: 'Импульсная магнитотерапия низкой частоты', text: 'Аппликаторы Biomag — процедура лёжа на кушетке', alt: 'Аппликаторы магнитотерапии Biomag на кушетке', services: ['fizioterapiya'] },
+  { id: 'combo', image: asset('/photos/eq-combo.jpg'), title: 'Ультразвуковая терапия и электротерапия', text: 'Комбинированный аппарат Enraf-Nonius', alt: 'Комбинированный аппарат физиотерапии Enraf-Nonius с двумя излучателями', services: ['fizioterapiya'] },
   { id: 'ems', image: asset('/photos/eq-ems.jpg'), title: 'Электромиостимуляция', text: 'Стимулятор Compex SP 4.0 и ультразвук Enraf-Nonius', alt: 'Миостимулятор Compex SP 4.0 и аппарат ультразвуковой терапии Enraf-Nonius', services: ['fizioterapiya'] },
   { id: 'lab', image: asset('/photos/eq-lab.jpg'), title: 'Процедурный кабинет', text: 'Забор крови на анализы и для PRP-терапии', alt: 'Пробирки с кровью в штативе в процедурном кабинете', services: ['prp'] },
 ]

@@ -14,7 +14,7 @@ const DOORS = [
   { n: '03', title: 'Я спортсмен', text: 'Спортивная реабилитация: вернуть силу и подвижность к тренировкам.', cta: 'Вернуться к спорту', tone: 'bg-coral-soft', go: '/uslugi/reabilitaciya/#sport' },
 ]
 
-const SLUG: Record<QuizArea, string> = { back: 'spina', knee: 'ortopediya', arm: 'ortopediya', foot: 'ortopediya', kids: 'detyam', endo: 'pitanie-i-psiholog' }
+const SLUG: Record<QuizArea, string> = { back: 'spina', knee: 'ortopediya', arm: 'ortopediya', foot: 'ortopediya', kids: 'detyam', endo: '' }
 
 // Три двери + опрос «подобрать врача за 3 вопроса»
 export function Start() {
@@ -84,7 +84,7 @@ export function Start() {
                 <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
                   <span className="text-2xl font-extrabold text-deep">{res.price} <span className="text-sm font-medium text-graphite/55">{res.priceNote}</span></span>
                   <span className="flex flex-wrap gap-2">
-                    <Link href={`/uslugi/${SLUG[answers.area as QuizArea]}/`} className="flex h-12 items-center rounded-full border border-deep/20 px-5 font-semibold text-deep">Об услуге</Link>
+                    <Link href={SLUG[answers.area as QuizArea] ? `/uslugi/${SLUG[answers.area as QuizArea]}/` : '/vrachi/'} className="flex h-12 items-center rounded-full border border-deep/20 px-5 font-semibold text-deep">Об услуге</Link>
                     <button type="button" onClick={() => openLead(res.chat)} className="h-12 rounded-full bg-deep px-6 font-semibold text-white transition hover:bg-black">Записаться</button>
                   </span>
                 </div>

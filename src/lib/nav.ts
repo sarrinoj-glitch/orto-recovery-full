@@ -103,20 +103,6 @@ export const SERVICES: Service[] = [
     extras: ['family'],
     chat: 'Здравствуйте, у ребёнка сколиоз, хочу на лечебную физкультуру',
   },
-  {
-    slug: 'pitanie-i-psiholog',
-    menu: 'Питание и психолог',
-    kicker: 'Не только сустав',
-    title: 'Восстановление — это ещё питание и голова',
-    lead: 'Нутрициолог, психолог, терапевт-гастроэнтеролог и лабораторные анализы — всё в одном центре.',
-    photo: '/photos/g-consilium.jpg',
-    photoAlt: 'Врачи центра обсуждают случай',
-    doctors: ['Нажмудинова Айшат Абдурахмановна'],
-    prices: [['Нутрициолог', '4 000 ₽'], ['Психолог', '3 000 ₽'], ['Групповые тренинги по психологии', 'от 1 500 ₽'], ['Терапевт-гастроэнтеролог', '3 000 ₽'], ['Лабораторные анализы', 'от 595 ₽']],
-    conditions: [],
-    extras: ['whole'],
-    chat: 'Здравствуйте, хочу к нутрициологу',
-  },
 ]
 
 export const NAV: { href: string; label: string; sub?: boolean }[] = [
@@ -129,4 +115,30 @@ export const NAV: { href: string; label: string; sub?: boolean }[] = [
   { href: '/otzyvy/', label: 'Отзывы' },
   { href: '/blog/', label: 'Блог' },
   { href: '/kontakty/', label: 'Контакты' },
+]
+
+// Вкладка «Услуги» в меню: только услуги с ценами от клиники (07.11.2026); href — страница направления, где о ней подробнее
+export const SERVICE_MENU: { name: string; price: string; href: string }[] = [
+  { name: 'Ударно-волновая терапия', price: 'до 3 000 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Магнит высокой интенсивности + лазер', price: 'до 2 000 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Магнит низкой частоты', price: 'до 800 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Ультразвуковая терапия', price: 'до 800 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Электромиостимуляция', price: 'до 1 500 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Электротерапия', price: 'до 1 500 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Транскраниальная электростимуляция', price: 'до 1 500 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Прессотерапия', price: 'до 1 500 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Электроакупунктура', price: 'до 2 500 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'Сухие иглы', price: 'до 2 500 ₽', href: '/uslugi/spina/' },
+  { name: 'Лечебная физкультура', price: 'от 2 000 ₽', href: '/uslugi/reabilitaciya/' },
+  { name: 'Лечебная гимнастика по методу СИАС', price: 'от 2 000 ₽', href: '/uslugi/detyam/' },
+  { name: 'Массаж всех видов', price: 'от 1 600 ₽', href: '/uslugi/reabilitaciya/' },
+  { name: 'Кинезиотейпирование', price: 'от 1 000 ₽', href: '/uslugi/fizioterapiya/' },
+  { name: 'PRP-терапия', price: 'до 10 500 ₽', href: '/uslugi/prp/' },
+  { name: 'Индивидуальные стельки Formthotics (взрослые)', price: '13 500 ₽', href: '/uslugi/ortopediya/' },
+  { name: 'Индивидуальные стельки Formthotics (детские)', price: '9 500 ₽', href: '/uslugi/detyam/' },
+  { name: 'Консультация травматолога-ортопеда', price: 'до 3 000 ₽', href: '/uslugi/ortopediya/' },
+  { name: 'Консультация терапевта-гастроэнтеролога', price: 'до 3 000 ₽', href: '/ceny/' },
+  { name: 'Консультация нутрициолога', price: 'до 4 000 ₽', href: '/ceny/' },
+  { name: 'Консультация реабилитолога', price: 'от 2 500 ₽', href: '/uslugi/reabilitaciya/' },
+  { name: 'Консультация психолога', price: 'до 3 000 ₽', href: '/ceny/' },
 ]

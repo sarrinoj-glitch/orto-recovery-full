@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { CLINIC } from '@/lib/clinic'
-import { NAV, SERVICES } from '@/lib/nav'
+import { NAV, SERVICE_MENU } from '@/lib/nav'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
 
@@ -45,10 +45,10 @@ export function Header() {
                 <Link href={l.href} className={`flex items-center gap-1.5 whitespace-nowrap py-2 transition-colors hover:text-graphite ${active(l.href) ? 'font-semibold text-graphite' : ''}`}>
                   {l.label} <ChevronDown size={14} className="transition group-hover:rotate-180" />
                 </Link>
-                <div className="invisible absolute -left-6 top-full z-50 grid w-[560px] translate-y-2 grid-cols-2 gap-x-6 rounded-3xl bg-white p-5 text-graphite opacity-0 shadow-lift ring-1 ring-graphite/5 transition duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  {SERVICES.map((s) => (
-                    <Link key={s.slug} href={`/uslugi/${s.slug}/`} className="flex items-center justify-between gap-3 border-b border-graphite/5 py-2.5 text-[15px] hover:text-teal">
-                      {s.menu}<span className="whitespace-nowrap text-sm text-graphite/45">{s.prices[0][1]}</span>
+                <div className="invisible absolute -left-6 top-full z-50 grid w-[720px] translate-y-2 grid-cols-2 gap-x-6 rounded-3xl bg-white p-5 text-graphite opacity-0 shadow-lift ring-1 ring-graphite/5 transition duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  {SERVICE_MENU.map((s) => (
+                    <Link key={s.name} href={s.href} className="flex items-center justify-between gap-3 border-b border-graphite/5 py-2 text-[14px] leading-snug hover:text-teal">
+                      {s.name}<span className="whitespace-nowrap text-[13px] text-graphite/45">{s.price}</span>
                     </Link>
                   ))}
                 </div>
@@ -85,8 +85,8 @@ export function Header() {
             <Link key={l.href} href={l.href} className={`block rounded-xl px-3 py-3 text-lg ${active(l.href) ? 'bg-ward font-semibold' : ''}`}>{l.label}</Link>
           ))}
           <p className="mt-3 px-3 text-xs font-semibold uppercase tracking-[0.12em] text-teal">Услуги</p>
-          {SERVICES.map((s) => (
-            <Link key={s.slug} href={`/uslugi/${s.slug}/`} className="flex justify-between rounded-xl px-3 py-2.5 text-[15px]">{s.menu}<span className="text-graphite/45">{s.prices[0][1]}</span></Link>
+          {SERVICE_MENU.map((s) => (
+            <Link key={s.name} href={s.href} className="flex justify-between gap-3 rounded-xl px-3 py-2 text-[15px]">{s.name}<span className="whitespace-nowrap text-graphite/45">{s.price}</span></Link>
           ))}
           <button type="button" onClick={() => { setOpen(false); openLead() }} className="mt-3 h-12 w-full rounded-2xl bg-teal font-semibold text-white">Записаться</button>
         </nav>

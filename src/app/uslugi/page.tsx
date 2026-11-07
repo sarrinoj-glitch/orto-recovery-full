@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: 'Услуги', description: 'Орт�
 export default function ServicesIndex() {
   return (
     <>
-      <PageHead kicker="Услуги" title="Что мы лечим" lead="Семь направлений в одном центре: от консультации ортопеда до обследования во сне. Выберите своё или подберите врача за три вопроса." />
+      <PageHead kicker="Услуги" title="Что мы лечим" lead="Шесть направлений в одном центре: от консультации ортопеда до обследования во сне. Выберите своё или подберите врача за три вопроса." />
       <main>
         <ServicesHoverList />
         <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:hidden">

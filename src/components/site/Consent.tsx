@@ -73,7 +73,7 @@ export function PdConsent({ checked, onChange, error, dark }: { checked: boolean
           <Link href={docHref('politika')} className={link} target="_blank">Политикой</Link>
         </span>
       </label>
-      {error && <p className={`mt-1.5 text-[13px] ${dark ? 'text-coral' : 'text-[#a3341d]'}`}>Отметьте согласие, чтобы отправить сообщение</p>}
+      {error && <p className={`mt-1.5 text-[13px] ${dark ? 'text-coral' : 'text-[#a3341d]'}`}>Отметьте согласие, чтобы отправить заявку</p>}
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { CLINIC, DOCTORS, type Doctor } from '@/lib/clinic'
 import { METHODS } from '@/lib/content'
 import { SERVICES } from '@/lib/nav'
 import { asset } from '@/lib/asset'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { AnimatedBeam, BorderBeam, Magnetic, Marquee, NumberTicker, TextReveal } from '@/components/ui/motion'
 
 const H2 = 'text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl'
@@ -119,8 +119,7 @@ export function BookingFlow() {
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">Запись без ожидания на линии</p>
           <h2 className={`${H2} mt-3`}>Пишете куда удобно — администратор сделает остальное</h2>
           <p className="mt-4 text-lg leading-relaxed text-graphite/65">Сайт, WhatsApp или звонок: администратор подберёт врача, запишет на свободное время и напомнит о визите накануне.</p>
-          <p className="mt-3 text-sm text-graphite/45">Пример того, как работает ИИ-администратор центра.</p>
-          <button type="button" onClick={() => openChat()} className="shimmer mt-7 flex h-14 items-center gap-2 rounded-full bg-deep px-7 font-semibold text-white">Попробовать — написать <ArrowRight size={18} /></button>
+          <button type="button" onClick={() => openLead()} className="shimmer mt-7 flex h-14 items-center gap-2 rounded-full bg-deep px-7 font-semibold text-white">Записаться на приём <ArrowRight size={18} /></button>
         </div>
         <div ref={box} className="relative flex h-[380px] items-center justify-between overflow-hidden rounded-[32px] bg-gradient-to-br from-lagoon via-white to-lime-soft px-4 sm:h-[420px] sm:px-10">
           <div className="flex h-full flex-col justify-around py-6">
@@ -250,7 +249,7 @@ export function DoctorsMorph({ title = 'Врачи, к которым прихо
                 )}
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
                   <span className="text-2xl font-extrabold text-deep">{d.price}</span>
-                  <button type="button" onClick={() => { setOpen(null); openChat(d.chat) }} className="shimmer h-14 rounded-full bg-deep px-7 font-semibold text-white">Записаться к врачу</button>
+                  <button type="button" onClick={() => { setOpen(null); openLead(d.chat) }} className="shimmer h-14 rounded-full bg-deep px-7 font-semibold text-white">Записаться к врачу</button>
                 </div>
               </motion.div>
             </motion.div>
@@ -291,7 +290,7 @@ export function OrbitCta() {
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[2.6rem]">Жизнь без боли начинается <span className="text-lime">с&nbsp;одного приёма</span></h2>
           <div className="mt-7 flex justify-center">
             <Magnetic>
-              <button type="button" onClick={() => openChat()} className="shimmer flex h-14 items-center gap-2 rounded-full bg-lime px-8 font-bold text-graphite shadow-[0_18px_40px_-16px_rgba(242,255,89,.7)]">Записаться на приём <ArrowRight size={18} /></button>
+              <button type="button" onClick={() => openLead()} className="shimmer flex h-14 items-center gap-2 rounded-full bg-lime px-8 font-bold text-graphite shadow-[0_18px_40px_-16px_rgba(242,255,89,.7)]">Записаться на приём <ArrowRight size={18} /></button>
             </Magnetic>
           </div>
           <a href={tel} className="mt-4 inline-block text-white/70 hover:text-white">или позвоните: {CLINIC.phone}</a>
@@ -317,7 +316,7 @@ export function MobileDock() {
           className="fixed inset-x-3 bottom-3 z-50 grid grid-cols-[1fr_1fr_1.4fr] gap-2 rounded-[22px] bg-white/95 p-2 shadow-[0_20px_50px_-15px_rgba(11,61,74,0.6)] ring-1 ring-graphite/10 backdrop-blur md:hidden">
           <a href={tel} className="flex h-12 flex-col items-center justify-center rounded-2xl bg-ward text-[11px] font-semibold text-deep"><Phone size={18} />Позвонить</a>
           <a href={CLINIC.whatsappLink} target="_blank" rel="noreferrer" className="flex h-12 flex-col items-center justify-center rounded-2xl bg-ward text-[11px] font-semibold text-deep"><MessageCircle size={18} className="text-[#25D366]" />WhatsApp</a>
-          <button type="button" onClick={() => openChat()} className="shimmer h-12 rounded-2xl bg-deep text-[15px] font-bold text-white">Записаться</button>
+          <button type="button" onClick={() => openLead()} className="shimmer h-12 rounded-2xl bg-deep text-[15px] font-bold text-white">Записаться</button>
         </motion.nav>
       )}
     </AnimatePresence>

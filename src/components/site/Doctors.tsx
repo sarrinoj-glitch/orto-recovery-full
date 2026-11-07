@@ -1,7 +1,7 @@
 'use client'
 
 import { DOCTORS } from '@/lib/clinic'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 
 const TONES = ['bg-teal text-white', 'bg-lime text-graphite', 'bg-deep text-white', 'bg-coral-soft text-graphite', 'bg-lagoon-deep text-graphite', 'bg-teal-soft text-teal-dark']
 const initials = (n: string) => n.split(' ').slice(0, 2).map((w) => w[0]).join('')
@@ -43,7 +43,7 @@ export function Doctors() {
               <span className="whitespace-nowrap font-semibold tabular-nums text-graphite">{d.price}</span>
               <button
                 type="button"
-                onClick={() => openChat(d.chat)}
+                onClick={() => openLead(d.chat)}
                 className="h-11 whitespace-nowrap rounded-full border border-teal px-5 text-[15px] font-medium text-teal transition hover:bg-teal hover:text-white"
               >
                 Записаться

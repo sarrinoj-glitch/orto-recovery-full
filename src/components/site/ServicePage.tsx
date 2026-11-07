@@ -6,7 +6,7 @@ import { ArrowRight, ChevronRight } from 'lucide-react'
 import { DOCTORS } from '@/lib/clinic'
 import { SERVICES, type Extra } from '@/lib/nav'
 import { asset } from '@/lib/asset'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { Conditions, SecondOpinion, AfterCourse } from '@/components/site/Conditions'
 import { TwinPlans, Glossary, PrpSteps, Whole, Sport } from '@/components/site/Treatment'
 import { Procedures } from '@/components/site/Procedures'
@@ -50,7 +50,7 @@ export function ServicePage({ slug }: { slug: string }) {
             <h1 className="mt-3 text-[2.3rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-deep sm:text-[3.4rem]">{s.title}</h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-graphite/70">{s.lead}</p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
-              <button type="button" onClick={() => openChat(s.chat)} className="flex h-14 items-center gap-2 rounded-full bg-deep px-7 font-semibold text-white transition hover:-translate-y-0.5">Записаться <ArrowRight size={18} /></button>
+              <button type="button" onClick={() => openLead(s.chat)} className="flex h-14 items-center gap-2 rounded-full bg-deep px-7 font-semibold text-white transition hover:-translate-y-0.5">Записаться <ArrowRight size={18} /></button>
               <span className="text-graphite/70">{s.prices[0][0]} — <b className="text-deep">{s.prices[0][1]}</b></span>
             </div>
           </div>
@@ -76,7 +76,7 @@ export function ServicePage({ slug }: { slug: string }) {
                 <span className="min-w-0 flex-1"><b className="block leading-tight text-deep">{d.name}</b><span className="text-[13px] text-teal">{d.role}</span>{d.visit && <span className="block text-[12px] text-graphite/55">{d.visit}</span>}</span>
               </div>
             ))}
-            <button type="button" onClick={() => openChat(docs[0]?.chat ?? s.chat)} className="mt-auto h-12 rounded-2xl bg-teal font-semibold text-white">Записаться к врачу</button>
+            <button type="button" onClick={() => openLead(docs[0]?.chat ?? s.chat)} className="mt-auto h-12 rounded-2xl bg-teal font-semibold text-white">Записаться к врачу</button>
           </div>
         </section>
 

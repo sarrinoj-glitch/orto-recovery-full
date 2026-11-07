@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { RevealObserver } from "@/components/site/RevealObserver";
-import ChatWidget from "@/components/ChatWidget";
+import LeadForm from "@/components/LeadForm";
 import { CookieBanner } from "@/components/site/Consent";
 import { ScrollProgress } from "@/components/ui/motion";
 import { MobileDock } from "@/components/site/Extras";
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <Footer />
         </div>
-        <ChatWidget />
+        <LeadForm />
         <CookieBanner />
         <MobileDock />
         <RevealObserver />

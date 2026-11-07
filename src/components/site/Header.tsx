@@ -7,7 +7,7 @@ import { ChevronDown, Menu, Phone, X } from 'lucide-react'
 import { CLINIC } from '@/lib/clinic'
 import { NAV, SERVICES } from '@/lib/nav'
 import { asset } from '@/lib/asset'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 
 const tel = `tel:${CLINIC.phone.replace(/[^\d+]/g, '')}`
 
@@ -70,7 +70,7 @@ export function Header() {
           <a href={tel} aria-label="Позвонить" className="flex h-11 w-11 items-center justify-center rounded-full bg-ward text-graphite md:hidden">
             <Phone size={18} />
           </a>
-          <button type="button" onClick={() => openChat()} className="hidden h-12 whitespace-nowrap rounded-[16px] bg-teal px-5 text-[15px] font-semibold text-white shadow-[0_10px_22px_-10px_rgba(23,126,150,0.8)] transition hover:-translate-y-0.5 sm:block">
+          <button type="button" onClick={() => openLead()} className="hidden h-12 whitespace-nowrap rounded-[16px] bg-teal px-5 text-[15px] font-semibold text-white shadow-[0_10px_22px_-10px_rgba(23,126,150,0.8)] transition hover:-translate-y-0.5 sm:block">
             Записаться
           </button>
           <button type="button" onClick={() => setOpen((v) => !v)} aria-label={open ? 'Закрыть меню' : 'Открыть меню'} aria-expanded={open} className="flex h-11 w-11 items-center justify-center rounded-full bg-graphite text-white xl:hidden">
@@ -88,7 +88,7 @@ export function Header() {
           {SERVICES.map((s) => (
             <Link key={s.slug} href={`/uslugi/${s.slug}/`} className="flex justify-between rounded-xl px-3 py-2.5 text-[15px]">{s.menu}<span className="text-graphite/45">{s.prices[0][1]}</span></Link>
           ))}
-          <button type="button" onClick={() => { setOpen(false); openChat() }} className="mt-3 h-12 w-full rounded-2xl bg-teal font-semibold text-white">Записаться</button>
+          <button type="button" onClick={() => { setOpen(false); openLead() }} className="mt-3 h-12 w-full rounded-2xl bg-teal font-semibold text-white">Записаться</button>
         </nav>
       )}
     </header>

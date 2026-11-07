@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import clsx from 'clsx'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 
 // Нейтральные описания методов, без обещаний результата (требования к медицинской рекламе)
 const PROCEDURES = [
@@ -116,7 +116,7 @@ export function Procedures() {
                 <p className="text-sm text-graphite/50">Подходит ли метод вам, решает врач после осмотра.</p>
                 <button
                   type="button"
-                  onClick={() => openChat(p.chat)}
+                  onClick={() => openLead(p.chat)}
                   className="h-11 rounded-full bg-teal px-5 text-[15px] font-medium text-white transition hover:bg-teal-dark"
                 >
                   Спросить у администратора

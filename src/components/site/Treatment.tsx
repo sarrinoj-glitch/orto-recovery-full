@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Check, Info, Syringe } from 'lucide-react'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { METHODS, TWIN_PLANS } from '@/lib/content'
 import { asset } from '@/lib/asset'
 
@@ -106,7 +106,7 @@ export function PrpSteps() {
         {[['Обезболивание', 'местная анестезия'], ['Делает', 'врач-ортопед'], ['Курс', '3–5 инъекций'], ['Стоимость', '10 500 ₽']].map(([a, b]) => (
           <span key={a} className="rounded-full bg-white px-4 py-2 shadow-card">{a}: <b className="text-teal">{b}</b></span>
         ))}
-        <button type="button" onClick={() => openChat('Здравствуйте, интересует PRP-терапия сустава')} className="rounded-full bg-deep px-5 py-2 font-semibold text-white">Спросить про PRP</button>
+        <button type="button" onClick={() => openLead('Здравствуйте, интересует PRP-терапия сустава')} className="rounded-full bg-deep px-5 py-2 font-semibold text-white">Спросить про PRP</button>
       </div>
     </section>
   )
@@ -124,7 +124,7 @@ export function Whole() {
       <h2 className={H2}>Восстановление — это ещё питание и голова</h2>
       <div data-stagger className="mt-10 grid gap-4 md:grid-cols-3">
         {items.map((x) => (
-          <button key={x.t} type="button" onClick={() => openChat(x.chat)} className={`lift flex min-h-[230px] flex-col justify-between gap-5 rounded-[28px] p-6 text-left ${x.tone}`}>
+          <button key={x.t} type="button" onClick={() => openLead(x.chat)} className={`lift flex min-h-[230px] flex-col justify-between gap-5 rounded-[28px] p-6 text-left ${x.tone}`}>
             <span><span className="block text-xl font-bold text-deep">{x.t}</span><span className="mt-2 block text-[15px] leading-relaxed text-graphite/75">{x.d}</span></span>
             <span className="text-2xl font-extrabold text-deep">{x.p}</span>
           </button>
@@ -149,7 +149,7 @@ export function Sport() {
               <li key={t} className="flex items-center gap-3"><span className="flex h-6 w-6 items-center justify-center rounded-full bg-lime text-graphite"><Check size={14} strokeWidth={3} /></span>{t}</li>
             ))}
           </ul>
-          <button type="button" onClick={() => openChat('Здравствуйте, я спортсмен, нужна реабилитация после травмы')} className="mt-7 h-14 rounded-full bg-lime px-7 font-semibold text-graphite transition hover:-translate-y-0.5">Записаться на реабилитацию</button>
+          <button type="button" onClick={() => openLead('Здравствуйте, я спортсмен, нужна реабилитация после травмы')} className="mt-7 h-14 rounded-full bg-lime px-7 font-semibold text-graphite transition hover:-translate-y-0.5">Записаться на реабилитацию</button>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 'use client'
 
 import { CLINIC } from '@/lib/clinic'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { HandNote } from '@/components/site/Decor'
 import { ConsentFrame } from '@/components/site/Consent'
 
@@ -38,7 +38,7 @@ export function Visit() {
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
-            onClick={() => openChat()}
+            onClick={() => openLead()}
             className="h-12 rounded-full bg-teal px-6 text-[15px] font-medium text-white transition hover:bg-teal-dark"
           >
             Записаться онлайн

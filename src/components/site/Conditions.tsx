@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { CONDITIONS, AFTER_COURSE } from '@/lib/content'
 import { asset } from '@/lib/asset'
 import { Check } from 'lucide-react'
@@ -35,7 +35,7 @@ export function Conditions({ ids, title = 'Травмы и заболевани�
         </motion.ul>
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-[15px] text-graphite/60">
           <span>Не нашли свой диагноз? Напишите — администратор подскажет, к какому врачу идти.</span>
-          <button type="button" onClick={() => openChat('Здравствуйте, не нашёл свой диагноз в списке, подскажите, к какому врачу идти')} className="h-12 rounded-full bg-deep px-6 font-semibold text-white">Спросить администратора</button>
+          <button type="button" onClick={() => openLead('Здравствуйте, не нашёл свой диагноз в списке, подскажите, к какому врачу идти')} className="h-12 rounded-full bg-deep px-6 font-semibold text-white">Спросить администратора</button>
         </div>
       </div>
     </section>
@@ -55,7 +55,7 @@ export function SecondOpinion() {
           <ul className="mt-5 space-y-2 text-[#4a1f12]">
             {['Возьмите снимки МРТ и заключения', 'Врач разберёт их на приёме', 'Если операция нужна — так и скажем'].map((t) => <li key={t} className="flex gap-3"><span className="font-bold text-[#C2563A]">→</span>{t}</li>)}
           </ul>
-          <button type="button" onClick={() => openChat('Здравствуйте, мне предложили операцию, хочу второе мнение ортопеда')} className="mt-7 h-14 self-start rounded-full bg-[#C2563A] px-7 font-semibold text-white transition hover:-translate-y-0.5">Записаться на консультацию — 3 000 ₽</button>
+          <button type="button" onClick={() => openLead('Здравствуйте, мне предложили операцию, хочу второе мнение ортопеда')} className="mt-7 h-14 self-start rounded-full bg-[#C2563A] px-7 font-semibold text-white transition hover:-translate-y-0.5">Записаться на консультацию — 3 000 ₽</button>
         </div>
       </div>
     </section>

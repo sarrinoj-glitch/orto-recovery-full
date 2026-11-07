@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import clsx from 'clsx'
 import { BODY_AREAS, EXTRA_AREAS, CLINIC, type BodyArea } from '@/lib/clinic'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { Waves, HandNote } from '@/components/site/Decor'
 
 // Точки на фигуре: координаты в процентах от viewBox 200×420
@@ -86,7 +86,7 @@ function Panel({ area }: { area: BodyArea }) {
         </div>
         <button
           type="button"
-          onClick={() => openChat(area.chat)}
+          onClick={() => openLead(area.chat)}
           className="h-12 shrink-0 rounded-full bg-teal px-6 text-[15px] font-medium text-white transition hover:bg-teal-dark"
         >
           Записаться на приём

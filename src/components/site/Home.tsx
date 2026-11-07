@@ -6,7 +6,7 @@ import type { ReactNode } from 'react'
 import { ArrowRight, Plus, Search } from 'lucide-react'
 import { CLINIC, DOCTORS } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { BlurIn, FlipWords, Magnetic, Spotlight, TiltCard } from '@/components/ui/motion'
 
 const H2 = 'text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl'
@@ -15,7 +15,7 @@ const CHIPS = ['Болит спина', 'Грыжа диска', 'Колено',
 // Первый экран (подача Hinge): живое фото на весь экран + оффер «без операции» со старого сайта + поиск «Что беспокоит?»
 export function HomeHero() {
   const [q, setQ] = useState('')
-  const submit = (e: FormEvent) => { e.preventDefault(); openChat(q.trim() || undefined) }
+  const submit = (e: FormEvent) => { e.preventDefault(); openLead(q.trim() || undefined) }
   return (
     <>
       <section className="relative isolate -mt-[84px] flex min-h-[max(680px,100svh)] items-start overflow-hidden rounded-b-[32px] text-white sm:-mt-[92px] sm:rounded-b-[48px]">
@@ -32,7 +32,7 @@ export function HomeHero() {
             </h1>
             <p className="mt-5 max-w-[520px] text-lg leading-relaxed text-white/85">Ортопеды, невролог и реабилитологи. Сначала находим причину, потом составляем план лечения — цену вы знаете до начала.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Magnetic><button type="button" onClick={() => openChat()} className="shimmer flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[radial-gradient(120%_180%_at_50%_50%,#FDFFC7_0%,#F2FF59_45%,#DCEB2E_100%)] px-8 font-bold text-graphite shadow-[0_18px_40px_-16px_rgba(242,255,89,.7)] transition hover:-translate-y-0.5">
+              <Magnetic><button type="button" onClick={() => openLead()} className="shimmer flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[radial-gradient(120%_180%_at_50%_50%,#FDFFC7_0%,#F2FF59_45%,#DCEB2E_100%)] px-8 font-bold text-graphite shadow-[0_18px_40px_-16px_rgba(242,255,89,.7)] transition hover:-translate-y-0.5">
                 Записаться на приём <ArrowRight size={20} />
               </button></Magnetic>
               <Link href="/uslugi/" className="flex h-14 items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 font-semibold backdrop-blur">Что мы лечим</Link>
@@ -58,7 +58,7 @@ export function HomeHero() {
             <span className="text-[13px] leading-tight text-graphite/60"><span className="text-[#F5B301]">★★★★★</span><br />2ГИС, {CLINIC.rating2gis.count} оценка · Яндекс {CLINIC.ratingYandex.value}</span>
           </div>
           <div className="flex flex-wrap gap-2 lg:col-span-2">
-            {CHIPS.map((c) => <button key={c} type="button" onClick={() => openChat(`Здравствуйте, ${c.toLowerCase()}`)} className="rounded-full border border-teal-soft px-4 py-2 text-sm text-deep transition hover:border-neon hover:bg-lagoon">{c}</button>)}
+            {CHIPS.map((c) => <button key={c} type="button" onClick={() => openLead(`Здравствуйте, ${c.toLowerCase()}`)} className="rounded-full border border-teal-soft px-4 py-2 text-sm text-deep transition hover:border-neon hover:bg-lagoon">{c}</button>)}
           </div>
         </div>
       </section>
@@ -125,7 +125,7 @@ export function DoctorsTeaser() {
             </div>
             <div className="mt-auto flex items-center justify-between border-t border-graphite/5 pt-3">
               <b className="text-deep">{d.price}</b>
-              <button type="button" onClick={() => openChat(d.chat)} className="h-10 rounded-xl bg-ward px-4 text-sm font-semibold text-deep transition hover:bg-lime">Записаться</button>
+              <button type="button" onClick={() => openLead(d.chat)} className="h-10 rounded-xl bg-ward px-4 text-sm font-semibold text-deep transition hover:bg-lime">Записаться</button>
             </div>
           </li>
         ))}

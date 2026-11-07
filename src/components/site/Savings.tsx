@@ -1,6 +1,6 @@
 'use client'
 
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 
 // Скидки — из материалов клиники (Яндекс Бизнес, архив сайта); суммы посчитаны от прайса ПроДокторов 19.10.2026
 const COURSES = [
@@ -48,7 +48,7 @@ export function Savings() {
               </p>
               <button
                 type="button"
-                onClick={() => openChat(c.chat)}
+                onClick={() => openLead(c.chat)}
                 className="h-12 rounded-full bg-graphite px-6 text-[15px] font-semibold text-white transition hover:bg-black"
               >
                 Записаться на курс

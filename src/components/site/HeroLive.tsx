@@ -4,7 +4,7 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { CLINIC } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 
 type AreaId = 'knee' | 'back' | 'arm' | 'foot'
 
@@ -128,7 +128,7 @@ export function HeroLive({ asBlock = false }: { asBlock?: boolean }) {
       <div className="mt-3.5 flex flex-wrap gap-1.5">{d.chips.map((c) => <span key={c} className="hl-chip">{c}</span>)}</div>
       <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3.5">
         <span className="text-[13px] leading-snug text-white/75">Ближайшее окно<br /><b className="text-[15px] text-white">{d.slot}</b></span>
-        <button type="button" onClick={() => openChat(d.chat)} className="rounded-[14px] bg-neon px-4 py-2.5 text-sm font-bold text-deep transition hover:-translate-y-0.5">Записаться</button>
+        <button type="button" onClick={() => openLead(d.chat)} className="rounded-[14px] bg-neon px-4 py-2.5 text-sm font-bold text-deep transition hover:-translate-y-0.5">Записаться</button>
       </div>
     </div>
   )
@@ -159,7 +159,7 @@ export function HeroLive({ asBlock = false }: { asBlock?: boolean }) {
               Нажмите на точку — увидите, кто ведёт приём, что может назначить врач и сколько это стоит. Запись в один клик или в чате.
             </p>
             <div className="hl-up mt-8 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '.7s' }}>
-              <button type="button" onClick={() => openChat()} className="hl-btn">
+              <button type="button" onClick={() => openLead()} className="hl-btn">
                 <span>Записаться на приём</span>
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#48F6FF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
               </button>

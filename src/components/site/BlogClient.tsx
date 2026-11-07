@@ -6,7 +6,7 @@ import { ArrowRight, Clock } from 'lucide-react'
 import { BLOG_CATEGORIES, BLOG_POSTS, type BlogPost } from '@/lib/blog'
 import { DOCTORS } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 
 const shortName = (full: string) => { const [f, i, o] = full.split(' '); return `${f} ${i?.[0] ?? ''}. ${o?.[0] ?? ''}.` }
 
@@ -70,7 +70,7 @@ export function BlogCards({ posts }: { posts: BlogPost[] }) {
 
 export function AskButton({ text, label, className }: { text: string; label: string; className?: string }) {
   return (
-    <button type="button" onClick={() => openChat(text)} className={`flex h-12 items-center justify-center gap-2 rounded-full px-6 font-semibold ${className ?? 'bg-deep text-white'}`}>
+    <button type="button" onClick={() => openLead(text)} className={`flex h-12 items-center justify-center gap-2 rounded-full px-6 font-semibold ${className ?? 'bg-deep text-white'}`}>
       {label} <ArrowRight size={17} />
     </button>
   )

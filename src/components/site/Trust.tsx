@@ -1,10 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { GraduationCap, Play } from 'lucide-react'
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { asset } from '@/lib/asset'
-import { PdConsent } from '@/components/site/Consent'
 
 const H2 = 'text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl'
 
@@ -23,7 +22,7 @@ const BUBBLES: { me?: boolean; text: string; card?: string; time: string }[] = [
   { text: '', card: 'Ваш курс: 4 из 10 процедур · следующая — четверг, 10:00', time: '18:12' },
 ]
 
-// «План лечения в WhatsApp» (Hinge «Your care, connected») — показывает, как работает ИИ-администратор
+// «План лечения в WhatsApp» (Hinge «Your care, connected») — как центр остаётся на связи между визитами
 export function WhatsAppPlan() {
   const [shown, setShown] = useState(0)
   const ref = useRef<HTMLDivElement>(null)
@@ -44,7 +43,6 @@ export function WhatsAppPlan() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
       <div className="relative grid gap-10 overflow-hidden rounded-[36px] bg-deep p-6 text-white sm:p-12 lg:grid-cols-[1fr_340px] lg:items-center">
-        <span className="absolute right-12 top-6 hidden text-xs text-white/50 lg:block">пример: так работает ИИ-администратор</span>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neon">Лечение не заканчивается в кабинете</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl">Ваш план лечения — в WhatsApp</h2>
@@ -54,7 +52,7 @@ export function WhatsAppPlan() {
               <li key={a} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-[15px]"><b className="block text-lime">{a}</b>{b}</li>
             ))}
           </ul>
-          <button type="button" onClick={() => openChat('Здравствуйте, хочу записаться на приём')} className="mt-7 h-14 rounded-full bg-lime px-7 font-semibold text-graphite transition hover:-translate-y-0.5">Написать администратору</button>
+          <button type="button" onClick={() => openLead('Здравствуйте, хочу записаться на приём')} className="mt-7 h-14 rounded-full bg-lime px-7 font-semibold text-graphite transition hover:-translate-y-0.5">Написать администратору</button>
         </div>
         <div ref={ref} className="mx-auto w-[290px] rounded-[44px] bg-black p-3 shadow-lift sm:w-[320px]">
           <div className="flex h-[540px] flex-col overflow-hidden rounded-[34px] bg-[#ECE5DD]">
@@ -168,11 +166,6 @@ export function Prep() {
     ['Заложите 30 минут', 'приём ортопеда длится 20–30 минут'],
   ]
   const [checked, setChecked] = useState<boolean[]>(() => items.map(() => false))
-  const [phone, setPhone] = useState('')
-  const [err, setErr] = useState(false)
-  const [sent, setSent] = useState(false)
-  const [pd, setPd] = useState(false)
-  const [pdErr, setPdErr] = useState(false)
 
   useEffect(() => {
     try { const s = JSON.parse(localStorage.getItem('orto-prep') || '[]'); if (Array.isArray(s)) setChecked((c) => c.map((_, i) => !!s[i])) } catch { /* браузер без хранилища */ }
@@ -182,13 +175,6 @@ export function Prep() {
     try { localStorage.setItem('orto-prep', JSON.stringify(n)) } catch { /* ignore */ }
     return n
   })
-  const submit = (e: FormEvent) => {
-    e.preventDefault()
-    const bad = phone.replace(/\D/g, '').replace(/^[78]/, '').length !== 10
-    setErr(bad); setPdErr(!pd)
-    if (bad || !pd) return
-    setSent(true)
-  }
 
   return (
     <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
@@ -211,18 +197,7 @@ export function Prep() {
             {['Двигаться каждый день', 'Беречься от травм и ушибов', 'Следить за весом и меньше нервничать', 'Не переохлаждаться', 'Отказаться от вредных привычек'].map((t) => <li key={t}>{t}</li>)}
           </ol>
           <p className="text-[15px] text-graphite/75">Пришлём памятку с подробностями в WhatsApp — бесплатно.</p>
-          {sent ? (
-            <div className="mt-auto rounded-2xl bg-white p-4 text-[15px] text-deep"><b>Готово!</b> Памятка придёт в WhatsApp в течение минуты.<span className="mt-1 block text-xs text-graphite/55">В демо номер никуда не отправляется.</span></div>
-          ) : (
-            <form onSubmit={submit} noValidate className="mt-auto">
-              <div className="flex flex-col gap-2 sm:flex-row">
-                <input value={phone} onChange={(e) => { setPhone(e.target.value); setErr(false) }} type="tel" inputMode="tel" placeholder="+7 (900) 000-00-00" aria-label="Телефон для WhatsApp" className="min-w-0 flex-1 rounded-2xl px-4 py-3.5 text-base outline-none focus-visible:ring-2 focus-visible:ring-teal" />
-                <button type="submit" className="rounded-2xl bg-graphite px-5 py-3.5 font-bold text-lime">Получить</button>
-              </div>
-              {err && <p className="mt-2 text-sm text-[#8a2b12]">Введите номер телефона — 10 цифр после +7</p>}
-              <div className="mt-3"><PdConsent checked={pd} onChange={(v) => { setPd(v); setPdErr(false) }} error={pdErr} /></div>
-            </form>
-          )}
+          <button type="button" onClick={() => openLead('Хочу памятку «5 правил, чтобы спина не болела»')} className="mt-auto h-14 rounded-2xl bg-graphite px-5 font-bold text-lime">Получить памятку</button>
         </div>
       </div>
     </section>

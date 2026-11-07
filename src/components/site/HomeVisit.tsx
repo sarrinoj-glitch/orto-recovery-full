@@ -1,6 +1,6 @@
 'use client'
 
-import { openChat } from '@/components/ChatWidget'
+import { openLead } from '@/components/LeadForm'
 import { asset } from '@/lib/asset'
 
 const CASES = [
@@ -38,7 +38,7 @@ export function HomeVisit() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <button
               type="button"
-              onClick={() => openChat('Нужен реабилитолог на дом для мамы после инсульта')}
+              onClick={() => openLead('Нужен реабилитолог на дом для мамы после инсульта')}
               className="h-14 rounded-full bg-lime px-8 text-base font-semibold text-graphite transition hover:bg-white"
             >
               Вызвать реабилитолога

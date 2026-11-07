@@ -201,7 +201,7 @@ export const PRICE_GROUPS: { title: string; items: { name: string; price: string
     ],
   },
   {
-    title: 'Лаборатория экспертного класса (анализы всех видов)',
+    title: 'Анализы всех видов',
     items: [{ name: 'Лабораторные анализы', price: 'от 595 ₽' }],
     note: 'Более 2 500 анализов. Быстро, качественно и точно в срок.',
   },

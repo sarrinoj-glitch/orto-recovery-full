@@ -6,6 +6,8 @@ export type Extra = 'second' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'spo
 export type Service = {
   slug: string
   menu: string
+  // problem — «что мы лечим» (жалоба пациента), method — метод лечения
+  kind: 'problem' | 'method'
   kicker: string
   title: string
   lead: string
@@ -21,7 +23,8 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     slug: 'ortopediya',
-    menu: 'Ортопедия и травматология',
+    menu: 'Боль в суставах и травмы',
+    kind: 'problem',
     kicker: 'Травматолог-ортопед',
     title: 'Лечим суставы, травмы и боль без операции',
     lead: 'Колено, плечо, кисть, стопа. Врач осмотрит, разберёт снимки и составит план лечения — цену вы узнаете до начала.',
@@ -36,6 +39,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'spina',
     menu: 'Боль в спине и шее',
+    kind: 'problem',
     kicker: 'Невролог, мануальный терапевт',
     title: 'Боль в спине и шее, грыжи и протрузии',
     lead: 'Невролог осмотрит, разберёт МРТ и подберёт лечение. Программу подбираем под ваш образ жизни.',
@@ -49,8 +53,9 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'reabilitaciya',
-    menu: 'Реабилитация и лечебная физкультура',
-    kicker: 'Реабилитация',
+    menu: 'Восстановление после травм и операций',
+    kind: 'problem',
+    kicker: 'Реабилитолог, лечебная физкультура',
     title: 'Восстановление после травм и операций',
     lead: 'Лечебная физкультура под контролем врача: нагрузка растёт постепенно, а дома вы занимаетесь по плану, который мы составим.',
     photo: '/photos/g-lfk.jpg',
@@ -64,6 +69,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'fizioterapiya',
     menu: 'Физиотерапия',
+    kind: 'method',
     kicker: 'Физиотерапия',
     title: 'Аппаратная физиотерапия в одном центре',
     lead: 'Ударно-волновая терапия, магнит с лазером, электромиостимуляция, прессотерапия. Процедуры назначает врач — по показаниям.',
@@ -78,6 +84,7 @@ export const SERVICES: Service[] = [
   {
     slug: 'prp',
     menu: 'PRP-терапия',
+    kind: 'method',
     kicker: 'PRP-терапия',
     title: 'PRP: лечение плазмой собственной крови',
     lead: 'Плазму, обогащённую тромбоцитами, вводят в сустав или зону повреждения. Процедуру проводит врач-ортопед под местной анестезией.',
@@ -91,8 +98,9 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'detyam',
-    menu: 'Детям',
-    kicker: 'Детская реабилитация',
+    menu: 'Осанка и стопы у детей',
+    kind: 'problem',
+    kicker: 'Инструктор лечебной физкультуры',
     title: 'Осанка, стопы и занятия для детей',
     lead: 'Лечебная гимнастика при сколиозе по методу СИАС, массаж и индивидуальные стельки для детей.',
     photo: '/photos/g-explain.jpg',
@@ -116,6 +124,9 @@ export const NAV: { href: string; label: string; sub?: boolean }[] = [
   { href: '/blog/', label: 'Блог' },
   { href: '/kontakty/', label: 'Контакты' },
 ]
+
+export const PROBLEMS = SERVICES.filter((s) => s.kind === 'problem')
+export const METHODS = SERVICES.filter((s) => s.kind === 'method')
 
 // Вкладка «Услуги» в меню: только услуги с ценами от клиники (07.11.2026); href — страница направления, где о ней подробнее
 export const SERVICE_MENU: { name: string; price: string; href: string }[] = [

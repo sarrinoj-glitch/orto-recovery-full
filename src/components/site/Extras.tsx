@@ -6,7 +6,7 @@ import { AnimatePresence, motion, useInView, useReducedMotion, useSpring } from 
 import { ArrowRight, BellRing, CalendarCheck, Globe, MessageCircle, Phone, Stethoscope, X } from 'lucide-react'
 import { CLINIC, DOCTORS, type Doctor } from '@/lib/clinic'
 import { METHODS } from '@/lib/content'
-import { SERVICES } from '@/lib/nav'
+import { type Service } from '@/lib/nav'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
 import { AnimatedBeam, BorderBeam, Magnetic, Marquee, NumberTicker, TextReveal } from '@/components/ui/motion'
@@ -324,16 +324,17 @@ export function MobileDock() {
 }
 
 // ===== Каталог услуг: картинка плывёт за курсором над строкой (Hover Image Reveal), только на компьютере =====
-export function ServicesHoverList() {
+export function ServicesHoverList({ items, title }: { items: Service[]; title?: string }) {
   const [hover, setHover] = useState<number | null>(null)
   const box = useRef<HTMLDivElement>(null)
   const x = useSpring(0, { stiffness: 260, damping: 28 })
   const y = useSpring(0, { stiffness: 260, damping: 28 })
   return (
     <section className="mx-auto hidden max-w-6xl px-6 py-14 lg:block">
+      {title && <h2 className={`${H2} mb-8`}>{title}</h2>}
       <div ref={box} className="relative" onPointerMove={(e) => { const r = box.current!.getBoundingClientRect(); x.set(e.clientX - r.left); y.set(e.clientY - r.top) }} onPointerLeave={() => setHover(null)}>
         <ul className="border-t border-graphite/10">
-          {SERVICES.map((s, i) => (
+          {items.map((s, i) => (
             <li key={s.slug} onPointerEnter={() => setHover(i)}>
               <Link href={`/uslugi/${s.slug}/`} className="group flex items-center justify-between gap-8 border-b border-graphite/10 py-6">
                 <span className="flex items-baseline gap-6">
@@ -353,7 +354,7 @@ export function ServicesHoverList() {
             <motion.div key="float" aria-hidden className="pointer-events-none absolute left-0 top-0 z-20 h-[220px] w-[300px] overflow-hidden rounded-3xl shadow-lift"
               style={{ x, y, translateX: '-50%', translateY: '-115%' }} initial={{ opacity: 0, scale: 0.8, rotate: -4 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ type: 'spring', stiffness: 300, damping: 24 }}>
               <AnimatePresence mode="popLayout" initial={false}>
-                <motion.img key={hover} src={asset(SERVICES[hover].photo)} alt="" className="absolute inset-0 h-full w-full object-cover" initial={{ opacity: 0, scale: 1.1 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} />
+                <motion.img key={hover} src={asset(items[hover].photo)} alt="" className="absolute inset-0 h-full w-full object-cover" initial={{ opacity: 0, scale: 1.1 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} />
               </AnimatePresence>
             </motion.div>
           )}

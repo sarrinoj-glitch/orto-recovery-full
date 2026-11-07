@@ -103,7 +103,7 @@ export function PrpSteps() {
         ))}
       </div>
       <div className="mt-5 flex flex-wrap gap-2.5 text-sm text-deep">
-        {[['Обезболивание', 'местная анестезия'], ['Делает', 'врач-ортопед'], ['Курс', '3–5 инъекций'], ['Стоимость', '10 500 ₽']].map(([a, b]) => (
+        {[['Обезболивание', 'местная анестезия'], ['Делает', 'врач-ортопед'], ['Курс', '3–5 инъекций'], ['Стоимость', 'до 10 500 ₽']].map(([a, b]) => (
           <span key={a} className="rounded-full bg-white px-4 py-2 shadow-card">{a}: <b className="text-teal">{b}</b></span>
         ))}
         <button type="button" onClick={() => openLead('Здравствуйте, интересует PRP-терапия сустава')} className="rounded-full bg-deep px-5 py-2 font-semibold text-white">Спросить про PRP</button>

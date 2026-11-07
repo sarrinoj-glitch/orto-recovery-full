@@ -55,7 +55,7 @@ export function SecondOpinion() {
           <ul className="mt-5 space-y-2 text-[#4a1f12]">
             {['Возьмите снимки МРТ и заключения', 'Врач разберёт их на приёме', 'Если операция нужна — так и скажем'].map((t) => <li key={t} className="flex gap-3"><span className="font-bold text-[#C2563A]">→</span>{t}</li>)}
           </ul>
-          <button type="button" onClick={() => openLead('Здравствуйте, мне предложили операцию, хочу второе мнение ортопеда')} className="mt-7 h-14 self-start rounded-full bg-[#C2563A] px-7 font-semibold text-white transition hover:-translate-y-0.5">Записаться на консультацию — 3 000 ₽</button>
+          <button type="button" onClick={() => openLead('Здравствуйте, мне предложили операцию, хочу второе мнение ортопеда')} className="mt-7 h-14 self-start rounded-full bg-[#C2563A] px-7 font-semibold text-white transition hover:-translate-y-0.5">Записаться на консультацию — до 3 000 ₽</button>
         </div>
       </div>
     </section>

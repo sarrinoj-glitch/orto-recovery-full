@@ -10,10 +10,10 @@ type AreaId = 'knee' | 'back' | 'arm' | 'foot'
 
 // Прайс клиники (ПроДокторов, 19.10.2026). Время окна — пример до подключения МИС
 const AREAS: Record<AreaId, { tag: string; ini: string; name: string; role: string; chips: string[]; slot: string; chat: string }> = {
-  knee: { tag: 'Колено', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед · ПроДокторов 5,0', chips: ['Приём 3 000 ₽', 'PRP 10 500 ₽', 'УВТ 3 000 ₽', 'Гиалуроновая кислота 3 000 ₽'], slot: 'завтра, 16:30', chat: 'Здравствуйте, болит колено уже месяц' },
-  back: { tag: 'Спина и шея', ini: 'КП', name: 'Куделя Павел Александрович', role: 'невролог, мануальный терапевт', chips: ['Приём невролога 3 000 ₽', 'УВТ 3 000 ₽', 'Лечебная физкультура 2 500 ₽', 'Массаж от 1 600 ₽'], slot: 'в день приезда врача', chat: 'Здравствуйте, болит спина, есть грыжа поясницы' },
-  arm: { tag: 'Плечо и кисть', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед, кистевой реабилитолог', chips: ['Приём 3 000 ₽', 'Разработка кисти 3 000 ₽', 'УВТ 3 000 ₽', 'Тейпирование 1 500 ₽'], slot: 'завтра, 11:30', chat: 'Здравствуйте, после перелома плохо разгибается кисть' },
-  foot: { tag: 'Стопа и пятка', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед', chips: ['Приём 3 000 ₽', 'УВТ 3 000 ₽', 'Стельки Formthotics 13 500 ₽'], slot: 'завтра, 16:00', chat: 'Здравствуйте, болит пятка по утрам' },
+  knee: { tag: 'Колено', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед · ПроДокторов 5,0', chips: ['Приём до 3 000 ₽', 'PRP до 10 500 ₽', 'УВТ до 3 000 ₽', 'Гиалуроновая кислота 3 000 ₽'], slot: 'завтра, 16:30', chat: 'Здравствуйте, болит колено уже месяц' },
+  back: { tag: 'Спина и шея', ini: 'КП', name: 'Куделя Павел Александрович', role: 'невролог, мануальный терапевт', chips: ['Приём невролога от 8 000 ₽', 'УВТ до 3 000 ₽', 'Лечебная физкультура от 2 000 ₽', 'Массаж от 1 600 ₽'], slot: 'в день приезда врача', chat: 'Здравствуйте, болит спина, есть грыжа поясницы' },
+  arm: { tag: 'Плечо и кисть', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед, кистевой реабилитолог', chips: ['Приём до 3 000 ₽', 'Разработка кисти 3 000 ₽', 'УВТ до 3 000 ₽', 'Тейпирование от 1 000 ₽'], slot: 'завтра, 11:30', chat: 'Здравствуйте, после перелома плохо разгибается кисть' },
+  foot: { tag: 'Стопа и пятка', ini: 'ХА', name: 'Хаджалов Абузар Магомедович', role: 'травматолог-ортопед', chips: ['Приём до 3 000 ₽', 'УВТ до 3 000 ₽', 'Стельки Formthotics 13 500 ₽'], slot: 'завтра, 16:00', chat: 'Здравствуйте, болит пятка по утрам' },
 }
 const ORDER: AreaId[] = ['knee', 'back', 'arm', 'foot']
 const HOTS: Record<AreaId, { x: number; y: number; label: string }> = {
@@ -245,15 +245,15 @@ export function HeroLive({ asBlock = false }: { asBlock?: boolean }) {
 
                   <button type="button" className={`hl-call${area === 'back' ? ' on' : ''}`} style={{ left: 150, top: 120 }} onClick={() => pick('back')} onMouseEnter={() => pick('back')}>
                     <span className="ic" style={{ background: '#DDF8FB' }}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#177E96" strokeWidth="2" strokeLinecap="round"><path d="M12 3v18M8 7h8M7 12h10M8 17h8" /></svg></span>
-                    <span><b className="font-bold">Спина и шея</b><br /><span className="text-[#5b6266]">невролог, 3 000 ₽</span></span>
+                    <span><b className="font-bold">Спина и шея</b><br /><span className="text-[#5b6266]">невролог, от 8 000 ₽</span></span>
                   </button>
                   <button type="button" className={`hl-call${area === 'arm' ? ' on' : ''}`} style={{ left: 560, top: 190, animationDelay: '-1.6s' }} onClick={() => pick('arm')} onMouseEnter={() => pick('arm')}>
                     <span className="ic" style={{ background: '#FFE3D9' }}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C2563A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 11V6a2 2 0 0 1 4 0v5M11 10V5a2 2 0 0 1 4 0v6M15 10V7a2 2 0 0 1 4 0v7a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-3l-2-4a2 2 0 0 1 3-2l1 1" /></svg></span>
-                    <span><b className="font-bold">Плечо и кисть</b><br /><span className="text-[#5b6266]">ортопед, 3 000 ₽</span></span>
+                    <span><b className="font-bold">Плечо и кисть</b><br /><span className="text-[#5b6266]">ортопед, до 3 000 ₽</span></span>
                   </button>
                   <button type="button" className={`hl-call${area === 'foot' ? ' on' : ''}`} style={{ left: 555, top: 440, animationDelay: '-3.1s' }} onClick={() => pick('foot')} onMouseEnter={() => pick('foot')}>
                     <span className="ic" style={{ background: '#F8FFC9' }}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7A00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 3c-2 4-2 9 0 13 1 2 3 3 5 3h4a2 2 0 0 0 0-4h-3" /></svg></span>
-                    <span><b className="font-bold">Стопа и пятка</b><br /><span className="text-[#5b6266]">УВТ, 3 000 ₽</span></span>
+                    <span><b className="font-bold">Стопа и пятка</b><br /><span className="text-[#5b6266]">УВТ, до 3 000 ₽</span></span>
                   </button>
 
                   <figure className="hl-photo hl-up" style={{ animationDelay: '1s' }}>

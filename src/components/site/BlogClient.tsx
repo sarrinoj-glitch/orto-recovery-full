@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
-import { BLOG_CATEGORIES, BLOG_POSTS, type BlogPost } from '@/lib/blog'
+import { BLOG_POSTS, type BlogPost } from '@/lib/blog'
 import { DOCTORS } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
@@ -53,9 +53,6 @@ export function BlogIndex() {
     <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
       <div role="tablist" aria-label="Темы" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:px-0">
         <button type="button" role="tab" aria-selected={!cat} onClick={() => setCat(null)} className={chip(!cat)}>Все статьи</button>
-        {BLOG_CATEGORIES.map((c) => (
-          <button key={c} type="button" role="tab" aria-selected={cat === c} onClick={() => setCat(c)} className={chip(cat === c)}>{c}</button>
-        ))}
       </div>
       <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {list.map((p, i) => <Card key={p.slug} p={p} big={i === 0 && !cat} />)}

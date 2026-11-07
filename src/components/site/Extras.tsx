@@ -4,7 +4,7 @@ import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion, useInView, useReducedMotion, useSpring } from 'framer-motion'
 import { ArrowRight, BellRing, CalendarCheck, Globe, MessageCircle, Phone, Stethoscope, X } from 'lucide-react'
-import { CLINIC, DOCTORS, type Doctor } from '@/lib/clinic'
+import { CLINIC, DOCTORS, type Doctor, doctorCta } from '@/lib/clinic'
 import { METHODS } from '@/lib/content'
 import { type Service } from '@/lib/nav'
 import { asset } from '@/lib/asset'
@@ -249,7 +249,7 @@ export function DoctorsMorph({ title = 'Врачи, к которым прихо
                 )}
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
                   <span className="text-2xl font-extrabold text-deep">{d.price}</span>
-                  <button type="button" onClick={() => { setOpen(null); openLead(d.chat) }} className="shimmer h-14 rounded-full bg-deep px-7 font-semibold text-white">Записаться к врачу</button>
+                  <button type="button" onClick={() => { setOpen(null); openLead(doctorCta(d.name, d.chat).context) }} className="shimmer h-14 rounded-full bg-deep px-7 font-semibold text-white">{doctorCta(d.name, d.chat, 'Записаться к врачу').label}</button>
                 </div>
               </motion.div>
             </motion.div>

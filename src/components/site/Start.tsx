@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { doctorCta } from '@/lib/clinic'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { BorderBeam } from '@/components/ui/motion'
@@ -85,7 +86,7 @@ export function Start() {
                   <span className="text-2xl font-extrabold text-deep">{res.price} <span className="text-sm font-medium text-graphite/55">{res.priceNote}</span></span>
                   <span className="flex flex-wrap gap-2">
                     <Link href={SLUG[answers.area as QuizArea] ? `/uslugi/${SLUG[answers.area as QuizArea]}/` : '/vrachi/'} className="flex h-12 items-center rounded-full border border-deep/20 px-5 font-semibold text-deep">Об услуге</Link>
-                    <button type="button" onClick={() => openLead(res.chat)} className="h-12 rounded-full bg-deep px-6 font-semibold text-white transition hover:bg-black">Записаться</button>
+                    <button type="button" onClick={() => openLead(doctorCta(res.doctor, res.chat).context)} className="h-12 rounded-full bg-deep px-6 font-semibold text-white transition hover:bg-black">{doctorCta(res.doctor, res.chat).label}</button>
                   </span>
                 </div>
               </div>

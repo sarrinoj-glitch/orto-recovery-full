@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { CLINIC } from '@/lib/clinic'
+import { CLINIC, doctorCta, isGuest } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
 
@@ -127,8 +127,8 @@ export function HeroLive({ asBlock = false }: { asBlock?: boolean }) {
       </div>
       <div className="mt-3.5 flex flex-wrap gap-1.5">{d.chips.map((c) => <span key={c} className="hl-chip">{c}</span>)}</div>
       <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3.5">
-        <span className="text-[13px] leading-snug text-white/75">Ближайшее окно<br /><b className="text-[15px] text-white">{d.slot}</b></span>
-        <button type="button" onClick={() => openLead(d.chat)} className="rounded-[14px] bg-neon px-4 py-2.5 text-sm font-bold text-deep transition hover:-translate-y-0.5">Записаться</button>
+        <span className="text-[13px] leading-snug text-white/75">{isGuest(d.name) ? 'Приём' : 'Ближайшее окно'}<br /><b className="text-[15px] text-white">{d.slot}</b></span>
+        <button type="button" onClick={() => openLead(doctorCta(d.name, d.chat).context)} className="rounded-[14px] bg-neon px-4 py-2.5 text-sm font-bold text-deep transition hover:-translate-y-0.5">{doctorCta(d.name, d.chat).label}</button>
       </div>
     </div>
   )

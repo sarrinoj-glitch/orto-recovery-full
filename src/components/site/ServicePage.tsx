@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { ArrowRight, ChevronRight } from 'lucide-react'
-import { DOCTORS } from '@/lib/clinic'
+import { DOCTORS, doctorCta } from '@/lib/clinic'
 import { SERVICES, type Extra } from '@/lib/nav'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
@@ -76,7 +76,7 @@ export function ServicePage({ slug }: { slug: string }) {
                 <span className="min-w-0 flex-1"><b className="block leading-tight text-deep">{d.name}</b><span className="text-[13px] text-teal">{d.role}</span>{d.visit && <span className="block text-[12px] text-graphite/55">{d.visit}</span>}</span>
               </div>
             ))}
-            <button type="button" onClick={() => openLead(docs[0]?.chat ?? s.chat)} className="mt-auto h-12 rounded-2xl bg-teal font-semibold text-white">Записаться к врачу</button>
+            {(() => { const d = docs.find((x) => !x.guest) ?? docs[0]; const c = doctorCta(d?.name, d?.chat ?? s.chat, 'Записаться к врачу'); return <button type="button" onClick={() => openLead(c.context)} className="mt-auto h-12 rounded-2xl bg-teal font-semibold text-white">{c.label}</button> })()}
           </div>
         </section>
 

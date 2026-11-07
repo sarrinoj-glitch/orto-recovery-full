@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import clsx from 'clsx'
-import { BODY_AREAS, EXTRA_AREAS, CLINIC, type BodyArea } from '@/lib/clinic'
+import { BODY_AREAS, EXTRA_AREAS, CLINIC, type BodyArea, doctorCta } from '@/lib/clinic'
 import { openLead } from '@/components/LeadForm'
 import { Waves, HandNote } from '@/components/site/Decor'
 
@@ -86,10 +86,10 @@ function Panel({ area }: { area: BodyArea }) {
         </div>
         <button
           type="button"
-          onClick={() => openLead(area.chat)}
+          onClick={() => openLead(doctorCta(area.doctor, area.chat).context)}
           className="h-12 shrink-0 rounded-full bg-teal px-6 text-[15px] font-medium text-white transition hover:bg-teal-dark"
         >
-          Записаться на приём
+          {doctorCta(area.doctor, area.chat, 'Записаться на приём').label}
         </button>
       </div>
       <p className="mt-4 text-sm text-graphite/50">

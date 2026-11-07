@@ -4,7 +4,7 @@ import { useState, type FormEvent } from 'react'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { ArrowRight, Plus, Search } from 'lucide-react'
-import { CLINIC, DOCTORS } from '@/lib/clinic'
+import { CLINIC, DOCTORS, doctorCta } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
 import { BlurIn, FlipWords, Magnetic, Spotlight, TiltCard } from '@/components/ui/motion'
@@ -125,7 +125,7 @@ export function DoctorsTeaser() {
             </div>
             <div className="mt-auto flex items-center justify-between border-t border-graphite/5 pt-3">
               <b className="text-deep">{d.price}</b>
-              <button type="button" onClick={() => openLead(d.chat)} className="h-10 rounded-xl bg-ward px-4 text-sm font-semibold text-deep transition hover:bg-lime">Записаться</button>
+              <button type="button" onClick={() => openLead(doctorCta(d.name, d.chat).context)} className="h-10 rounded-xl bg-ward px-4 text-sm font-semibold text-deep transition hover:bg-lime">{doctorCta(d.name, d.chat).label}</button>
             </div>
           </li>
         ))}

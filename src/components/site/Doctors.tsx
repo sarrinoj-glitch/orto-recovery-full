@@ -1,6 +1,6 @@
 'use client'
 
-import { DOCTORS } from '@/lib/clinic'
+import { DOCTORS, doctorCta } from '@/lib/clinic'
 import { openLead } from '@/components/LeadForm'
 
 const TONES = ['bg-teal text-white', 'bg-lime text-graphite', 'bg-deep text-white', 'bg-coral-soft text-graphite', 'bg-lagoon-deep text-graphite', 'bg-teal-soft text-teal-dark']
@@ -43,10 +43,10 @@ export function Doctors() {
               <span className="whitespace-nowrap font-semibold tabular-nums text-graphite">{d.price}</span>
               <button
                 type="button"
-                onClick={() => openLead(d.chat)}
+                onClick={() => openLead(doctorCta(d.name, d.chat).context)}
                 className="h-11 whitespace-nowrap rounded-full border border-teal px-5 text-[15px] font-medium text-teal transition hover:bg-teal hover:text-white"
               >
-                Записаться
+                {doctorCta(d.name, d.chat).label}
               </button>
             </div>
           </li>

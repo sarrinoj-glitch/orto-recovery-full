@@ -29,6 +29,8 @@ export type Doctor = {
   chat: string
   // Врач приезжает и ведёт приём не каждый день — показываем под должностью
   visit?: string
+  // Приглашённый врач: записи нет, вместо «Записаться» — «Узнать о приезде»
+  guest?: boolean
   // Портрет из фотосессии 2024 (медиатека старого сайта) — только где имя точно известно
   photo?: string
 }
@@ -46,6 +48,7 @@ export const DOCTORS: Doctor[] = [
     name: 'Куделя Павел Александрович',
     role: 'Невролог, мануальный терапевт',
     visit: 'Специальный гость из Москвы — принимает в дни приезда, по предварительной записи',
+    guest: true,
     treats: 'Боль в спине и шее, грыжи, спортивные травмы',
     price: 'от 8 000 ₽',
     chat: 'Здравствуйте, болит спина, хочу к неврологу',
@@ -85,6 +88,13 @@ export type BodyArea = {
   visit: string
   chat: string
 }
+
+// К приглашённому врачу записи нет — пациент оставляет заявку, и администратор сообщит о приезде
+export const GUEST_CTA = 'Узнать о приезде'
+export const isGuest = (name?: string) => DOCTORS.some((d) => d.name === name && d.guest)
+export const guestAsk = (name: string) => `Сообщите, пожалуйста, когда приедет ${name} — хочу попасть на приём`
+export const doctorCta = (name: string | undefined, chat: string, label = 'Записаться') =>
+  isGuest(name) ? { label: GUEST_CTA, context: guestAsk(name!) } : { label, context: chat }
 
 export const BODY_AREAS: BodyArea[] = [
   {

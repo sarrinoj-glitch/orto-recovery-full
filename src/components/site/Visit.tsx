@@ -32,6 +32,12 @@ export function Visit() {
                 {CLINIC.phone}
               </a>
             </dd>
+            <dt className="mt-4 text-sm text-graphite/55">WhatsApp</dt>
+            <dd className="mt-1">
+              <a href={CLINIC.whatsappLink} target="_blank" rel="noreferrer" className="font-semibold text-graphite underline-offset-4 hover:underline">
+                {CLINIC.whatsapp}
+              </a>
+            </dd>
           </div>
         </dl>
 

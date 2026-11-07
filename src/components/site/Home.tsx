@@ -72,7 +72,7 @@ const CARDS = [
   { href: '/uslugi/ortopediya/', tag: 'Плечо и кисть', title: 'Плечо и кисть', text: 'После переломов и травм, УВТ, тейпирование.', price: 'приём ортопеда 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-left', spot: ['57%', '38%'] },
   { href: '/uslugi/ortopediya/', tag: 'Стопа', title: 'Стопа и пятка', text: 'Пяточная шпора, плоскостопие, стельки.', price: 'УВТ 3 000 ₽', img: '/photos/foot.jpg', pos: 'object-[95%_50%]', spot: ['74%', '50%'] },
   { href: '/uslugi/reabilitaciya/', tag: 'Реабилитация', title: 'После травм и операций', text: 'Лечебная физкультура под контролем врача, спортивная реабилитация.', price: 'занятие 2 500 ₽', img: '/photos/g-lfk.jpg', pos: 'object-center' },
-  { href: '/uslugi/detyam/', tag: 'Детям', title: 'Осанка и стопы у детей', text: 'Гимнастика СИАС, занятия при ДЦП.', price: 'занятие 2 500 ₽', img: '/photos/g-explain.jpg', pos: 'object-[60%_50%]' },
+  { href: '/uslugi/detyam/', tag: 'Детям', title: 'Осанка и стопы у детей', text: 'Лечебная гимнастика по методу СИАС, массаж, стельки.', price: 'занятие 2 500 ₽', img: '/photos/g-explain.jpg', pos: 'object-[60%_50%]' },
 ]
 
 // «От шеи до пяток» (Hinge): карточки с фото и точкой боли, каждая ведёт на страницу услуги

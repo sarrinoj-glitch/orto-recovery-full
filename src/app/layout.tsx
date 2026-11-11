@@ -26,8 +26,9 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: { default: "Орто-Рекавери — центр восстановительной медицины в Махачкале", template: "%s — Орто-Рекавери, Махачкала" },
   description:
-    "Сайт ЦВМ «Орто-Рекавери» (демо): ортопед-травматолог, реабилитация и лечебная физкультура, физиотерапия, PRP. Махачкала, пр. Имама Шамиля, 35А.",
-  robots: { index: false, follow: false },
+    "Центр восстановительной медицины «Орто-Рекавери» в Махачкале: ортопед-травматолог, реабилитация и лечебная физкультура, физиотерапия, PRP. Махачкала, пр. Имама Шамиля, 35А.",
+  // индексация только в сборке для домена клиники; демо на GitHub Pages закрыто
+  robots: process.env.NEXT_PUBLIC_INDEX === '1' ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

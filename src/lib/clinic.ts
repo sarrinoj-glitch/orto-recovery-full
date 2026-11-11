@@ -112,7 +112,7 @@ export const BODY_AREAS: BodyArea[] = [
     options: [
       { name: 'Лечебная физкультура', price: 'от 2 000 ₽' },
       { name: 'Ударно-волновая терапия', price: 'до 3 000 ₽' },
-      { name: 'Массаж всех видов', price: 'от 1 600 ₽' },
+      { name: 'Сухое иглоукалывание', price: 'до 2 500 ₽' },
       { name: 'Кинезиотейпирование', price: 'от 1 000 ₽' },
     ],
     doctor: 'Магомедов Муслим Абдулла-Гаджиевич',
@@ -253,6 +253,9 @@ export const PHOTOS = [
 // Оборудование центра: фото кабинетов 2026 (orto-recovery/оборудование). services — на каких страницах услуг показывать
 export const EQUIPMENT = [
   { id: 'uvt', image: asset('/photos/eq-uvt.jpg'), title: 'Ударно-волновая терапия', text: 'Аппарат Gymna Shockmaster 500', alt: 'Аппарат ударно-волновой терапии Gymna Shockmaster 500', services: ['koleno', 'plecho', 'stopa', 'spina', 'fizioterapiya'] },
+  { id: 'btl', image: asset('/photos/eq-btl.jpg'), title: 'Ударно-волновая терапия', text: 'Аппарат BTL', alt: 'Аппарат ударно-волновой терапии BTL', services: ['spina', 'koleno', 'plecho', 'stopa', 'fizioterapiya'] },
+  { id: 'uvt-foot', image: asset('/photos/eq-uvt-foot.jpg'), title: 'Ударно-волновая терапия стопы', text: 'Процедура на аппарате BTL', alt: 'Врач проводит ударно-волновую терапию стопы', services: ['stopa', 'fizioterapiya'] },
+  { id: 'press', image: asset('/photos/eq-press.jpg'), title: 'Прессотерапия', text: 'Манжеты на ноги, процедура лёжа', alt: 'Пациент на процедуре прессотерапии', services: ['fizioterapiya', 'reabilitaciya'] },
   { id: 'magnet', image: asset('/photos/eq-magnet.jpg'), title: 'Магнит высокой интенсивности', text: 'Аппарат Doc Basyr с кольцевым излучателем', alt: 'Аппарат высокоинтенсивной магнитотерапии Doc Basyr', services: ['fizioterapiya'] },
   { id: 'biomag', image: asset('/photos/eq-biomag.jpg'), title: 'Импульсная магнитотерапия низкой частоты', text: 'Аппликаторы Biomag — процедура лёжа на кушетке', alt: 'Аппликаторы магнитотерапии Biomag на кушетке', services: ['fizioterapiya'] },
   { id: 'combo', image: asset('/photos/eq-combo.jpg'), title: 'Ультразвуковая терапия и электротерапия', text: 'Комбинированный аппарат Enraf-Nonius', alt: 'Комбинированный аппарат физиотерапии Enraf-Nonius с двумя излучателями', services: ['fizioterapiya'] },

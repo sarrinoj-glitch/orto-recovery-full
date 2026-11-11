@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
+import { HeroSlides } from '@/components/site/HeroSlides'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { ArrowRight, Plus, Search } from 'lucide-react'
@@ -19,7 +20,7 @@ export function HomeHero() {
   return (
     <>
       <section className="relative isolate -mt-[84px] flex min-h-[max(680px,100svh)] items-start overflow-hidden rounded-b-[32px] text-white sm:-mt-[92px] sm:rounded-b-[48px]">
-        <img src={asset('/photos/hero.jpg')} alt="Дедушка присел в саду и держит внука на руках" className="absolute inset-0 -z-20 h-[62%] w-full -scale-x-100 object-cover object-[40%_0%] sm:h-full sm:object-[50%_40%]" />
+        <HeroSlides className="absolute inset-0 -z-20 h-[62%] w-full overflow-hidden sm:h-full" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(7,40,49,.45)_0%,rgba(7,40,49,0)_18%,rgba(7,40,49,0)_34%,rgba(7,40,49,.9)_54%,#072831_64%)] sm:bg-[linear-gradient(90deg,rgba(7,40,49,.92)_0%,rgba(7,40,49,.78)_28%,rgba(7,40,49,.25)_52%,rgba(7,40,49,0)_70%),linear-gradient(180deg,rgba(7,40,49,.55)_0%,rgba(7,40,49,0)_22%,rgba(7,40,49,0)_70%,rgba(7,40,49,.55)_100%)]" />
         <div className="mx-auto w-full max-w-[1320px] px-4 pb-24 pt-[300px] sm:px-6 sm:pt-[170px]">
           <div className="max-w-[640px]">
@@ -40,10 +41,6 @@ export function HomeHero() {
             <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.04em] text-white/70">Имеются противопоказания. Необходима консультация специалиста</p>
           </div>
         </div>
-        <span aria-hidden className="absolute left-[69.5%] top-[53%] hidden h-5 w-5 -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full border-[3px] border-white bg-[#E2553A] shadow-[0_0_0_10px_rgba(226,85,58,.25)] lg:block" />
-        <Link href="/uslugi/plecho/" className="absolute left-[calc(69.5%+22px)] top-[calc(53%+14px)] hidden rounded-2xl bg-white/95 px-3.5 py-2.5 text-[13px] leading-snug text-graphite shadow-lift lg:block">
-          <b className="block text-sm">Плечо</b><span className="text-graphite/60">ортопед · приём до 3 000 ₽</span>
-        </Link>
       </section>
 
       <section className="relative z-10 mx-auto -mt-10 max-w-[1320px] px-4 sm:-mt-16 sm:px-6">

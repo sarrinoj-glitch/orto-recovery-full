@@ -165,9 +165,9 @@ export function PageHead({ kicker, title, lead, children, image }: { kicker: str
           {children}
         </div>
         {image && (
-          <figure className="relative max-w-[300px] overflow-hidden rounded-[28px] shadow-lift">
-            <img src={asset(image.src)} alt={image.alt} className="aspect-[4/5] w-full object-cover" />
-            <figcaption className="absolute inset-x-3 bottom-3 rounded-2xl bg-white/90 px-3.5 py-2.5 text-[13px] leading-snug text-graphite backdrop-blur">{image.caption}</figcaption>
+          <figure className="max-w-[300px]">
+            <img src={asset(image.src)} alt={image.alt} className="aspect-[4/5] w-full rounded-[28px] object-cover shadow-lift" />
+            <figcaption className="mt-3 text-[14px] leading-snug text-graphite/70">{image.caption}</figcaption>
           </figure>
         )}
       </div>

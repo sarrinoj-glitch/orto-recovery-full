@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { asset } from '@/lib/asset'
 
-// Слайд-шоу первого экрана: фото центра плавно сменяются каждые 6 секунд, кадр медленно «отъезжает».
+// Слайд-шоу первого экрана: фото центра плавно сменяются каждые 5 секунд, кадр медленно «отъезжает».
 // Грузится первое фото (с высоким приоритетом) и следующее; остальные — по мере показа.
 // На телефоне — версия 960 px, на компьютере — 1920 px. При «уменьшить движение» слайды не листаются.
 const SLIDES = [
@@ -15,7 +15,7 @@ const SLIDES = [
   { src: 'hero-6', alt: 'Лечебный массаж спины', pos: 'object-[60%_50%]' },
   { src: 'hero-7', alt: 'Специалисты центра обсуждают план лечения', pos: 'object-[60%_40%]' },
 ]
-const DELAY = 6000
+const DELAY = 5000
 
 export function HeroSlides({ className }: { className: string }) {
   const [cur, setCur] = useState(0)
@@ -52,7 +52,7 @@ export function HeroSlides({ className }: { className: string }) {
             aria-hidden={k !== cur}
             fetchPriority={k === 0 ? 'high' : 'low'}
             decoding="async"
-            className={`absolute inset-0 h-full w-full object-cover [transition:opacity_1.4s_ease,transform_7s_linear] ${s.pos} ${k === cur ? 'scale-100 opacity-100' : 'scale-[1.06] opacity-0'}`}
+            className={`absolute inset-0 h-full w-full object-cover [transition:opacity_1.4s_ease,transform_6s_linear] ${s.pos} ${k === cur ? 'scale-100 opacity-100' : 'scale-[1.06] opacity-0'}`}
           />
         ))}
       </div>

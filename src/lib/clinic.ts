@@ -252,7 +252,7 @@ export const PHOTOS = [
 
 // Оборудование центра: фото кабинетов 2026 (orto-recovery/оборудование). services — на каких страницах услуг показывать
 export const EQUIPMENT = [
-  { id: 'uvt', image: asset('/photos/eq-uvt.jpg'), title: 'Ударно-волновая терапия', text: 'Аппарат Gymna Shockmaster 500', alt: 'Аппарат ударно-волновой терапии Gymna Shockmaster 500', services: ['ortopediya', 'spina', 'fizioterapiya'] },
+  { id: 'uvt', image: asset('/photos/eq-uvt.jpg'), title: 'Ударно-волновая терапия', text: 'Аппарат Gymna Shockmaster 500', alt: 'Аппарат ударно-волновой терапии Gymna Shockmaster 500', services: ['koleno', 'plecho', 'stopa', 'spina', 'fizioterapiya'] },
   { id: 'magnet', image: asset('/photos/eq-magnet.jpg'), title: 'Магнит высокой интенсивности', text: 'Аппарат Doc Basyr с кольцевым излучателем', alt: 'Аппарат высокоинтенсивной магнитотерапии Doc Basyr', services: ['fizioterapiya'] },
   { id: 'biomag', image: asset('/photos/eq-biomag.jpg'), title: 'Импульсная магнитотерапия низкой частоты', text: 'Аппликаторы Biomag — процедура лёжа на кушетке', alt: 'Аппликаторы магнитотерапии Biomag на кушетке', services: ['fizioterapiya'] },
   { id: 'combo', image: asset('/photos/eq-combo.jpg'), title: 'Ультразвуковая терапия и электротерапия', text: 'Комбинированный аппарат Enraf-Nonius', alt: 'Комбинированный аппарат физиотерапии Enraf-Nonius с двумя излучателями', services: ['fizioterapiya'] },

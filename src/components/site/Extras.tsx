@@ -21,7 +21,7 @@ const STATS: { v: number; dec?: number; pre?: string; suffix?: string; label: st
   { v: 4.9, dec: 1, label: 'на Яндекс Картах', src: 'Яндекс' },
   { v: 5, pre: 'более ', suffix: ' лет', label: 'стаж каждого врача', src: 'данные центра' },
   { v: 23, label: 'методики восстановления', src: 'сайт центра' },
-  { v: 7, label: 'направлений в одном центре', src: 'прайс' },
+  { v: 9, label: 'направлений в одном центре', src: 'прайс' },
 ]
 
 export function Stats() {

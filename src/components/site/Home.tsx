@@ -41,7 +41,7 @@ export function HomeHero() {
           </div>
         </div>
         <span aria-hidden className="absolute left-[69.5%] top-[53%] hidden h-5 w-5 -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full border-[3px] border-white bg-[#E2553A] shadow-[0_0_0_10px_rgba(226,85,58,.25)] lg:block" />
-        <Link href="/uslugi/ortopediya/" className="absolute left-[calc(69.5%+22px)] top-[calc(53%+14px)] hidden rounded-2xl bg-white/95 px-3.5 py-2.5 text-[13px] leading-snug text-graphite shadow-lift lg:block">
+        <Link href="/uslugi/plecho/" className="absolute left-[calc(69.5%+22px)] top-[calc(53%+14px)] hidden rounded-2xl bg-white/95 px-3.5 py-2.5 text-[13px] leading-snug text-graphite shadow-lift lg:block">
           <b className="block text-sm">Плечо</b><span className="text-graphite/60">ортопед · приём до 3 000 ₽</span>
         </Link>
       </section>
@@ -68,9 +68,9 @@ export function HomeHero() {
 
 const CARDS = [
   { href: '/uslugi/spina/', tag: 'Спина и шея', title: 'Боль в спине и шее', text: 'Грыжи, протрузии, остеохондроз.', price: 'занятие от 2 000 ₽', img: '/photos/c-back.jpg', pos: 'object-right' },
-  { href: '/uslugi/ortopediya/', tag: 'Суставы', title: 'Колено и тазобедренный', text: 'PRP, ударно-волновая терапия, лечебная физкультура.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-center', spot: ['52%', '52%'] },
-  { href: '/uslugi/ortopediya/', tag: 'Плечо и кисть', title: 'Плечо и кисть', text: 'После переломов и травм, УВТ, тейпирование.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-left', spot: ['57%', '38%'] },
-  { href: '/uslugi/ortopediya/', tag: 'Стопа', title: 'Стопа и пятка', text: 'Пяточная шпора, плоскостопие, стельки.', price: 'УВТ до 3 000 ₽', img: '/photos/foot.jpg', pos: 'object-[95%_50%]', spot: ['74%', '50%'] },
+  { href: '/uslugi/koleno/', tag: 'Суставы', title: 'Колено и тазобедренный', text: 'PRP, ударно-волновая терапия, лечебная физкультура.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-center', spot: ['52%', '52%'] },
+  { href: '/uslugi/plecho/', tag: 'Плечо и кисть', title: 'Плечо и кисть', text: 'После переломов и травм, УВТ, тейпирование.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-left', spot: ['57%', '38%'] },
+  { href: '/uslugi/stopa/', tag: 'Стопа', title: 'Стопа и пятка', text: 'Пяточная шпора, плоскостопие, стельки.', price: 'УВТ до 3 000 ₽', img: '/photos/foot.jpg', pos: 'object-[95%_50%]', spot: ['74%', '50%'] },
   { href: '/uslugi/reabilitaciya/', tag: 'Реабилитация', title: 'После травм и операций', text: 'Лечебная физкультура под контролем врача, спортивная реабилитация.', price: 'занятие от 2 000 ₽', img: '/photos/g-lfk.jpg', pos: 'object-center' },
   { href: '/uslugi/detyam/', tag: 'Детям', title: 'Осанка и стопы у детей', text: 'Лечебная гимнастика по методу СИАС, массаж, стельки.', price: 'занятие от 2 000 ₽', img: '/photos/g-explain.jpg', pos: 'object-[60%_50%]' },
 ]

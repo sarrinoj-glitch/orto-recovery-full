@@ -15,7 +15,7 @@ const DOORS = [
   { n: '03', title: 'Я спортсмен', text: 'Спортивная реабилитация: вернуть силу и подвижность к тренировкам.', cta: 'Вернуться к спорту', tone: 'bg-coral-soft', go: '/uslugi/reabilitaciya/#sport' },
 ]
 
-const SLUG: Record<QuizArea, string> = { back: 'spina', knee: 'ortopediya', arm: 'ortopediya', foot: 'ortopediya', kids: 'detyam', endo: '' }
+const SLUG: Record<QuizArea, string> = { back: 'spina', knee: 'koleno', arm: 'plecho', foot: 'stopa', kids: 'detyam', endo: '' }
 
 // Три двери + опрос «подобрать врача за 3 вопроса»
 export function Start() {

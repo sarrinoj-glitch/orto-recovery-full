@@ -192,7 +192,6 @@ export const SERVICE_MENU: { name: string; price: string; href: string }[] = [
   { name: 'Сухие иглы', price: 'до 2 500 ₽', href: '/uslugi/spina/' },
   { name: 'Лечебная физкультура', price: 'от 2 000 ₽', href: '/uslugi/lechebnaya-fizkultura/' },
   { name: 'Лечебная гимнастика по методу СИАС', price: 'от 2 000 ₽', href: '/uslugi/detyam/' },
-  { name: 'Массаж всех видов', price: 'от 1 600 ₽', href: '/uslugi/reabilitaciya/' },
   { name: 'Кинезиотейпирование', price: 'от 1 000 ₽', href: '/uslugi/fizioterapiya/' },
   { name: 'PRP-терапия', price: 'до 10 500 ₽', href: '/uslugi/prp/' },
   { name: 'Индивидуальные стельки Formthotics (взрослые)', price: '13 500 ₽', href: '/uslugi/stopa/' },

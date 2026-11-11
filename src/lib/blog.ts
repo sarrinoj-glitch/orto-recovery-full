@@ -43,8 +43,8 @@ export const BLOG_POSTS: BlogPost[] = [
   "category": "Суставы и стопы",
   "service": "fizioterapiya",
   "reviewer": "Хаджалов Абузар Магомедович",
-  "cover": "foot.jpg",
-  "coverAlt": "Стопа пациента на приёме у ортопеда",
+  "cover": "hero-1.jpg",
+  "coverAlt": "Врач проводит ударно-волновую терапию стопы",
   "minutes": 3,
   "toc": [
    {

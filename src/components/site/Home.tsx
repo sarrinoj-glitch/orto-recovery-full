@@ -152,16 +152,24 @@ export function PricesTeaser() {
 }
 
 // Шапка внутренних страниц
-export function PageHead({ kicker, title, lead, children }: { kicker: string; title: string; lead?: string; children?: ReactNode }) {
+export function PageHead({ kicker, title, lead, children, image }: { kicker: string; title: string; lead?: string; children?: ReactNode; image?: { src: string; alt: string; caption: string } }) {
   return (
     <section className="relative isolate -mt-[84px] overflow-hidden bg-lagoon pb-14 pt-[132px] sm:-mt-[92px] sm:pt-[150px]">
       <div aria-hidden className="absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-neon/25 blur-2xl" />
       <Spotlight color="rgba(255,255,255,0.55)" />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">{kicker}</p>
-        <h1 className="mt-3 max-w-3xl text-[2.4rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-deep sm:text-[3.6rem]"><BlurIn text={title} /></h1>
-        {lead && <p className="mt-4 max-w-2xl text-lg leading-relaxed text-graphite/70">{lead}</p>}
-        {children}
+      <div className={`mx-auto max-w-6xl px-4 sm:px-6 ${image ? 'grid gap-8 lg:grid-cols-[1fr_300px] lg:items-end' : ''}`}>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">{kicker}</p>
+          <h1 className="mt-3 max-w-3xl text-[2.4rem] font-extrabold leading-[1.02] tracking-[-0.035em] text-deep sm:text-[3.6rem]"><BlurIn text={title} /></h1>
+          {lead && <p className="mt-4 max-w-2xl text-lg leading-relaxed text-graphite/70">{lead}</p>}
+          {children}
+        </div>
+        {image && (
+          <figure className="relative max-w-[300px] overflow-hidden rounded-[28px] shadow-lift">
+            <img src={asset(image.src)} alt={image.alt} className="aspect-[4/5] w-full object-cover" />
+            <figcaption className="absolute inset-x-3 bottom-3 rounded-2xl bg-white/90 px-3.5 py-2.5 text-[13px] leading-snug text-graphite backdrop-blur">{image.caption}</figcaption>
+          </figure>
+        )}
       </div>
     </section>
   )

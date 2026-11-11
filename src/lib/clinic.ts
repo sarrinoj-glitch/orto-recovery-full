@@ -241,7 +241,7 @@ export const PRICE_GROUPS: { title: string; items: { name: string; price: string
 
 // Экскурсия по центру: фотосессия 2024 из медиатеки старого сайта + ресепшен
 export const PHOTOS = [
-  { id: 'reception', image: asset('/photos/reception.jpg'), title: 'Ресепшен', description: 'Здесь вас встретит администратор', alt: 'Стойка администратора с логотипом центра' },
+  { id: 'reception', image: asset('/photos/reception-admin.jpg'), title: 'Ресепшен', description: 'Вас встретит администратор Зарема Муртузалиева', alt: 'Администратор центра за стойкой регистрации' },
   { id: 'uvt', image: asset('/photos/c-shoulder.jpg'), title: 'Ударно-волновая терапия', description: 'УВТ — до 3 000 ₽', alt: 'Ударно-волновая терапия плеча' },
   { id: 'uvt-foot', image: asset('/photos/hero-1.jpg'), title: 'Ударно-волновая терапия стопы', description: 'Процедура на аппарате BTL', alt: 'Врач проводит ударно-волновую терапию стопы' },
   { id: 'uvt-foot-2', image: asset('/photos/eq-uvt-foot.jpg'), title: 'Лечение пяточной шпоры', description: 'Ударно-волновая терапия', alt: 'Врач проводит ударно-волновую терапию пятки' },

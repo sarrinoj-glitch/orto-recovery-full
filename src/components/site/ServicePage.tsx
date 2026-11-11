@@ -65,7 +65,7 @@ export function ServicePage({ slug }: { slug: string }) {
             <ul className="mt-3 divide-y divide-graphite/5">
               {s.prices.map(([n, p]) => <li key={n} className="flex justify-between gap-4 py-3"><span>{n}</span><b className="whitespace-nowrap text-deep">{p}</b></li>)}
             </ul>
-            <p className="mt-3 text-[13px] text-graphite/50">Прайс центра на ПроДокторов от 19.10.2026. <Link href="/ceny/" className="text-teal underline-offset-2 hover:underline">Все цены</Link></p>
+            <p className="mt-3 text-[13px] text-graphite/50">Цены по данным центра на 7 ноября 2026 года. <Link href="/ceny/" className="text-teal underline-offset-2 hover:underline">Все цены</Link></p>
           </div>
           <div data-reveal className="flex flex-col gap-3 rounded-[28px] bg-ward p-6 sm:p-7">
             <h2 className="text-2xl font-bold text-deep">{docs.length > 1 ? 'Ведут приём' : 'Ведёт приём'}</h2>

@@ -140,7 +140,7 @@ export function PricesTeaser() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-neon">Цены</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-[2.6rem]">Цену вы знаете до начала лечения</h2>
-          <p className="mt-4 text-white/75">Прайс центра на ПроДокторов от 19.10.2026. Есть рассрочка без переплат и справка для налогового вычета. Цены не являются публичной офертой: стоимость лечения фиксируется в договоре.</p>
+          <p className="mt-4 text-white/75">Цены по данным центра на 7 ноября 2026 года. Есть рассрочка без переплат и справка для налогового вычета. Цены не являются публичной офертой: стоимость лечения фиксируется в договоре.</p>
           <Link href="/ceny/" className="mt-6 inline-flex h-12 items-center gap-2 rounded-full bg-lime px-6 font-semibold text-graphite">Весь прайс <ArrowRight size={18} /></Link>
         </div>
         <ul className="divide-y divide-white/10 rounded-3xl bg-white/5 px-5">

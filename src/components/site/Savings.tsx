@@ -7,11 +7,20 @@ const COURSES = [
   {
     title: 'Гимнастика при сколиозе по методике СИАС',
     terms: 'Курс из 10 индивидуальных занятий',
-    discount: '−20%',
+    discount: '−10%',
     old: '25 000 ₽',
-    now: '20 000 ₽',
+    now: '22 500 ₽',
     chat: 'Здравствуйте, хочу курс гимнастики СИАС со скидкой для ребёнка',
     tone: 'bg-lagoon',
+  },
+  {
+    title: 'Курс реабилитации',
+    terms: 'Скидка 10% при оплате 100% стоимости курса сразу',
+    discount: '−10%',
+    old: '',
+    now: '',
+    chat: 'Здравствуйте, хочу курс реабилитации со скидкой 10% при полной оплате',
+    tone: 'bg-lime-soft',
   },
 ]
 
@@ -34,7 +43,7 @@ export function Savings() {
             </div>
             <div className="flex flex-wrap items-end justify-between gap-4">
               <p>
-                <span className="strike relative mr-3 inline-block text-graphite/45">{c.old}<svg aria-hidden="true" className="absolute left-0 top-1/2 h-3 w-full -translate-y-1/2 overflow-visible" viewBox="0 0 100 10" preserveAspectRatio="none"><line x1="0" y1="7" x2="100" y2="3" stroke="#C2563A" strokeWidth="2.5" pathLength="100" /></svg></span>
+                {c.old && <span className="strike relative mr-3 inline-block text-graphite/45">{c.old}<svg aria-hidden="true" className="absolute left-0 top-1/2 h-3 w-full -translate-y-1/2 overflow-visible" viewBox="0 0 100 10" preserveAspectRatio="none"><line x1="0" y1="7" x2="100" y2="3" stroke="#C2563A" strokeWidth="2.5" pathLength="100" /></svg></span>}
                 <span className="text-3xl font-extrabold tracking-[-0.03em] text-graphite">{c.now}</span>
               </p>
               <button
@@ -59,7 +68,7 @@ export function Savings() {
         <div className="rounded-[28px] bg-lime-soft p-6 sm:p-8">
           <p className="text-xl font-semibold text-graphite">Налоговый вычет — до 19 500 ₽ в год</p>
           <p className="mt-2 text-[15px] leading-relaxed text-graphite/70">
-            Государство возвращает 13% расходов на лечение. Например, с курса за 20 000 ₽ вернётся 2 600 ₽. Справку для налоговой
+            Государство возвращает 13% расходов на лечение. Например, с курса за 22 500 ₽ вернётся 2 925 ₽. Справку для налоговой
             выдадим по запросу.
           </p>
         </div>

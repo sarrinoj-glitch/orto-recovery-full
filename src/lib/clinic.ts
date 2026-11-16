@@ -101,7 +101,7 @@ export const BODY_AREAS: BodyArea[] = [
     complaints: 'Болит колено на лестнице, щёлкает, отекает после нагрузки, врач сказал «артроз».',
     options: [
       { name: 'PRP-терапия', price: 'до 10 500 ₽' },
-      { name: 'Плазмотерапия', price: '4 000 ₽' },
+      { name: 'Плазмотерапия', price: 'до 4 000 ₽' },
       { name: 'Лечебная физкультура', price: 'от 2 000 ₽' },
       { name: 'Ударно-волновая терапия', price: 'до 3 000 ₽' },
     ],
@@ -116,8 +116,8 @@ export const BODY_AREAS: BodyArea[] = [
     complaints: 'Утром больно наступить на пятку, плоскостопие, быстро устают ноги.',
     options: [
       { name: 'Ударно-волновая терапия', price: 'до 3 000 ₽' },
-      { name: 'Индивидуальные стельки Formthotics', price: '13 500 ₽' },
-      { name: 'Детские стельки Formthotics', price: '9 500 ₽' },
+      { name: 'Индивидуальные стельки Formthotics', price: 'до 13 500 ₽' },
+      { name: 'Детские стельки Formthotics', price: 'до 9 500 ₽' },
     ],
     doctor: 'Хаджалов Абузар Магомедович',
     doctorRole: 'травматолог-ортопед',
@@ -133,7 +133,7 @@ export const EXTRA_AREAS: BodyArea[] = [
     complaints: 'Сутулится, одно плечо выше, плоскостопие, быстро устаёт при ходьбе.',
     options: [
       { name: 'Лечебная гимнастика по методу СИАС', price: 'от 2 000 ₽' },
-      { name: 'Индивидуальные стельки Formthotics, детские', price: '9 500 ₽' },
+      { name: 'Индивидуальные стельки Formthotics, детские', price: 'до 9 500 ₽' },
     ],
     doctor: 'Хаджалов Абузар Магомедович',
     doctorRole: 'травматолог-ортопед',
@@ -184,10 +184,10 @@ export const PRICE_GROUPS: { title: string; items: { name: string; price: string
     title: 'Суставы и стопы',
     items: [
       { name: 'PRP-терапия', price: 'до 10 500 ₽' },
-      { name: 'Плазмотерапия', price: '4 000 ₽' },
-      { name: 'Блокада сустава или позвоночника', price: '3 000 ₽' },
-      { name: 'Индивидуальные стельки Formthotics (взрослые)', price: '13 500 ₽' },
-      { name: 'Индивидуальные стельки Formthotics (детские)', price: '9 500 ₽' },
+      { name: 'Плазмотерапия', price: 'до 4 000 ₽' },
+      { name: 'Блокада сустава или позвоночника', price: 'до 3 000 ₽' },
+      { name: 'Индивидуальные стельки Formthotics (взрослые)', price: 'до 13 500 ₽' },
+      { name: 'Индивидуальные стельки Formthotics (детские)', price: 'до 9 500 ₽' },
     ],
   },
   {

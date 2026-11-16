@@ -203,7 +203,7 @@ export const PHOTOS = [
   { id: 'uvt', image: asset('/photos/c-shoulder.jpg'), title: 'Ударно-волновая терапия', description: 'УВТ — до 3 000 ₽', alt: 'Ударно-волновая терапия плеча' },
   { id: 'uvt-foot', image: asset('/photos/hero-1.jpg'), title: 'Ударно-волновая терапия стопы', description: 'Процедура на аппарате BTL', alt: 'Врач проводит ударно-волновую терапию стопы' },
   { id: 'uvt-foot-2', image: asset('/photos/eq-uvt-foot.jpg'), title: 'Лечение пяточной шпоры', description: 'Ударно-волновая терапия', alt: 'Врач проводит ударно-волновую терапию пятки' },
-  { id: 'magnet', image: asset('/photos/g-magnet.jpg'), title: 'Аппаратная физиотерапия', description: 'Магнит, ультразвук, ток', alt: 'Аппаратная физиотерапия спины' },
+  { id: 'magnet', image: asset('/photos/g-magnet.jpg'), title: 'Аппарат магнита высокой интенсивности', description: 'Процедура на спину', alt: 'Врач проводит процедуру на аппарате магнита высокой интенсивности' },
   { id: 'lfk', image: asset('/photos/g-lfk.jpg'), title: 'Зал лечебной физкультуры', description: 'Занятия со взрослыми и детьми', alt: 'Зал лечебной физкультуры' },
   { id: 'mri', image: asset('/photos/g-mri.jpg'), title: 'Разбор снимков', description: 'МРТ и рентген — на приёме', alt: 'Врачи разбирают снимок МРТ' },
 ]
@@ -212,7 +212,7 @@ export const PHOTOS = [
 export const EQUIPMENT = [
   { id: 'uvt', image: asset('/photos/eq-uvt.jpg'), title: 'Ударно-волновая терапия', text: 'Аппарат Gymna Shockmaster 500', alt: 'Аппарат ударно-волновой терапии Gymna Shockmaster 500', services: ['spina', 'koleno', 'plecho', 'stopa', 'reabilitaciya', 'fizioterapiya'] },
   { id: 'btl', image: asset('/photos/eq-btl.jpg'), title: 'Ударно-волновая терапия', text: 'Аппарат BTL', alt: 'Аппарат ударно-волновой терапии BTL', services: ['spina', 'koleno', 'plecho', 'stopa', 'reabilitaciya', 'fizioterapiya'] },
-  { id: 'press', image: asset('/photos/eq-press.jpg'), title: 'Прессотерапия', text: 'Манжеты на ноги, процедура лёжа', alt: 'Пациент на процедуре прессотерапии', services: ['reabilitaciya', 'lechebnaya-fizkultura', 'fizioterapiya'] },
+  { id: 'press', image: asset('/photos/eq-press.jpg'), title: 'Импульсная магнитотерапия низкой частоты', text: 'Манжеты-индукторы на ноги, процедура лёжа', alt: 'Пациент на процедуре импульсной магнитотерапии низкой частоты', services: ['reabilitaciya', 'lechebnaya-fizkultura', 'fizioterapiya'] },
   { id: 'magnet', image: asset('/photos/eq-magnet.jpg'), title: 'Магнит высокой интенсивности', text: 'Аппарат Doc Basyr с кольцевым излучателем', alt: 'Аппарат высокоинтенсивной магнитотерапии Doc Basyr', services: ['spina', 'koleno', 'plecho', 'reabilitaciya', 'fizioterapiya'] },
   { id: 'biomag', image: asset('/photos/eq-biomag.jpg'), title: 'Импульсная магнитотерапия низкой частоты', text: 'Аппликаторы Biomag — процедура лёжа на кушетке', alt: 'Аппликаторы магнитотерапии Biomag на кушетке', services: ['spina', 'reabilitaciya', 'fizioterapiya'] },
   { id: 'combo', image: asset('/photos/eq-combo.jpg'), title: 'Ультразвуковая терапия и электротерапия', text: 'Комбинированный аппарат Enraf-Nonius', alt: 'Комбинированный аппарат физиотерапии Enraf-Nonius с двумя излучателями', services: ['spina', 'koleno', 'plecho', 'reabilitaciya', 'fizioterapiya'] },

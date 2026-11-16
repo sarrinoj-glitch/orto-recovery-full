@@ -51,13 +51,13 @@ export function TwinPlans() {
   )
 }
 
-// Словарь из 23 методик старого сайта
+// Словарь методик старого сайта (без массажа)
 export function Glossary() {
   const [m, setM] = useState<string | null>(null)
   const cur = METHODS.find((x) => x.name === m)
   return (
     <section className="mx-auto max-w-6xl px-4 pb-6 sm:px-6">
-      <p className="text-lg font-semibold text-graphite">Все 23 методики центра — нажмите, чтобы узнать, что это:</p>
+      <p className="text-lg font-semibold text-graphite">Все 21 методика центра — нажмите, чтобы узнать, что это:</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {METHODS.map((x) => (
           <button key={x.name} type="button" aria-pressed={m === x.name} onClick={() => setM(x.name)}

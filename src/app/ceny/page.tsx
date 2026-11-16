@@ -4,7 +4,7 @@ import { Prices } from '@/components/site/Prices'
 import { Savings } from '@/components/site/Savings'
 import Link from 'next/link'
 
-export const metadata: Metadata = { title: 'Цены', description: 'Цены на приём врачей, физиотерапию, лечебную физкультуру, массаж, PRP и анализы в центре «Орто-Рекавери».' }
+export const metadata: Metadata = { title: 'Цены', description: 'Цены на приём врачей, физиотерапию, лечебную физкультуру, PRP и анализы в центре «Орто-Рекавери».' }
 
 export default function PricesPage() {
   return (

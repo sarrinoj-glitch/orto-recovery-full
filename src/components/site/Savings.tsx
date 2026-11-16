@@ -13,15 +13,6 @@ const COURSES = [
     chat: 'Здравствуйте, хочу курс гимнастики СИАС со скидкой для ребёнка',
     tone: 'bg-lagoon',
   },
-  {
-    title: 'Общий массаж',
-    terms: 'Курс из 5 сеансов',
-    discount: '−10%',
-    old: '17 500 ₽',
-    now: '15 750 ₽',
-    chat: 'Здравствуйте, хочу курс массажа из 5 сеансов',
-    tone: 'bg-coral-soft',
-  },
 ]
 
 export function Savings() {

@@ -31,7 +31,7 @@ export function HomeHero() {
             <h1 className="mt-3 text-[2.6rem] font-extrabold leading-none tracking-[-0.035em] sm:text-[4.2rem]">
               Лечим боль в <FlipWords words={['спине', 'колене', 'плече', 'шее', 'пятке']} className="text-white" /><br /><span className="bg-gradient-to-r from-neon to-lime bg-clip-text text-transparent">без операции</span>
             </h1>
-            <p className="mt-5 max-w-[520px] text-lg leading-relaxed text-white/85">Ортопеды, невролог и реабилитологи. Сначала находим причину, потом составляем план лечения — цену вы знаете до начала.</p>
+            <p className="mt-5 max-w-[520px] text-lg leading-relaxed text-white/85">Травматолог-ортопед, физиотерапия и лечебная физкультура. Сначала находим причину, потом составляем план лечения — цену вы знаете до начала.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Magnetic><button type="button" onClick={() => openLead()} className="shimmer flex h-14 w-full items-center justify-center gap-2.5 rounded-full bg-[radial-gradient(120%_180%_at_50%_50%,#FDFFC7_0%,#F2FF59_45%,#DCEB2E_100%)] px-8 font-bold text-graphite shadow-[0_18px_40px_-16px_rgba(242,255,89,.7)] transition hover:-translate-y-0.5">
                 Записаться на приём <ArrowRight size={20} />
@@ -69,7 +69,7 @@ const CARDS = [
   { href: '/uslugi/plecho/', tag: 'Плечо и кисть', title: 'Плечо и кисть', text: 'После переломов и травм, УВТ, тейпирование.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-left', spot: ['57%', '38%'] },
   { href: '/uslugi/stopa/', tag: 'Стопа', title: 'Стопа и пятка', text: 'Пяточная шпора, плоскостопие, стельки.', price: 'УВТ до 3 000 ₽', img: '/photos/foot.jpg', pos: 'object-[95%_50%]', spot: ['74%', '50%'] },
   { href: '/uslugi/reabilitaciya/', tag: 'Реабилитация', title: 'После травм и операций', text: 'Лечебная физкультура под контролем врача, спортивная реабилитация.', price: 'занятие от 2 000 ₽', img: '/photos/g-lfk.jpg', pos: 'object-center' },
-  { href: '/uslugi/detyam/', tag: 'Детям', title: 'Осанка и стопы у детей', text: 'Лечебная гимнастика по методу СИАС, массаж, стельки.', price: 'занятие от 2 000 ₽', img: '/photos/g-explain.jpg', pos: 'object-[60%_50%]' },
+  { href: '/uslugi/detyam/', tag: 'Детям', title: 'Осанка и стопы у детей', text: 'Лечебная гимнастика по методу СИАС, стельки.', price: 'занятие от 2 000 ₽', img: '/photos/g-explain.jpg', pos: 'object-[60%_50%]' },
 ]
 
 // «От шеи до пяток» (Hinge): карточки с фото и точкой боли, каждая ведёт на страницу услуги
@@ -131,7 +131,7 @@ export function DoctorsTeaser() {
   )
 }
 
-const TOP_PRICES: [string, string][] = [['Травматолог-ортопед', 'до 3 000 ₽'], ['Невролог', 'от 8 000 ₽'], ['Ударно-волновая терапия', 'до 3 000 ₽'], ['PRP-терапия', 'до 10 500 ₽'], ['Лечебная физкультура', 'от 2 000 ₽'], ['Массаж всех видов', 'от 1 600 ₽']]
+const TOP_PRICES: [string, string][] = [['Травматолог-ортопед', 'до 3 000 ₽'], ['Ударно-волновая терапия', 'до 3 000 ₽'], ['PRP-терапия', 'до 10 500 ₽'], ['Лечебная физкультура', 'от 2 000 ₽'], ['Кинезиотейпирование', 'от 1 000 ₽']]
 
 export function PricesTeaser() {
   return (

@@ -5,12 +5,12 @@ import { Founders } from '@/components/site/Trust'
 import { DoctorVideos } from '@/components/site/Videos'
 import Link from 'next/link'
 
-export const metadata: Metadata = { title: 'Врачи', description: 'Травматолог-ортопед, невролог, гастроэнтеролог, инструктор лечебной физкультуры центра «Орто-Рекавери».' }
+export const metadata: Metadata = { title: 'Врачи', description: 'Травматолог-ортопед центра «Орто-Рекавери» в Махачкале.' }
 
 export default function DoctorsPage() {
   return (
     <>
-      <PageHead kicker="Специалисты" title="Врачи центра" lead="Можно записаться к конкретному врачу. Если вам спокойнее со специалистом-женщиной, скажите об этом администратору." />
+      <PageHead kicker="Специалисты" title="Врачи центра" lead="Травматолог-ортопед, кистевой реабилитолог. Записаться можно онлайн, по телефону или в WhatsApp." />
       <main>
         <DoctorsMorph title="Наши специалисты" link={false} />
         <section className="mx-auto max-w-6xl px-4 pb-10 sm:px-6">

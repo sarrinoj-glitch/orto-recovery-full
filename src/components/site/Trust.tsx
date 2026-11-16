@@ -86,7 +86,7 @@ export function Founders({ seminar = true, people: showPeople = true }: { semina
     <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
       {seminar && <div data-reveal className="flex items-center gap-4 rounded-3xl bg-lime p-5 sm:px-7">
         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/60"><GraduationCap size={22} /></span>
-        <p className="text-[15px] leading-relaxed sm:text-base"><b>Центр учит других врачей.</b> Павел Куделя проводит здесь авторские семинары по сухим иглам для специалистов, в центре проходил семинар KinesioCourse по кинезиотейпированию.</p>
+        <p className="text-[15px] leading-relaxed sm:text-base"><b>Центр учит других врачей.</b> Здесь проходят авторские семинары по сухим иглам для специалистов, в центре проходил семинар KinesioCourse по кинезиотейпированию.</p>
       </div>}
       {showPeople && <>
       <h2 className={`${H2} ${seminar ? 'mt-16' : ''}`}>Кто за этим стоит</h2>
@@ -116,7 +116,6 @@ export function Guarantees() {
     ['Доказательная медицина', 'Применяем методы, доказавшие свою эффективность и безопасность.'],
     ['Лицензия Минздрава', 'Зарегистрированное медицинское учреждение с необходимыми лицензиями.'],
     ['Без операций', 'Осторожный подход: только безоперационные методы восстановления.'],
-    ['Консилиум врачей', 'В сложных случаях вас посмотрят несколько специалистов центра, чтобы поставить точный диагноз.'],
     ['Пандус и парковка', 'Первый этаж, вход без ступенек, парковка у входа.'],
     ['Чай и кофе, пока ждёте', 'Бесплатно — чтобы визит к врачу был спокойнее.'],
   ]

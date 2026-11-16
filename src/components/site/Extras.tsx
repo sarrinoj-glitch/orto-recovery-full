@@ -20,7 +20,7 @@ const STATS: { v: number; dec?: number; pre?: string; suffix?: string; label: st
   { v: 121, label: 'оценка пациентов', src: '2ГИС' },
   { v: 4.9, dec: 1, label: 'на Яндекс Картах', src: 'Яндекс' },
   { v: 5, pre: 'более ', suffix: ' лет', label: 'стаж каждого врача', src: 'данные центра' },
-  { v: 23, label: 'методики восстановления', src: 'сайт центра' },
+  { v: 21, label: 'методики восстановления', src: 'сайт центра' },
   { v: 9, label: 'направлений в одном центре', src: 'прайс' },
 ]
 
@@ -160,14 +160,14 @@ export function Manifesto() {
   )
 }
 
-// ===== 23 методики бегущей строкой =====
+// ===== 21 методика бегущей строкой =====
 export function MethodsMarquee() {
   const half = Math.ceil(METHODS.length / 2)
   const chip = (n: string, i: number) => <span key={n} className={`whitespace-nowrap rounded-full px-5 py-3 text-[15px] font-medium ${i % 3 === 0 ? 'bg-lime text-graphite' : i % 3 === 1 ? 'bg-lagoon text-deep' : 'bg-white text-deep ring-1 ring-graphite/10'}`}>{n}</span>
   return (
     <section className="py-14">
       <div className="mx-auto mb-6 flex max-w-6xl flex-wrap items-end justify-between gap-3 px-4 sm:px-6">
-        <h2 className="text-2xl font-extrabold tracking-[-0.02em] text-graphite sm:text-3xl">23 методики восстановления в одном центре</h2>
+        <h2 className="text-2xl font-extrabold tracking-[-0.02em] text-graphite sm:text-3xl">21 методика восстановления в одном центре</h2>
         <Link href="/uslugi/fizioterapiya/" className="flex items-center gap-2 font-semibold text-teal">Что это за методики <ArrowRight size={18} /></Link>
       </div>
       <div className="space-y-3">
@@ -181,9 +181,6 @@ export function MethodsMarquee() {
 // ===== Врачи: карточка раскрывается в окно с биографией (Morphing Dialog) =====
 // Биографии — из медиатеки старого сайта (выгрузка WordPress, 25.10.2026); у кого её нет, показываем, что лечит
 const BIO: Record<string, string[]> = {
-  'Нажмудинова Айшат Абдурахмановна': ['Первый МГМУ им. Сеченова, лечебное дело (2013)', 'Специализация по гастроэнтерологии — МГМСУ им. Евдокимова (2019)', 'Повышение квалификации по гастроэнтерологии и гепатологии — РНИМУ им. Пирогова (2023–2024)'],
-  'Мусаева Эльмира Ашурбеговна': ['Лечебная гимнастика по методике SEAS (СИАС)', 'Ашхабадское медицинское училище (1994)', 'Северо-Кавказский государственный институт (2012)'],
-  'Куделя Павел Александрович': ['Проводит авторские семинары по сухим иглам для специалистов'],
 }
 const TONES = ['bg-teal text-white', 'bg-lime text-graphite', 'bg-deep text-white', 'bg-coral-soft text-graphite', 'bg-lagoon-deep text-graphite', 'bg-teal-soft text-teal-dark']
 const initials = (n: string) => n.split(' ').slice(0, 2).map((w) => w[0]).join('')
@@ -281,8 +278,8 @@ export function OrbitCta() {
         <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[540px] w-[540px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 sm:block" />
         <div aria-hidden className="absolute left-1/2 top-1/2 hidden h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 lg:block" />
         <div aria-hidden className="pointer-events-none absolute inset-0">
-          {ring('orbit-spin hidden sm:block', 270, [0, 2, 4])}
-          {ring('orbit-spin-2 hidden lg:block', 350, [1, 3, 5])}
+          {ring('orbit-spin hidden sm:block', 270, DOCTORS.map((_, i) => i).filter((i) => i % 2 === 0))}
+          {ring('orbit-spin-2 hidden lg:block', 350, DOCTORS.map((_, i) => i).filter((i) => i % 2 === 1))}
         </div>
         <div className="relative z-10 max-w-md">
           <div className="mb-6 flex justify-center -space-x-3 sm:hidden">{DOCTORS.map((d, i) => <Avatar key={d.name} d={d} i={i} className="h-12 w-12 rounded-full border-[3px] border-deep text-sm" />)}</div>

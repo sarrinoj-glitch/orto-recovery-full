@@ -1,10 +1,10 @@
-import { Baby, Dumbbell, HeartHandshake, Accessibility } from 'lucide-react'
+import { Baby, Dumbbell, Accessibility } from 'lucide-react'
 
 const GROUPS = [
   {
     icon: Baby,
     title: 'Детям',
-    text: 'Массаж с первых месяцев жизни, лечебная гимнастика при сколиозе по методу СИАС, детские стельки.',
+    text: 'Лечебная гимнастика при сколиозе по методу СИАС, детские стельки, консультация ортопеда.',
     tone: 'bg-coral-soft',
     iconTone: 'bg-coral text-white',
   },
@@ -14,13 +14,6 @@ const GROUPS = [
     text: 'Восстановление после травм связок и мениска, ударно-волновая терапия, тейпирование, программа возвращения к тренировкам.',
     tone: 'bg-lagoon',
     iconTone: 'bg-teal text-white',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Женщинам',
-    text: 'По вашему желанию подберём специалиста-женщину — на массаж, лечебную физкультуру или приём.',
-    tone: 'bg-lime-soft',
-    iconTone: 'bg-lime text-graphite',
   },
   {
     icon: Accessibility,

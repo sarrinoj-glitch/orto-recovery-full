@@ -122,6 +122,15 @@ export function ReviewsHub() {
             <p className="text-[15px] leading-relaxed text-graphite/70">Отзывы и оценки с карточки центра на Яндекс Картах.</p>
             <ConsentFrame src={CLINIC.reviewsWidget} title="Отзывы о центре на Яндекс Картах" label="Виджет отзывов Яндекс Карт" action="Показать отзывы Яндекса" className="min-h-[200px] w-full rounded-2xl bg-ward [&:is(iframe)]:h-[620px]" />
           </div>
+          <div className="flex flex-col gap-4 rounded-[28px] bg-white p-6 shadow-lift sm:flex-row sm:items-center sm:justify-between sm:p-7 lg:col-span-2">
+            <div>
+              <h2 className="text-2xl font-extrabold tracking-[-0.02em] text-deep">2ГИС</h2>
+              <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-graphite/70">Оценка центра — {CLINIC.rating2gis.value} по {CLINIC.rating2gis.count} оценке пациентов. Отзывы можно прочитать на карточке центра в 2ГИС.</p>
+            </div>
+            <a href={CLINIC.rating2gis.url} target="_blank" rel="noreferrer" className="flex h-12 shrink-0 items-center justify-center gap-2 self-start rounded-full bg-deep px-6 text-[15px] font-semibold text-white transition hover:bg-graphite sm:self-auto">
+              Читать отзывы в 2ГИС <ArrowUpRight size={18} />
+            </a>
+          </div>
         </div>
       </section>
 

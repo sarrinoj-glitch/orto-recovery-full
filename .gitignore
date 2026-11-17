@@ -11,3 +11,5 @@ skill-ref/
 ASSISTANT_PERSONA.md
 DEMO_RUNBOOK.md
 deno.lock
+# генерируется из content/blog при сборке
+src/lib/blog.ts

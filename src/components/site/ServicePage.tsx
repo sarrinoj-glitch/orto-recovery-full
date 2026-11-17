@@ -10,6 +10,8 @@ import { openLead } from '@/components/LeadForm'
 import { Conditions, SecondOpinion, AfterCourse } from '@/components/site/Conditions'
 import { TwinPlans, Glossary, PrpSteps, Whole, Sport } from '@/components/site/Treatment'
 import { Procedures } from '@/components/site/Procedures'
+import { BLOG_POSTS } from '@/lib/blog'
+import { BlogCards } from '@/components/site/BlogClient'
 import { Equipment } from '@/components/site/Equipment'
 import { HomeVisit } from '@/components/site/HomeVisit'
 import { ForFamily } from '@/components/site/ForFamily'
@@ -83,6 +85,15 @@ export function ServicePage({ slug }: { slug: string }) {
         {s.conditions.length > 0 && <Conditions ids={s.conditions} title="С чем к нам приходят" />}
         {s.extras.map((e) => <div key={e}>{EXTRAS[e]()}</div>)}
         <Equipment service={slug} />
+        {(() => {
+          const posts = BLOG_POSTS.filter((p) => p.service === slug).slice(0, 3)
+          return posts.length > 0 && (
+            <section className="mx-auto max-w-6xl px-4 pt-16 sm:px-6">
+              <h2 className="mb-6 text-[1.9rem] font-extrabold tracking-[-0.03em] text-graphite">Статьи по теме</h2>
+              <BlogCards posts={posts} />
+            </section>
+          )
+        })()}
         <OrbitCta />
 
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

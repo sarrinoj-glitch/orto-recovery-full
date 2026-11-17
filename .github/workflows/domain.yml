@@ -1,5 +1,6 @@
 # Сборка для домена клиники ortorecovery.ru (корень сайта, индексация включена).
-# Результат — артефакт ortorecovery-ru: его содержимое загружается на хостинг REG.RU в папку сайта.
+# Результат — артефакт ortorecovery-ru. Если в настройках репозитория заданы секреты FTP_SERVER, FTP_USERNAME, FTP_PASSWORD —
+# сайт сам выкладывается на хостинг REG.RU (только изменённые файлы). Так публикуются и статьи из бота врачей.
 name: Build for ortorecovery.ru
 on:
   push:
@@ -7,9 +8,15 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+# Выкладки на хостинг идут строго по очереди
+concurrency:
+  group: ortorecovery-ru
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HAS_FTP: ${{ secrets.FTP_SERVER != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -19,6 +26,10 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
+      - name: PHP-часть (бот, заявки) — проверка синтаксиса и тесты
+        run: |
+          for f in $(find server -name '*.php'); do php -l "$f"; done
+          php server/tests/run.php
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
         env:
@@ -26,9 +37,22 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: ''
           NEXT_PUBLIC_INDEX: '1'
           NEXT_PUBLIC_SITE_URL: https://ortorecovery.ru
+          NEXT_PUBLIC_LEAD_API: /api/lead.php
+      - name: PHP-часть — в сборку
+        run: cp -R server/api server/bot server/inc out/
       - uses: actions/upload-artifact@v4
         with:
           name: ortorecovery-ru
           path: out
           include-hidden-files: true
           retention-days: 30
+      - name: Выложить на хостинг REG.RU (FTP)
+        if: env.HAS_FTP == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          server-dir: ${{ vars.FTP_DIR || 'www/ortorecovery.ru/' }}
+          local-dir: out/

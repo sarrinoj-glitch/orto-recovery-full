@@ -9,6 +9,9 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
+# PHP-часть (бот для статей, заявки): служебные файлы напрямую не открываются
+RewriteRule ^inc/ - [F,L]
+
 # Старые адреса WordPress → новые страницы (сохраняем позиции в поиске)
 RewriteRule ^prp-terapiya-sustavov-v-mahachkale-czentr-orto-rekaveri/?$ /uslugi/prp/ [L,R=301]
 RewriteRule ^konsultacziya-ortopeda-travmatologa-v-mahachkale/?$ /uslugi/koleno/ [L,R=301]

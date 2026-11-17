@@ -7,7 +7,7 @@ import { CLINIC } from '@/lib/clinic'
 import { PdConsent } from '@/components/site/Consent'
 
 // Заявка на приём: открывается любой CTA-кнопкой сайта.
-// Заявка уходит на orto-lead-api (Vercel) → WhatsApp администратора через API.
+// Заявка уходит на обработчик (REG.RU: /api/lead.php, демо: orto-lead-api на Vercel) → администратору в Telegram/WhatsApp.
 // Если сервер недоступен или не настроен — показываем кнопку «Отправить через WhatsApp» с готовым текстом.
 export function openLead(context?: string) {
   window.dispatchEvent(new CustomEvent('open-lead', { detail: { context } }))
@@ -15,7 +15,8 @@ export function openLead(context?: string) {
 
 const WHEN = ['До двух недель', 'От месяца до полугода', 'Больше полугода']
 const WHY = ['Да, травма', 'Да, операция', 'Нет']
-const LEAD_API = 'https://orto-lead-api.vercel.app/api/lead'
+// На домене ortorecovery.ru — свой обработчик на хостинге REG.RU (server/api/lead.php), на демо-адресах — Vercel
+const LEAD_API = process.env.NEXT_PUBLIC_LEAD_API || 'https://orto-lead-api.vercel.app/api/lead'
 
 // «Здравствуйте, болит колено» → «Болит колено» — подсказка для поля «Что беспокоит?»
 const fromContext = (t?: string) => {

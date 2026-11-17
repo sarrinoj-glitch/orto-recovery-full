@@ -21,15 +21,17 @@ return [
         // 987654321,
     ],
 
-    // --- Заявки с сайта (форма «Записаться») ---
+    // --- Заявки с сайта (форма «Записаться») → WhatsApp администратора ---
     'lead' => [
-        'email' => '',            // почта клиники — бесплатно
+        // Green API (console.green-api.com): инстанс, к которому по QR-коду привязан ОТДЕЛЬНЫЙ номер-отправитель
+        // (не основной номер клиники). Тариф «Разработчик» бесплатный, до 3 чатов — заявки идут в один чат.
+        'green_id' => '',         // idInstance
+        'green_token' => '',      // apiTokenInstance
+        'green_url' => 'https://api.green-api.com', // apiUrl из личного кабинета Green API
+        'whatsapp_to' => '79883011805', // куда приходят заявки: WhatsApp центра
+        // Запасные каналы, по желанию
+        'email' => '',            // почта клиники
         'email_from' => '',       // например: ortorecovery.ru <noreply@ortorecovery.ru>
-        'telegram_chats' => [],   // Telegram ID администраторов (они должны написать боту /start) — бесплатно
-        // WhatsApp через Green API — по желанию, платно
-        'green_id' => '',
-        'green_token' => '',
-        'green_url' => 'https://api.green-api.com',
-        'whatsapp_to' => '',      // 79XXXXXXXXX
+        'telegram_chats' => [],   // Telegram ID администраторов (должны написать боту /start)
     ],
 ];

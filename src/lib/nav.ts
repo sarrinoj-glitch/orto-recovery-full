@@ -1,7 +1,7 @@
 // Структура сайта: верхнее меню как на старом ortorecovery.ru + страницы услуг.
 // Цены — данные клиники от 07.11.2026, описания — старый сайт (выгрузка WordPress, 25.10.2026).
 
-export type Extra = 'second' | 'hand' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
+export type Extra = 'second' | 'hand' | 'results' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
 
 export type Service = {
   slug: string
@@ -153,8 +153,8 @@ export const SERVICES: Service[] = [
     kicker: 'Травматолог-ортопед',
     title: 'Осанка, стопы и занятия для детей',
     lead: 'Лечебная гимнастика при сколиозе по методу СИАС и индивидуальные стельки для детей.',
-    photo: '/photos/g-explain.jpg',
-    photoAlt: 'Врач центра объясняет на доске',
+    photo: '/photos/g-lfk.jpg',
+    photoAlt: 'Зал лечебной физкультуры, где проходят занятия для детей',
     doctors: ['Хаджалов Абузар Магомедович'],
     prices: [['Лечебная гимнастика по методу СИАС', 'от 2 000 ₽'], ['Индивидуальные стельки Formthotics, детские', 'до 9 500 ₽']],
     conditions: ['kids'],

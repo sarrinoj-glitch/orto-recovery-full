@@ -200,11 +200,16 @@ export const PRICE_GROUPS: { title: string; items: { name: string; price: string
 // Экскурсия по центру: фотосессия 2024 из медиатеки старого сайта + ресепшен
 export const PHOTOS = [
   { id: 'reception', image: asset('/photos/reception.jpg'), title: 'Ресепшен', description: 'Здесь вас встретит администратор', alt: 'Стойка администратора с логотипом центра' },
+  { id: 'scoliosis', image: asset('/photos/tour-scoliosis.jpg'), video: asset('/video/tour-scoliosis.mp4'), title: 'Реабилитация при сколиозе', description: 'Видео — нажмите, чтобы смотреть со звуком', alt: 'Видео: специалист центра рассказывает о реабилитации при сколиозе' },
+  { id: 'hand', image: asset('/photos/hand-1.jpg'), title: 'Разработка кисти', description: 'Занятие ведёт ортопед Хаджалов А. М.', alt: 'Травматолог-ортопед Хаджалов проводит занятие по разработке кисти' },
   { id: 'uvt', image: asset('/photos/c-shoulder.jpg'), title: 'Ударно-волновая терапия', description: 'УВТ — до 3 000 ₽', alt: 'Ударно-волновая терапия плеча' },
   { id: 'uvt-foot', image: asset('/photos/hero-1.jpg'), title: 'Ударно-волновая терапия стопы', description: 'Процедура на аппарате BTL', alt: 'Врач проводит ударно-волновую терапию стопы' },
   { id: 'uvt-foot-2', image: asset('/photos/eq-uvt-foot.jpg'), title: 'Лечение пяточной шпоры', description: 'Ударно-волновая терапия', alt: 'Врач проводит ударно-волновую терапию пятки' },
   { id: 'magnet', image: asset('/photos/g-magnet.jpg'), title: 'Аппарат магнита высокой интенсивности', description: 'Процедура на спину', alt: 'Врач проводит процедуру на аппарате магнита высокой интенсивности' },
-  { id: 'lfk', image: asset('/photos/g-lfk.jpg'), title: 'Зал лечебной физкультуры', description: 'Занятия со взрослыми и детьми', alt: 'Зал лечебной физкультуры' },
+  { id: 'lfk', image: asset('/photos/g-lfk.jpg'), title: 'Зал лечебной физкультуры', description: 'Занятия со взрослыми и детьми', alt: 'Зал лечебной физкультуры: шведская стенка, тренажёр, мячи, кушетки' },
+  { id: 'hand-band', image: asset('/photos/hand-3.jpg'), title: 'Разгибание пальцев с резинкой', description: 'Разработка кисти — 3 000 ₽', alt: 'Пациент разгибает пальцы, преодолевая сопротивление резинки' },
+  { id: 'hand-show', image: asset('/photos/hand-2.jpg'), title: 'Врач показывает упражнение', description: 'И следит за техникой', alt: 'Хаджалов показывает пациенту упражнение для кисти' },
+  { id: 'hand-board', image: asset('/photos/hand-4.jpg'), title: 'Доска со стойками', description: 'Захват цилиндров разной толщины', alt: 'Упражнение для кисти на доске со стойками' },
 ]
 
 // Оборудование центра: фото кабинетов 2026 (orto-recovery/оборудование). services — на каких страницах услуг показывать

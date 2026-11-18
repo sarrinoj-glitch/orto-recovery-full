@@ -16,6 +16,8 @@ export interface HoverExpandItem {
   id: string;
   image?: string;
   title: string;
+  /** Видео: в развёрнутой карточке играет без звука, повторное нажатие — на весь экран со звуком */
+  video?: string;
 }
 
 export interface HoverExpandProps {
@@ -49,6 +51,7 @@ const HoverExpand = ({
   const activeIndex = isControlled ? activeIndexProp : internalActive;
   const [isHoverDevice, setIsHoverDevice] = useState(false);
   const panelRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const isHorizontal = orientation === "horizontal";
 
   useEffect(() => {
@@ -62,6 +65,27 @@ const HoverExpand = ({
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
+
+  // видео играет только в развёрнутой карточке
+  useEffect(() => {
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === activeIndex && !shouldReduceMotion) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, [activeIndex, shouldReduceMotion]);
+
+  // со звуком на весь экран; после выхода снова без звука
+  const openVideo = (index: number) => {
+    const v = videoRefs.current[index] as (HTMLVideoElement & { webkitEnterFullscreen?: () => void }) | null;
+    if (!v) return;
+    v.muted = false;
+    v.currentTime = 0;
+    v.play().catch(() => {});
+    const back = () => { if (!document.fullscreenElement) { v.muted = true; document.removeEventListener("fullscreenchange", back); } };
+    if (v.requestFullscreen) { v.requestFullscreen().then(() => document.addEventListener("fullscreenchange", back)).catch(() => {}); }
+    else if (v.webkitEnterFullscreen) { v.addEventListener("webkitendfullscreen", () => { v.muted = true; }, { once: true }); v.webkitEnterFullscreen(); }
+  };
 
   const setActive = (index: number) => {
     if (!isControlled) {
@@ -106,7 +130,9 @@ const HoverExpand = ({
             initial={false}
             key={item.id}
             onClick={() => {
-              if (!isHoverDevice) {
+              if (item.video && isActive) {
+                openVideo(index);
+              } else if (!isHoverDevice) {
                 setActive(index);
               }
             }}
@@ -124,7 +150,26 @@ const HoverExpand = ({
             transition={shouldReduceMotion ? { duration: 0 } : { bounce: 0.1, duration: 0.25, type: "spring" }}
             type="button"
           >
-            {item.image ? (
+            {item.video ? (
+              <>
+                <video
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  loop
+                  muted
+                  playsInline
+                  poster={item.image}
+                  preload="none"
+                  ref={(el) => {
+                    videoRefs.current[index] = el;
+                  }}
+                  src={item.video}
+                />
+                <span aria-hidden="true" className="absolute left-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-deep shadow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z" /></svg>
+                </span>
+              </>
+            ) : item.image ? (
               <img
                 alt={item.alt ?? item.title}
                 className="absolute inset-0 h-full w-full object-cover"

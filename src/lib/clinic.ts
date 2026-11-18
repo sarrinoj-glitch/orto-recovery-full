@@ -205,7 +205,6 @@ export const PHOTOS = [
   { id: 'uvt-foot-2', image: asset('/photos/eq-uvt-foot.jpg'), title: 'Лечение пяточной шпоры', description: 'Ударно-волновая терапия', alt: 'Врач проводит ударно-волновую терапию пятки' },
   { id: 'magnet', image: asset('/photos/g-magnet.jpg'), title: 'Аппарат магнита высокой интенсивности', description: 'Процедура на спину', alt: 'Врач проводит процедуру на аппарате магнита высокой интенсивности' },
   { id: 'lfk', image: asset('/photos/g-lfk.jpg'), title: 'Зал лечебной физкультуры', description: 'Занятия со взрослыми и детьми', alt: 'Зал лечебной физкультуры' },
-  { id: 'mri', image: asset('/photos/g-mri.jpg'), title: 'Разбор снимков', description: 'МРТ и рентген — на приёме', alt: 'Врачи разбирают снимок МРТ' },
 ]
 
 // Оборудование центра: фото кабинетов 2026 (orto-recovery/оборудование). services — на каких страницах услуг показывать

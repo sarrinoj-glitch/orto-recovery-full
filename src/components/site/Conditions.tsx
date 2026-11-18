@@ -47,7 +47,7 @@ export function SecondOpinion() {
   return (
     <section id="second" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
       <div data-reveal className="grid overflow-hidden rounded-[36px] bg-coral-soft lg:grid-cols-2">
-        <img src={asset('/photos/g-mri.jpg')} alt="Врач центра разбирает снимок МРТ" className="h-64 w-full object-cover object-[40%_40%] lg:h-full lg:min-h-[420px]" />
+        <img src={asset('/photos/hero-1.jpg')} alt="Травматолог-ортопед Хаджалов на приёме" className="h-64 w-full object-cover object-[75%_35%] lg:h-full lg:min-h-[420px]" />
         <div className="flex flex-col justify-center p-7 sm:p-12">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C2563A]">Второе мнение</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-[#4a1f12] sm:text-[2.6rem]">Вам предложили операцию? Сначала покажитесь нам</h2>

@@ -62,6 +62,46 @@ export function SecondOpinion() {
   )
 }
 
+// Разработка кисти: фото занятия с Хаджаловым (страница «Плечо, локоть и кисть»)
+const HAND_SHOTS = [
+  { src: '/photos/hand-2.jpg', alt: 'Хаджалов показывает пациенту упражнение для кисти на перфорированной доске', cap: 'Врач показывает упражнение' },
+  { src: '/photos/hand-3.jpg', alt: 'Пациент разгибает пальцы, преодолевая сопротивление резинки', cap: 'Разгибание пальцев с резинкой' },
+  { src: '/photos/hand-4.jpg', alt: 'Упражнение для кисти: пальцы между стойками доски, резинка натянута', cap: 'Упражнения на доске со стойками' },
+]
+
+export function HandRehab() {
+  return (
+    <section id="hand" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div className="grid gap-3 lg:grid-cols-12">
+        <div data-reveal className="flex flex-col justify-center rounded-[36px] bg-lagoon p-7 sm:p-10 lg:col-span-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">Кистевая реабилитация</p>
+          <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-deep sm:text-[2.4rem]">Разработка кисти после перелома и операции</h2>
+          <p className="mt-4 text-lg leading-relaxed text-graphite/70">После травмы пальцы долго остаются слабыми и плохо слушаются. Занятие ведёт сам ортопед — кистевой реабилитолог: показывает упражнения, следит за техникой и меняет задания по ходу восстановления.</p>
+          <ul className="mt-5 space-y-2 text-deep">
+            {['Захват цилиндров разной толщины', 'Разгибание пальцев с сопротивлением резинки', 'Занятие ведёт врач, а не инструктор'].map((t) => <li key={t} className="flex gap-3"><Check className="mt-0.5 shrink-0 text-teal" size={20} />{t}</li>)}
+          </ul>
+          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <button type="button" onClick={() => openLead('Здравствуйте, нужна разработка кисти после травмы или операции')} className="h-14 rounded-full bg-deep px-7 font-semibold text-white transition hover:-translate-y-0.5">Записаться на занятие</button>
+            <span className="text-graphite/70">Занятие — <b className="text-deep">3 000 ₽</b></span>
+          </div>
+        </div>
+        <figure data-reveal className="relative overflow-hidden rounded-[36px] lg:col-span-7">
+          <img src={asset('/photos/hand-1.jpg')} alt="Травматолог-ортопед Хаджалов проводит занятие по разработке кисти" className="aspect-[16/10] h-full w-full object-cover object-[60%_50%] lg:aspect-auto lg:min-h-[460px]" />
+          <figcaption className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-deep backdrop-blur">Хаджалов Абузар Магомедович, кистевой реабилитолог</figcaption>
+        </figure>
+        <div data-stagger className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:col-span-12">
+          {HAND_SHOTS.map((p) => (
+            <figure key={p.src} className="relative w-[82%] shrink-0 snap-start overflow-hidden rounded-[28px] sm:w-auto">
+              <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-500 hover:scale-[1.03]" />
+              <figcaption className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3.5 py-1.5 text-[13px] font-semibold text-deep backdrop-blur">{p.cap}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export function AfterCourse() {
   const tones = ['bg-lagoon', 'bg-lime', 'bg-coral-soft', 'bg-lime-soft', 'bg-white ring-1 ring-graphite/10', 'bg-teal-soft']
   return (

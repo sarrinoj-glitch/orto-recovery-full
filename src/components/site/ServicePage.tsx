@@ -7,7 +7,7 @@ import { DOCTORS, doctorCta } from '@/lib/clinic'
 import { SERVICES, type Extra } from '@/lib/nav'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
-import { Conditions, SecondOpinion, AfterCourse } from '@/components/site/Conditions'
+import { Conditions, SecondOpinion, HandRehab, AfterCourse } from '@/components/site/Conditions'
 import { TwinPlans, Glossary, PrpSteps, Whole, Sport } from '@/components/site/Treatment'
 import { Procedures } from '@/components/site/Procedures'
 import { BLOG_POSTS } from '@/lib/blog'
@@ -19,6 +19,7 @@ import { OrbitCta } from '@/components/site/Extras'
 
 const EXTRAS: Record<Extra, () => ReactNode> = {
   second: () => <SecondOpinion />,
+  hand: () => <HandRehab />,
   twin: () => <TwinPlans />,
   glossary: () => <Glossary />,
   procedures: () => <Procedures />,

@@ -1,7 +1,7 @@
 // Структура сайта: верхнее меню как на старом ortorecovery.ru + страницы услуг.
 // Цены — данные клиники от 07.11.2026, описания — старый сайт (выгрузка WordPress, 25.10.2026).
 
-export type Extra = 'second' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
+export type Extra = 'second' | 'hand' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
 
 export type Service = {
   slug: string
@@ -66,7 +66,7 @@ export const SERVICES: Service[] = [
     doctors: ['Хаджалов Абузар Магомедович'],
     prices: [['Консультация травматолога-ортопеда', 'до 3 000 ₽'], ['Разработка кисти после операции', '3 000 ₽'], ['Ударно-волновая терапия', 'до 3 000 ₽'], ['Магнит высокой интенсивности + лазер', 'до 2 000 ₽'], ['Кинезиотейпирование', 'от 1 000 ₽']],
     conditions: ['shoulder'],
-    extras: ['second', 'procedures'],
+    extras: ['second', 'hand', 'procedures'],
     chat: 'Здравствуйте, болит плечо',
   },
   {

@@ -200,7 +200,6 @@ export const PRICE_GROUPS: { title: string; items: { name: string; price: string
 // Экскурсия по центру: фотосессия 2024 из медиатеки старого сайта + ресепшен
 export const PHOTOS = [
   { id: 'reception', image: asset('/photos/reception.jpg'), title: 'Ресепшен', description: 'Здесь вас встретит администратор', alt: 'Стойка администратора с логотипом центра' },
-  { id: 'scoliosis', image: asset('/photos/tour-scoliosis.jpg'), video: asset('/video/tour-scoliosis.mp4'), title: 'Реабилитация при сколиозе', description: 'Видео — нажмите, чтобы смотреть со звуком', alt: 'Видео: специалист центра рассказывает о реабилитации при сколиозе' },
   { id: 'hand', image: asset('/photos/hand-1.jpg'), title: 'Разработка кисти', description: 'Занятие ведёт ортопед Хаджалов А. М.', alt: 'Травматолог-ортопед Хаджалов проводит занятие по разработке кисти' },
   { id: 'uvt', image: asset('/photos/c-shoulder.jpg'), title: 'Ударно-волновая терапия', description: 'УВТ — до 3 000 ₽', alt: 'Ударно-волновая терапия плеча' },
   { id: 'uvt-foot', image: asset('/photos/hero-1.jpg'), title: 'Ударно-волновая терапия стопы', description: 'Процедура на аппарате BTL', alt: 'Врач проводит ударно-волновую терапию стопы' },

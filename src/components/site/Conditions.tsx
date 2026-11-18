@@ -87,9 +87,9 @@ export function HandRehab() {
         </div>
         <figure data-reveal className="relative overflow-hidden rounded-[36px] lg:col-span-7">
           <img src={asset('/photos/hand-1.jpg')} alt="Травматолог-ортопед Хаджалов проводит занятие по разработке кисти" className="aspect-[16/10] h-full w-full object-cover object-[60%_50%] lg:aspect-auto lg:min-h-[460px]" />
-          <figcaption className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-deep backdrop-blur">Хаджалов Абузар Магомедович, кистевой реабилитолог</figcaption>
+          <figcaption className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3.5 py-1.5 text-[13px] font-semibold text-deep backdrop-blur sm:bottom-4 sm:left-4 sm:px-4 sm:py-2 sm:text-sm"><span className="sm:hidden">Хаджалов А. М., кистевой реабилитолог</span><span className="hidden sm:inline">Хаджалов Абузар Магомедович, кистевой реабилитолог</span></figcaption>
         </figure>
-        <div data-stagger className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:col-span-12">
+        <div data-stagger className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:col-span-12">
           {HAND_SHOTS.map((p) => (
             <figure key={p.src} className="relative w-[82%] shrink-0 snap-start overflow-hidden rounded-[28px] sm:w-auto">
               <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-500 hover:scale-[1.03]" />

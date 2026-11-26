@@ -1,7 +1,7 @@
 // Структура сайта: верхнее меню как на старом ortorecovery.ru + страницы услуг.
 // Цены — данные клиники от 07.11.2026, описания — старый сайт (выгрузка WordPress, 25.10.2026).
 
-export type Extra = 'second' | 'hand' | 'results' | 'sias' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
+export type Extra = 'second' | 'hand' | 'results' | 'rphotos' | 'sias' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
 
 export type Service = {
   slug: string
@@ -91,12 +91,12 @@ export const SERVICES: Service[] = [
     kicker: 'Реабилитолог, лечебная физкультура',
     title: 'Восстановление после травм и операций',
     lead: 'Лечебная физкультура под контролем врача: нагрузка растёт постепенно, а дома вы занимаетесь по плану, который мы составим.',
-    photo: '/photos/g-lfk.jpg',
-    photoAlt: 'Зал лечебной физкультуры центра',
+    photo: '/photos/rehab-knee.jpg',
+    photoAlt: 'Реабилитолог разрабатывает колено пациента на кушетке',
     doctors: ['Хаджалов Абузар Магомедович'],
     prices: [['Лечебная физкультура', 'от 2 000 ₽'], ['Реабилитолог', 'от 2 500 ₽'], ['Выезд врача на дом', '4 000 ₽'], ['Разработка кисти после операции', '3 000 ₽'], ['Кинезиотейпирование', 'от 1 000 ₽']],
     conditions: ['lfk', 'knee', 'shoulder'],
-    extras: ['after', 'sport', 'home'],
+    extras: ['rphotos', 'after', 'sport', 'home'],
     chat: 'Здравствуйте, нужна реабилитация после травмы',
   },
   {

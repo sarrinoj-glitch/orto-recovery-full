@@ -1,7 +1,7 @@
 // Структура сайта: верхнее меню как на старом ortorecovery.ru + страницы услуг.
 // Цены — данные клиники от 07.11.2026, описания — старый сайт (выгрузка WordPress, 25.10.2026).
 
-export type Extra = 'second' | 'hand' | 'results' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
+export type Extra = 'second' | 'hand' | 'results' | 'sias' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
 
 export type Service = {
   slug: string
@@ -158,7 +158,7 @@ export const SERVICES: Service[] = [
     doctors: ['Хаджалов Абузар Магомедович'],
     prices: [['Лечебная гимнастика по методу СИАС', 'от 2 000 ₽'], ['Индивидуальные стельки Formthotics, детские', 'до 9 500 ₽']],
     conditions: ['kids'],
-    extras: ['results', 'insoles', 'family'],
+    extras: ['sias', 'results', 'insoles', 'family'],
     chat: 'Здравствуйте, у ребёнка сколиоз, хочу на лечебную физкультуру',
   },
 ]

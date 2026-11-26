@@ -12,7 +12,7 @@ export function Gallery() {
       </div>
       <div className="mt-6">
         <HoverExpand items={PHOTOS} orientation="horizontal" showLabelsWhenCollapsed={false} className="hidden h-[440px] md:flex" />
-        <HoverExpand items={PHOTOS} orientation="vertical" showLabelsWhenCollapsed={false} className="h-[760px] md:hidden" />
+        <HoverExpand items={PHOTOS} orientation="vertical" showLabelsWhenCollapsed={false} className="h-[960px] md:hidden" />
       </div>
     </section>
   )

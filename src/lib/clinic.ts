@@ -209,6 +209,11 @@ export const PHOTOS = [
   { id: 'hand-band', image: asset('/photos/hand-3.jpg'), title: 'Разгибание пальцев с резинкой', description: 'Разработка кисти — 3 000 ₽', alt: 'Пациент разгибает пальцы, преодолевая сопротивление резинки' },
   { id: 'hand-show', image: asset('/photos/hand-2.jpg'), title: 'Врач показывает упражнение', description: 'И следит за техникой', alt: 'Хаджалов показывает пациенту упражнение для кисти' },
   { id: 'hand-board', image: asset('/photos/hand-4.jpg'), title: 'Доска со стойками', description: 'Захват цилиндров разной толщины', alt: 'Упражнение для кисти на доске со стойками' },
+  { id: 'knee', image: asset('/photos/rehab-knee.jpg'), title: 'Разработка колена', description: 'Специалист проверяет подвижность сустава', alt: 'Специалист центра разрабатывает колено пациента на кушетке' },
+  { id: 'bench', image: asset('/photos/sias.jpg'), title: 'Упражнения с лентой', description: 'Специалист следит за положением спины', alt: 'Пациент выполняет упражнение на скамье с лентой, специалист контролирует положение спины' },
+  { id: 'ems-leg', image: asset('/photos/rehab-ems.jpg'), title: 'Электромиостимуляция', description: 'Электроды на мышцах бедра', alt: 'Электроды миостимулятора на мышцах бедра пациента' },
+  { id: 'biomag-knee', image: asset('/photos/rehab-biomag.jpg'), title: 'Магнитотерапия Biomag', description: 'Процедура лёжа, индуктор на колене', alt: 'Пациент на процедуре магнитотерапии, индуктор на колене' },
+  { id: 'tes', image: asset('/photos/rehab-head.jpg'), title: 'Транскраниальная электростимуляция', description: 'Электроды закреплены на голове', alt: 'Пациент на процедуре транскраниальной электростимуляции' },
 ]
 
 // Оборудование центра: фото кабинетов 2026 (orto-recovery/оборудование). services — на каких страницах услуг показывать
@@ -220,5 +225,6 @@ export const EQUIPMENT = [
   { id: 'biomag', image: asset('/photos/eq-biomag.jpg'), title: 'Импульсная магнитотерапия низкой частоты', text: 'Аппликаторы Biomag — процедура лёжа на кушетке', alt: 'Аппликаторы магнитотерапии Biomag на кушетке', services: ['spina', 'reabilitaciya', 'fizioterapiya'] },
   { id: 'combo', image: asset('/photos/eq-combo.jpg'), title: 'Ультразвуковая терапия и электротерапия', text: 'Комбинированный аппарат Enraf-Nonius', alt: 'Комбинированный аппарат физиотерапии Enraf-Nonius с двумя излучателями', services: ['spina', 'koleno', 'plecho', 'reabilitaciya', 'fizioterapiya'] },
   { id: 'ems', image: asset('/photos/eq-ems.jpg'), title: 'Электромиостимуляция', text: 'Стимулятор Compex SP 4.0 и ультразвук Enraf-Nonius', alt: 'Миостимулятор Compex SP 4.0 и аппарат ультразвуковой терапии Enraf-Nonius', services: ['plecho', 'reabilitaciya', 'lechebnaya-fizkultura', 'fizioterapiya'] },
-  { id: 'lab', image: asset('/photos/eq-lab.jpg'), title: 'Процедурный кабинет', text: 'Забор крови на анализы и для PRP-терапии', alt: 'Пробирки с кровью в штативе в процедурном кабинете', services: ['prp'] },
+  { id: 'tes', image: asset('/photos/eq-tes.jpg'), title: 'Транскраниальная электростимуляция', text: 'Аппарат Магнон-ДКС', alt: 'Аппарат транскраниальной электростимуляции Магнон-ДКС и оголовье с электродами', services: ['reabilitaciya', 'fizioterapiya'] },
+  { id: 'lab', image: asset('/photos/eq-centrifuge.jpg'), title: 'Процедурный кабинет', text: 'Забор крови на анализы и для PRP-терапии', alt: 'Центрифуга для анализов в процедурном кабинете', services: ['prp'] },
 ]

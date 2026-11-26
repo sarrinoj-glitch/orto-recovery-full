@@ -28,7 +28,7 @@ export function BeforeAfter() {
         <div className="lg:col-span-5">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">Примеры пациентов</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-[2.6rem]">Осанка до и после курса</h2>
-          <p className="mt-4 text-lg leading-relaxed text-graphite/70">Потяните ползунок, чтобы сравнить. Снимки сделаны в центре у одной и той же стены с сеткой — так проще увидеть разницу.</p>
+          <p className="mt-4 text-lg leading-relaxed text-graphite/70">Ползунок сам показывает «до» и «после» — его можно потянуть и рукой. Снимки сделаны в центре.</p>
           <div role="tablist" className="mt-6 flex flex-wrap gap-2">
             {CASES.map((x) => (
               <button key={x.id} role="tab" type="button" aria-selected={x.id === id} onClick={() => { setId(x.id); setPos(50); setAuto(true) }}

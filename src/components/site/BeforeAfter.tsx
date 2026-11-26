@@ -30,7 +30,7 @@ export function BeforeAfter() {
           <p className="mt-6 text-[13px] leading-relaxed text-graphite/50">Пример одного пациента. Результат зависит от диагноза, возраста и регулярности занятий — врач скажет, чего ждать, после осмотра. Фото опубликованы с согласия родителей.</p>
         </div>
         <div className="lg:col-span-7">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] select-none overflow-hidden rounded-[32px] bg-ward">
+          <div className="relative mx-auto aspect-[2/3] w-full max-w-[440px] select-none overflow-hidden rounded-[32px] bg-ward">
             <img src={asset(c.after)} alt={`${c.what} — после курса`} className="absolute inset-0 h-full w-full object-cover" draggable={false} />
             <img src={asset(c.before)} alt={`${c.what} — до начала занятий`} className="absolute inset-0 h-full w-full object-cover" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }} draggable={false} />
             <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[13px] font-semibold text-deep">До</span>

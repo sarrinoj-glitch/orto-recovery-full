@@ -16,12 +16,14 @@ import { Equipment } from '@/components/site/Equipment'
 import { HomeVisit } from '@/components/site/HomeVisit'
 import { ForFamily } from '@/components/site/ForFamily'
 import { BeforeAfter } from '@/components/site/BeforeAfter'
+import { KidsInsoles } from '@/components/site/KidsInsoles'
 import { OrbitCta } from '@/components/site/Extras'
 
 const EXTRAS: Record<Extra, () => ReactNode> = {
   second: () => <SecondOpinion />,
   hand: () => <HandRehab />,
   results: () => <BeforeAfter />,
+  insoles: () => <KidsInsoles />,
   twin: () => <TwinPlans />,
   glossary: () => <Glossary />,
   procedures: () => <Procedures />,

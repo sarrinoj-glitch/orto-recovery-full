@@ -1,7 +1,7 @@
 // Структура сайта: верхнее меню как на старом ortorecovery.ru + страницы услуг.
 // Цены — данные клиники от 07.11.2026, описания — старый сайт (выгрузка WordPress, 25.10.2026).
 
-export type Extra = 'second' | 'hand' | 'results' | 'rphotos' | 'sias' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
+export type Extra = 'second' | 'hand' | 'results' | 'rphotos' | 'fphotos' | 'sias' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
 
 export type Service = {
   slug: string
@@ -81,7 +81,7 @@ export const SERVICES: Service[] = [
     doctors: ['Хаджалов Абузар Магомедович'],
     prices: [['Консультация травматолога-ортопеда', 'до 3 000 ₽'], ['Ударно-волновая терапия', 'до 3 000 ₽'], ['Индивидуальные стельки Formthotics (взрослые)', 'до 13 500 ₽'], ['Индивидуальные стельки Formthotics (детские)', 'до 9 500 ₽']],
     conditions: ['foot'],
-    extras: ['procedures'],
+    extras: ['fphotos', 'procedures'],
     chat: 'Здравствуйте, болит пятка по утрам',
   },
   {

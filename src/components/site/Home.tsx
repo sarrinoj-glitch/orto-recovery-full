@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useRef, useState, type FormEvent, type PointerEvent as RPointerEvent } from 'react'
 import { HeroSlides } from '@/components/site/HeroSlides'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-import { ArrowRight, Plus, Search } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Plus, Search } from 'lucide-react'
 import { CLINIC, DOCTORS, doctorCta } from '@/lib/clinic'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
@@ -74,13 +74,61 @@ const CARDS = [
 
 // «От шеи до пяток» (Hinge): карточки с фото и точкой боли, каждая ведёт на страницу услуги
 export function BodyCards() {
+  // Мышью колесо крутит страницу вниз, поэтому листаем стрелками или перетаскиванием
+  const track = useRef<HTMLDivElement>(null)
+  const drag = useRef({ on: false, x: 0, left: 0, moved: false })
+  const [edge, setEdge] = useState({ start: true, end: false })
+  const onScroll = () => {
+    const el = track.current
+    if (el) setEdge({ start: el.scrollLeft < 8, end: el.scrollLeft + el.clientWidth > el.scrollWidth - 8 })
+  }
+  const step = (dir: number) => {
+    const el = track.current
+    const card = el?.firstElementChild as HTMLElement | null
+    el?.scrollBy({ left: dir * ((card?.offsetWidth ?? 300) + 16), behavior: 'smooth' })
+  }
+  const down = (e: RPointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== 'mouse' || !track.current) return
+    drag.current = { on: true, x: e.clientX, left: track.current.scrollLeft, moved: false }
+  }
+  const move = (e: RPointerEvent<HTMLDivElement>) => {
+    const el = track.current
+    if (!drag.current.on || !el) return
+    const dx = e.clientX - drag.current.x
+    if (!drag.current.moved && Math.abs(dx) > 6) {
+      drag.current.moved = true
+      el.style.scrollSnapType = 'none'
+      el.setPointerCapture(e.pointerId)
+    }
+    if (drag.current.moved) el.scrollLeft = drag.current.left - dx
+  }
+  const up = () => {
+    const el = track.current
+    if (!drag.current.on || !el) return
+    drag.current.on = false
+    if (drag.current.moved) {
+      const card = el.firstElementChild as HTMLElement | null
+      const w = (card?.offsetWidth ?? 300) + 16
+      el.style.scrollSnapType = ''
+      el.scrollTo({ left: Math.round(el.scrollLeft / w) * w, behavior: 'smooth' })
+    }
+  }
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <h2 className={H2}>От шеи до пяток</h2>
-        <Link href="/uslugi/" className="flex items-center gap-2 font-semibold text-teal">Все услуги <ArrowRight size={18} /></Link>
+        <div className="flex items-center gap-5">
+          <Link href="/uslugi/" className="flex items-center gap-2 font-semibold text-teal">Все услуги <ArrowRight size={18} /></Link>
+          <div className="hidden gap-2.5 sm:flex">
+            <button type="button" aria-label="Предыдущие направления" onClick={() => step(-1)} disabled={edge.start} className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-deep shadow-soft ring-1 ring-graphite/5 transition hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0"><ArrowLeft size={20} /></button>
+            <button type="button" aria-label="Следующие направления" onClick={() => step(1)} disabled={edge.end} className="flex h-12 w-12 items-center justify-center rounded-full bg-lime text-graphite shadow-soft transition hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0"><ArrowRight size={20} /></button>
+          </div>
+        </div>
       </div>
-      <div className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [scrollbar-width:none] sm:mx-0 sm:px-0">
+      <div ref={track} onScroll={onScroll} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
+        onClickCapture={(e) => { if (drag.current.moved) { e.preventDefault(); e.stopPropagation(); drag.current.moved = false } }}
+        onDragStart={(e) => e.preventDefault()}
+        className="-mx-4 mt-8 flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [scrollbar-width:none] active:cursor-grabbing sm:mx-0 sm:px-0">
         {CARDS.map((c) => (
           <TiltCard key={c.title} className="w-[78%] shrink-0 snap-start rounded-[28px] sm:w-[300px]"><Link href={c.href} className="group relative isolate block aspect-[4/5] overflow-hidden rounded-[28px] text-white">
             <img src={asset(c.img)} alt="" className={`absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105 ${c.pos}`} />

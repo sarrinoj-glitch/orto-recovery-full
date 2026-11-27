@@ -5,7 +5,7 @@
 
 import { cn } from "@/lib/cn";
 import { motion, useReducedMotion } from "framer-motion";
-import type { KeyboardEvent } from "react";
+import type { KeyboardEvent, Ref } from "react";
 import { useEffect, useRef, useState } from "react";
 
 export type HoverExpandOrientation = "horizontal" | "vertical";
@@ -29,6 +29,11 @@ export interface HoverExpandProps {
   onActiveIndexChange?: (index: number) => void;
   orientation?: HoverExpandOrientation;
   showLabelsWhenCollapsed?: boolean;
+  /** Ряд шире экрана: карточки фиксированной ширины, ряд листается (стрелки и перетаскивание — снаружи) */
+  scrollable?: boolean;
+  trackRef?: Ref<HTMLDivElement>;
+  collapsedWidth?: number;
+  expandedWidth?: number;
 }
 
 const DEFAULT_EXPANDED_FLEX = 4;
@@ -44,6 +49,10 @@ const HoverExpand = ({
   collapsedFlex = DEFAULT_COLLAPSED_FLEX,
   showLabelsWhenCollapsed = true,
   className,
+  scrollable = false,
+  trackRef,
+  collapsedWidth = 112,
+  expandedWidth = 440,
 }: HoverExpandProps) => {
   const shouldReduceMotion = useReducedMotion();
   const [internalActive, setInternalActive] = useState(0);
@@ -114,7 +123,8 @@ const HoverExpand = ({
   return (
     <div
       aria-label="Фотографии центра"
-      className={cn("flex w-full gap-2", isHorizontal ? "h-[360px] flex-row" : "h-[520px] flex-col", className)}
+      ref={trackRef}
+      className={cn("flex w-full gap-2", isHorizontal ? "h-[360px] flex-row" : "h-[520px] flex-col", scrollable && isHorizontal && "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden", className)}
       role="group"
     >
       {items.map((item, index) => {
@@ -123,10 +133,10 @@ const HoverExpand = ({
 
         return (
           <motion.button
-            animate={{ flexGrow: isActive ? expandedFlex : collapsedFlex }}
+            animate={scrollable && isHorizontal ? { width: isActive ? expandedWidth : collapsedWidth } : { flexGrow: isActive ? expandedFlex : collapsedFlex }}
             aria-label={item.title}
             aria-pressed={isActive}
-            className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-2xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+            className={cn("relative min-h-0 min-w-0 overflow-hidden rounded-2xl text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal", scrollable && isHorizontal ? "shrink-0" : "flex-1")}
             initial={false}
             key={item.id}
             onClick={() => {
@@ -146,7 +156,7 @@ const HoverExpand = ({
             ref={(el) => {
               panelRefs.current[index] = el;
             }}
-            style={{ flexBasis: 0 }}
+            style={scrollable && isHorizontal ? { width: isActive ? expandedWidth : collapsedWidth } : { flexBasis: 0 }}
             transition={shouldReduceMotion ? { duration: 0 } : { bounce: 0.1, duration: 0.25, type: "spring" }}
             type="button"
           >

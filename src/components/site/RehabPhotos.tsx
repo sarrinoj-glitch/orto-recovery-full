@@ -62,15 +62,20 @@ export const HipCheck = () => (
 const BACK = [
   { src: '/photos/cupping.jpg', alt: 'Специалист ставит на спину пациента силиконовые вакуумные банки' },
   { src: '/photos/back-massage.jpg', alt: 'Специалист центра делает массаж спины пациенту' },
-  { src: '/photos/back-scraping.jpg', alt: 'Специалист обрабатывает мышцы спины металлическим скребком' },
 ]
 
 export const Cupping = () => (
   <section id="back-photos" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-    <div data-stagger className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+    <div data-stagger className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0">
       {BACK.map((p) => (
         <img key={p.src} src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[4/5] w-[72%] shrink-0 snap-start rounded-[28px] object-cover sm:w-full" />
       ))}
     </div>
   </section>
+)
+
+export const Iastm = () => (
+  <PhotoNote id="iastm" img="/photos/back-scraping.jpg" alt="Специалист прорабатывает мышцы спины металлическим инструментом IASTM"
+    kicker="Процедуры" title="Инструментальная мобилизация мягких тканей (IASTM)"
+    text="Инструментальная мобилизация мягких тканей (IASTM) — современный метод физиотерапевтического воздействия с использованием специальных металлических инструментов. Метод направлен на проработку мышц, фасций и соединительных тканей, уменьшение мышечного напряжения, улучшение подвижности тканей и восстановление их функционального состояния." />
 )

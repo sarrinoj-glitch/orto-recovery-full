@@ -16,7 +16,7 @@ import { Equipment } from '@/components/site/Equipment'
 import { HomeVisit } from '@/components/site/HomeVisit'
 import { ForFamily } from '@/components/site/ForFamily'
 import { BeforeAfter } from '@/components/site/BeforeAfter'
-import { RehabPhotos, FootPhotos, HipCheck, Cupping } from '@/components/site/RehabPhotos'
+import { RehabPhotos, FootPhotos, HipCheck, Cupping, Iastm } from '@/components/site/RehabPhotos'
 import { KidsInsoles, KidsSias } from '@/components/site/KidsInsoles'
 import { OrbitCta } from '@/components/site/Extras'
 
@@ -28,6 +28,7 @@ const EXTRAS: Record<Extra, () => ReactNode> = {
   fphotos: () => <FootPhotos />,
   hipcheck: () => <HipCheck />,
   cupping: () => <Cupping />,
+  iastm: () => <Iastm />,
   insoles: () => <KidsInsoles />,
   sias: () => <KidsSias />,
   twin: () => <TwinPlans />,

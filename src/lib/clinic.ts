@@ -167,8 +167,6 @@ export const PRICE_GROUPS: { title: string; items: { name: string; price: string
       { name: 'Транскраниальная электростимуляция', price: 'до 1 500 ₽' },
       { name: 'Прессотерапия', price: 'до 1 500 ₽' },
       { name: 'Электроакупунктура', price: 'до 2 500 ₽' },
-      { name: 'Сухие иглы', price: 'до 2 500 ₽' },
-      { name: 'Кинезиотейпирование', price: 'от 1 000 ₽' },
     ],
   },
   {
@@ -178,6 +176,8 @@ export const PRICE_GROUPS: { title: string; items: { name: string; price: string
       { name: 'Лечебная гимнастика по методу СИАС', price: 'от 2 000 ₽' },
       { name: 'Разработка кисти после операции', price: '3 000 ₽' },
       { name: 'Групповые тренинги по психологии', price: 'от 1 500 ₽' },
+      { name: 'Сухие иглы', price: 'до 2 500 ₽' },
+      { name: 'Кинезиотейпирование', price: 'от 1 000 ₽' },
     ],
   },
   {

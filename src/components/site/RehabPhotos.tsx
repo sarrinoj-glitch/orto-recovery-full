@@ -59,16 +59,24 @@ export const HipCheck = () => (
 )
 
 // Фото процедур для спины — без подписей, по просьбе клиента
-const BACK = [
+const BACK: { src: string; alt: string; title?: string; text?: string }[] = [
   { src: '/photos/cupping.jpg', alt: 'Специалист ставит на спину пациента силиконовые вакуумные банки' },
-  { src: '/photos/back-massage.jpg', alt: 'Специалист центра делает массаж спины пациенту' },
+  { src: '/photos/back-thrust.jpg', alt: 'Специалист выполняет трастовый приём на грудном отделе позвоночника у сидящего пациента', title: 'Трастовые приёмы', text: 'Специалист выполняет короткое точное движение в зоне сустава позвоночника, чтобы вернуть ему подвижность. Приём проводят только после осмотра, если нет противопоказаний.' },
 ]
 
 export const Cupping = () => (
   <section id="back-photos" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
     <div data-stagger className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0">
       {BACK.map((p) => (
-        <img key={p.src} src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[4/5] w-[72%] shrink-0 snap-start rounded-[28px] object-cover sm:w-full" />
+        <figure key={p.src} className="relative w-[72%] shrink-0 snap-start overflow-hidden rounded-[28px] sm:w-full">
+          <img src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[4/5] w-full object-cover" />
+          {p.title && (
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-deep/95 via-deep/75 to-transparent p-5 pt-16 text-white sm:p-7 sm:pt-24">
+              <span className="block text-xl font-bold leading-tight sm:text-2xl">{p.title}</span>
+              <span className="mt-2 block text-[15px] leading-relaxed text-white/85">{p.text}</span>
+            </figcaption>
+          )}
+        </figure>
       ))}
     </div>
   </section>

@@ -58,8 +58,19 @@ export const HipCheck = () => (
     text="Специалист сгибает ногу в колене и в тазобедренном суставе и мягко поворачивает бедро. Ремень удерживает таз, чтобы двигался только сустав. Так видно, насколько свободно сустав движется и в какой момент появляется боль." />
 )
 
+// Фото процедур для спины — без подписей, по просьбе клиента
+const BACK = [
+  { src: '/photos/cupping.jpg', alt: 'Специалист ставит на спину пациента силиконовые вакуумные банки' },
+  { src: '/photos/back-massage.jpg', alt: 'Специалист центра делает массаж спины пациенту' },
+  { src: '/photos/back-scraping.jpg', alt: 'Специалист обрабатывает мышцы спины металлическим скребком' },
+]
+
 export const Cupping = () => (
-  <PhotoNote id="cupping" img="/photos/cupping.jpg" alt="Специалист проводит массаж спины силиконовыми вакуумными банками"
-    kicker="Процедуры" title="Вакуумный массаж банками"
-    text="Специалист ставит на спину силиконовые банки: они присасываются к коже и приподнимают ткани. Процедура проходит лёжа на кушетке." />
+  <section id="back-photos" className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <div data-stagger className="-mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0">
+      {BACK.map((p) => (
+        <img key={p.src} src={asset(p.src)} alt={p.alt} loading="lazy" className="aspect-[4/5] w-[72%] shrink-0 snap-start rounded-[28px] object-cover sm:w-full" />
+      ))}
+    </div>
+  </section>
 )

@@ -130,8 +130,8 @@ export function BodyCards() {
         onDragStart={(e) => e.preventDefault()}
         className="-mx-4 mt-8 flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [scrollbar-width:none] active:cursor-grabbing sm:mx-0 sm:px-0">
         {CARDS.map((c) => (
-          <TiltCard key={c.title} className="w-[78%] shrink-0 snap-start rounded-[28px] sm:w-[300px]"><Link href={c.href} className="group relative isolate block aspect-[4/5] overflow-hidden rounded-[28px] text-white">
-            <img src={asset(c.img)} alt="" className={`absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105 ${c.pos}`} />
+          <TiltCard key={c.title} className="w-[78%] shrink-0 snap-start rounded-[28px] sm:w-[300px]"><Link href={c.href} draggable={false} className="group relative isolate block aspect-[4/5] select-none overflow-hidden rounded-[28px] text-white">
+            <img src={asset(c.img)} alt="" draggable={false} className={`absolute inset-0 -z-20 h-full w-full object-cover transition duration-700 group-hover:scale-105 ${c.pos}`} />
             <span className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent from-40% to-deep/90" />
             <span className="absolute left-4 top-4 rounded-full bg-lime px-3 py-1 text-[13px] font-semibold text-graphite">{c.tag}</span>
             {c.spot && <span aria-hidden className="absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white bg-[#E2553A] shadow-[0_0_0_14px_rgba(255,106,61,.3)]" style={{ left: c.spot[0], top: c.spot[1] }} />}

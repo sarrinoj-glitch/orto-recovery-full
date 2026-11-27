@@ -70,3 +70,9 @@ export function PatientDocs() {
     </section>
   )
 }
+
+// Текст документа без боковой колонки — для вставки на другие страницы
+export function LegalHtml({ slug }: { slug: string }) {
+  const d = LEGAL_DOCS.find((x) => x.slug === slug)
+  return d ? <div className="legal-doc" dangerouslySetInnerHTML={{ __html: withBase(d.html) }} /> : null
+}

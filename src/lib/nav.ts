@@ -188,6 +188,7 @@ export const NAV: { href: string; label: string; sub?: boolean }[] = [
   { href: '/pacientam/', label: 'Пациентам' },
   { href: '/otzyvy/', label: 'Отзывы' },
   { href: '/blog/', label: 'Блог' },
+  { href: '/vakansii/', label: 'Вакансии' },
   { href: '/kontakty/', label: 'Контакты' },
 ]
 

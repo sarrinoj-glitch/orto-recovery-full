@@ -42,3 +42,31 @@ export function LegalBody({ doc }: { doc: LegalDoc }) {
     </div>
   )
 }
+
+// Информация для пациентов: документы клиники для скачивания (по просьбе юристов).
+// Сейчас PDF сделаны из присланных Word-файлов; после подписания приказов заменяем на сканы с теми же именами
+const PATIENT_DOCS = [
+  { slug: 'polozhenie', pdf: 'polozhenie.pdf', title: 'Положение о порядке предоставления платных медицинских услуг' },
+  { slug: 'prava-pacienta', pdf: 'prava-grazhdan.pdf', title: 'Права и обязанности граждан в сфере охраны здоровья' },
+  { slug: 'pravila', pdf: 'pravila.pdf', title: 'Правила внутреннего распорядка для пациентов и посетителей' },
+  { slug: 'dogovor', pdf: 'dogovor.pdf', title: 'Договор на оказание платных медицинских услуг (образец)' },
+]
+
+export function PatientDocs() {
+  return (
+    <section id="info" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <h2 className="text-[2.1rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-graphite sm:text-5xl">Информация для пациентов</h2>
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+        {PATIENT_DOCS.map((d) => (
+          <li key={d.slug} className="flex flex-col justify-between gap-5 rounded-[28px] bg-white p-6 shadow-soft ring-1 ring-graphite/5">
+            <p className="text-lg font-semibold leading-snug text-deep">{d.title}</p>
+            <div className="flex flex-wrap gap-3">
+              <Link href={`/dokumenty/${d.slug}/`} className="flex h-11 items-center rounded-full bg-ward px-5 text-[15px] font-semibold text-deep hover:bg-lagoon">Читать на сайте</Link>
+              <a href={`${prefix}docs/${d.pdf}`} target="_blank" rel="noreferrer" className="flex h-11 items-center rounded-full bg-deep px-5 text-[15px] font-semibold text-white">Скачать PDF</a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

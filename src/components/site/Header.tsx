@@ -8,6 +8,7 @@ import { CLINIC } from '@/lib/clinic'
 import { NAV, SERVICE_MENU } from '@/lib/nav'
 import { asset } from '@/lib/asset'
 import { openLead } from '@/components/LeadForm'
+import { A11yToggle } from '@/components/site/A11yToggle'
 
 const tel = `tel:${CLINIC.phone.replace(/[^\d+]/g, '')}`
 
@@ -63,6 +64,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3">
+          <A11yToggle className="flex h-11 w-11 items-center justify-center rounded-full bg-ward text-graphite transition hover:bg-lagoon" />
           <a href={tel} className="hidden flex-col items-end leading-tight md:flex">
             <b className="whitespace-nowrap text-[15px] text-graphite">{CLINIC.phone}</b>
             <span className="text-xs text-[#5b6266]">пн–пт 9–18, сб 9–16</span>

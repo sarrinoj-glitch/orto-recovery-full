@@ -332,3 +332,20 @@ html { scroll-behavior: smooth; }
 .article .callout.warn { background: #FFF1EC; border-left: 4px solid #E2553A; }
 .article .callout.warn b { display: block; color: #8a2f1c; }
 .article .callout > p:only-child { margin: 0; font-size: 15px; color: #56656B; }
+
+/* Документы: скан, кнопка «скачать», подзаголовки, длинные ссылки */
+.legal-doc h3 { margin: 1.6em 0 .4em; font-size: 1.1rem; font-weight: 700; color: #0B3D4A; }
+.legal-doc a { overflow-wrap: anywhere; }
+.legal-doc .doc-scan { margin: 1.2em 0; max-width: 28rem; }
+.legal-doc .doc-scan img { width: 100%; border-radius: 16px; border: 1px solid #DCE7EA; }
+.legal-doc .doc-scan figcaption { margin-top: .5em; font-size: 14px; color: #56656B; }
+.legal-doc a.doc-dl { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 999px; background: #0B3D4A; color: #fff; font-weight: 600; text-decoration: none; }
+
+/* Версия для слабовидящих (переключатель в шапке и подвале) */
+html.a11y body { zoom: 1.2; }
+html.a11y main, html.a11y footer { filter: grayscale(1) contrast(1.15); }
+html.a11y *, html.a11y *::before, html.a11y *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+html.a11y a { text-decoration: underline !important; text-underline-offset: 3px; }
+html.a11y p, html.a11y li, html.a11y td { line-height: 1.7 !important; letter-spacing: .01em; }
+html.a11y :focus-visible { outline: 3px solid #000 !important; outline-offset: 2px; }
+html.a11y [data-reveal], html.a11y [data-stagger] > * { opacity: 1 !important; transform: none !important; }

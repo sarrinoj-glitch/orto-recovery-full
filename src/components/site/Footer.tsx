@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { A11yToggle } from '@/components/site/A11yToggle'
 import { CLINIC } from '@/lib/clinic'
 import { NAV, SERVICES } from '@/lib/nav'
 import { Waves } from '@/components/site/Decor'
@@ -39,10 +40,11 @@ export function Footer() {
         <div className="space-y-1.5 text-sm">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-neon">Документы</p>
           <ul className="space-y-2 text-[15px]">
-            {[['svedeniya', 'Сведения о центре и лицензия'], ['vrachi', 'Сведения о врачах'], ['platnye-uslugi', 'Условия платных услуг'], ['dogovor', 'Образец договора'], ['politika', 'Политика обработки ПДн'], ['soglasie', 'Согласие на обработку ПДн'], ['cookie', 'Политика cookie'], ['kontroliruyushchie-organy', 'Контролирующие органы']].map(([s, t]) => (
+            {[['svedeniya', 'Сведения о центре и лицензия'], ['vrachi', 'Сведения о врачах'], ['platnye-uslugi', 'Условия платных услуг'], ['dogovor', 'Образец договора'], ['politika', 'Политика обработки ПДн'], ['soglasie', 'Согласие на обработку ПДн'], ['cookie', 'Политика cookie'], ['kontroliruyushchie-organy', 'Контролирующие органы'], ['normativnye-dokumenty', 'Нормативные документы'], ['vakansii', 'Вакансии']].map(([s, t]) => (
               <li key={s}><Link href={`/dokumenty/${s}/`} className="hover:text-white">{t}</Link></li>
             ))}
             <li><Link href="/dokumenty/" className="text-neon hover:text-white">Все документы</Link></li>
+            <li><A11yToggle withLabel className="mt-2 flex items-center gap-2 text-neon hover:text-white" /></li>
           </ul>
         </div>
       </div>

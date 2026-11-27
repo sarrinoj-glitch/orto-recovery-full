@@ -49,10 +49,10 @@ export function HomeVisit() {
           </div>
         </div>
         <img
-          src={asset('/photos/room.jpg')}
-          alt="Кабинет лечебной физкультуры центра"
+          src={asset('/photos/d-khadzhalov.jpg')}
+          alt="Хаджалов Абузар Магомедович, травматолог-ортопед, кистевой реабилитолог"
           loading="lazy"
-          className="h-72 w-full object-cover lg:h-full"
+          className="h-96 w-full object-cover object-[50%_20%] lg:h-full"
         />
       </div>
     </section>

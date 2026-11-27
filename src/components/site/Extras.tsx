@@ -46,11 +46,11 @@ export function Stats() {
 }
 
 // ===== Как проходит лечение: шаги со старого сайта, фото «прилипает» и меняется при прокрутке (Sticky Scroll Reveal) =====
-const STEPS = [
+const STEPS: { t: string; d: string; img: string; alt: string; more?: string[] }[] = [
   { t: 'Расскажите, что беспокоит', d: 'Врач собирает жалобы и историю: когда началось, что усиливает боль, были ли травмы и операции.', img: '/photos/room.jpg', alt: 'Кабинет врача в центре' },
-  { t: 'Осмотр и простой тест', d: 'Врач смотрит, как двигается сустав или спина, и проводит несложный физический тест.', img: '/photos/stopa.jpg', alt: 'Ортопед проверяет подвижность стопы пациента' },
+  { t: 'Осмотр и простой тест', d: 'Врач смотрит, как двигается сустав или спина, и проводит несложный физический тест.', more: ['/photos/back-thrust.jpg', '/photos/rehab-knee.jpg'], img: '/photos/stopa.jpg', alt: 'Ортопед проверяет подвижность стопы пациента' },
   { t: 'Разбираем снимки', d: 'МРТ, рентген, заключения — врач объяснит простыми словами, что на них видно.', img: '/photos/cabinet.jpg', alt: 'Кабинет ортопеда с негатоскопом для снимков' },
-  { t: 'План лечения и цена', d: 'Вы получаете курс процедур и знаете, сколько он стоит, до начала лечения.', img: '/photos/c-shoulder.jpg', alt: 'Ударно-волновая терапия плеча' },
+  { t: 'План лечения и цена', d: 'Вы получаете курс процедур и знаете, сколько он стоит, до начала лечения.', more: ['/photos/rehab-biomag.jpg', '/photos/rehab-ems.jpg'], img: '/photos/c-shoulder.jpg', alt: 'Ударно-волновая терапия плеча' },
 ]
 
 function Step({ i, active, onActive }: { i: number; active: boolean; onActive: (i: number) => void }) {
@@ -71,6 +71,16 @@ function Step({ i, active, onActive }: { i: number; active: boolean; onActive: (
 export function StickySteps() {
   const [active, setActive] = useState(0)
   const reduce = useReducedMotion()
+  // у шага может быть несколько фото: пока шаг активен, они быстро сменяют друг друга в той же рамке
+  const imgs = [STEPS[active].img, ...(STEPS[active].more ?? [])]
+  const [sub, setSub] = useState(0)
+  useEffect(() => {
+    setSub(0)
+    if (imgs.length < 2 || reduce) return
+    const t = setInterval(() => setSub((x) => (x + 1) % imgs.length), 1500)
+    return () => clearInterval(t)
+  }, [active, imgs.length, reduce])
+  const shown = imgs[Math.min(sub, imgs.length - 1)]
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">Как проходит приём</p>
@@ -84,7 +94,7 @@ export function StickySteps() {
         <div className="hidden lg:block">
           <div className="sticky top-28 aspect-[4/5] overflow-hidden rounded-[36px] bg-ward shadow-lift">
             <AnimatePresence mode="popLayout" initial={false}>
-              <motion.img key={active} src={asset(STEPS[active].img)} alt={STEPS[active].alt} className="absolute inset-0 h-full w-full object-cover"
+              <motion.img key={shown} src={asset(shown)} alt={STEPS[active].alt} className="absolute inset-0 h-full w-full object-cover"
                 initial={reduce ? false : { opacity: 0, scale: 1.08 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} />
             </AnimatePresence>
             <div className="absolute inset-x-5 bottom-5 flex items-center justify-between rounded-2xl bg-white/90 px-4 py-3 backdrop-blur">

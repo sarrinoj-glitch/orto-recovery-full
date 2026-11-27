@@ -65,7 +65,7 @@ export function HomeHero() {
 
 const CARDS = [
   { href: '/uslugi/spina/', tag: 'Спина и шея', title: 'Боль в спине и шее', text: 'Грыжи, протрузии, остеохондроз.', price: 'занятие от 2 000 ₽', img: '/photos/c-back.jpg', pos: 'object-right' },
-  { href: '/uslugi/koleno/', tag: 'Суставы', title: 'Колено и тазобедренный', text: 'PRP, ударно-волновая терапия, лечебная физкультура.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-center', spot: ['52%', '52%'] },
+  { href: '/uslugi/koleno/', tag: 'Суставы', title: 'Колено и тазобедренный', text: 'PRP, ударно-волновая терапия, лечебная физкультура.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/uvt-knee.jpg', pos: 'object-[61%_50%]' },
   { href: '/uslugi/plecho/', tag: 'Плечо и кисть', title: 'Плечо и кисть', text: 'После переломов и травм, УВТ, тейпирование.', price: 'приём ортопеда до 3 000 ₽', img: '/photos/c-shoulder.jpg', pos: 'object-left', spot: ['57%', '38%'] },
   { href: '/uslugi/stopa/', tag: 'Стопа', title: 'Стопа и пятка', text: 'Пяточная шпора, плоскостопие, стельки.', price: 'УВТ до 3 000 ₽', img: '/photos/stopa.jpg', pos: 'object-[73%_50%]', spot: ['45%', '30%'] },
   { href: '/uslugi/reabilitaciya/', tag: 'Реабилитация', title: 'После травм и операций', text: 'Лечебная физкультура под контролем врача, спортивная реабилитация.', price: 'занятие от 2 000 ₽', img: '/photos/g-lfk.jpg', pos: 'object-center' },

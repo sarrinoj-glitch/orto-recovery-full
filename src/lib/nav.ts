@@ -1,7 +1,7 @@
 // Структура сайта: верхнее меню как на старом ortorecovery.ru + страницы услуг.
 // Цены — данные клиники от 07.11.2026, описания — старый сайт (выгрузка WordPress, 25.10.2026).
 
-export type Extra = 'second' | 'hand' | 'results' | 'rphotos' | 'fphotos' | 'sias' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
+export type Extra = 'second' | 'hand' | 'results' | 'rphotos' | 'fphotos' | 'hipcheck' | 'cupping' | 'sias' | 'insoles' | 'twin' | 'glossary' | 'procedures' | 'prp' | 'sport' | 'after' | 'home' | 'family' | 'whole'
 
 export type Service = {
   slug: string
@@ -36,7 +36,7 @@ export const SERVICES: Service[] = [
     doctors: ['Хаджалов Абузар Магомедович'],
     prices: [['Лечебная физкультура', 'от 2 000 ₽'], ['Ударно-волновая терапия', 'до 3 000 ₽'], ['Приём невролога', 'от 8 000 ₽'], ['Блокада позвоночника', 'до 3 000 ₽']],
     conditions: ['spine'],
-    extras: ['twin', 'second'],
+    extras: ['twin', 'cupping', 'second'],
     chat: 'Здравствуйте, болит спина, хочу на приём',
   },
   {
@@ -46,12 +46,12 @@ export const SERVICES: Service[] = [
     kicker: 'Травматолог-ортопед',
     title: 'Боль в колене и тазобедренном суставе',
     lead: 'Болит колено на лестнице, щёлкает, отекает после нагрузки, сказали «артроз». Ортопед осмотрит, разберёт снимки и составит план лечения — цену вы узнаете до начала.',
-    photo: '/photos/rehab-knee.jpg',
-    photoAlt: 'Специалист центра проверяет подвижность колена пациента на кушетке',
+    photo: '/photos/uvt-knee.jpg',
+    photoAlt: 'Специалист проводит ударно-волновую терапию колена',
     doctors: ['Хаджалов Абузар Магомедович'],
     prices: [['Консультация травматолога-ортопеда', 'до 3 000 ₽'], ['PRP-терапия', 'до 10 500 ₽'], ['Плазмотерапия', 'до 4 000 ₽'], ['Лечебная физкультура', 'от 2 000 ₽'], ['Ударно-волновая терапия', 'до 3 000 ₽']],
     conditions: ['knee'],
-    extras: ['second', 'procedures'],
+    extras: ['hipcheck', 'second', 'procedures'],
     chat: 'Здравствуйте, болит колено',
   },
   {

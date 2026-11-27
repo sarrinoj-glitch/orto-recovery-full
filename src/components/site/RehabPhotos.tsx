@@ -35,3 +35,31 @@ function PhotoSet({ title, shots }: { title: string; shots: Shot[] }) {
 
 export const RehabPhotos = () => <PhotoSet title="Как проходит восстановление" shots={REHAB} />
 export const FootPhotos = () => <PhotoSet title="Как мы работаем со стопой" shots={FOOT} />
+
+// Фото с коротким пояснением, что делает специалист
+function PhotoNote({ id, img, alt, kicker, title, text }: { id: string; img: string; alt: string; kicker: string; title: string; text: string }) {
+  return (
+    <section id={id} className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <div data-reveal className="grid overflow-hidden rounded-[36px] bg-white shadow-soft ring-1 ring-graphite/5 lg:grid-cols-2">
+        <img src={asset(img)} alt={alt} loading="lazy" className="h-64 w-full object-cover sm:h-80 lg:h-full lg:min-h-[380px]" />
+        <div className="flex flex-col justify-center p-7 sm:p-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal">{kicker}</p>
+          <h2 className="mt-3 text-[1.9rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-deep sm:text-[2.3rem]">{title}</h2>
+          <p className="mt-4 text-lg leading-relaxed text-graphite/70">{text}</p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export const HipCheck = () => (
+  <PhotoNote id="hip" img="/photos/rehab-knee.jpg" alt="Специалист сгибает ногу пациента в колене и тазобедренном суставе на кушетке, таз зафиксирован ремнём"
+    kicker="Осмотр" title="Проверяем подвижность тазобедренного сустава"
+    text="Специалист сгибает ногу в колене и в тазобедренном суставе и мягко поворачивает бедро. Ремень удерживает таз, чтобы двигался только сустав. Так видно, насколько свободно сустав движется и в какой момент появляется боль." />
+)
+
+export const Cupping = () => (
+  <PhotoNote id="cupping" img="/photos/cupping.jpg" alt="Специалист проводит массаж спины силиконовыми вакуумными банками"
+    kicker="Процедуры" title="Вакуумный массаж банками"
+    text="Специалист ставит на спину силиконовые банки: они присасываются к коже и приподнимают ткани. Процедура проходит лёжа на кушетке." />
+)

@@ -4,6 +4,7 @@ import { Start } from '@/components/site/Start'
 import { SecondOpinion } from '@/components/site/Conditions'
 import { Reviews } from '@/components/site/Reviews'
 import { Visit } from '@/components/site/Visit'
+import { HomeLegal } from '@/components/site/LegalDoc'
 import { Stats, StickySteps, Manifesto, DoctorsMorph, BookingFlow, MethodsMarquee, OrbitCta } from '@/components/site/Extras'
 
 // Главная — только самое важное; подробности на страницах услуг и разделов
@@ -26,6 +27,7 @@ export default function HomePage() {
         <PricesTeaser />
         <OrbitCta />
         <Visit />
+        <HomeLegal />
       </main>
     </>
   )

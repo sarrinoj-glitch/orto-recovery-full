@@ -76,3 +76,26 @@ export function LegalHtml({ slug }: { slug: string }) {
   const d = LEGAL_DOCS.find((x) => x.slug === slug)
   return d ? <div className="legal-doc" dangerouslySetInnerHTML={{ __html: withBase(d.html) }} /> : null
 }
+
+// Главная: полный текст политики и согласия (по просьбе юристов) — в раскрывающихся блоках
+export function HomeLegal() {
+  return (
+    <section id="personal-data" className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <h2 className="text-[1.6rem] font-extrabold leading-tight tracking-[-0.02em] text-graphite sm:text-[2rem]">Персональные данные</h2>
+      <div className="mt-6 space-y-3">
+        {['politika', 'soglasie'].map((slug) => {
+          const d = LEGAL_DOCS.find((x) => x.slug === slug)!
+          return (
+            <details key={slug} className="group rounded-[24px] bg-white p-5 shadow-soft ring-1 ring-graphite/5 sm:p-7">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-deep [&::-webkit-details-marker]:hidden">
+                {d.title}
+                <ChevronRight size={20} className="shrink-0 transition group-open:rotate-90" />
+              </summary>
+              <div className="mt-5 max-h-[70vh] overflow-y-auto pr-2"><LegalHtml slug={slug} /></div>
+            </details>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
